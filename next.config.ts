@@ -1,17 +1,23 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // 🚀 Active l'export statique (remplace `next export`)
- 
- images: {
-    unoptimized: true, // ⚡ désactive l’optimisation côté serveur
+  images: {
+    unoptimized: true, 
   },
   eslint: {
-    ignoreDuringBuilds: true, // ⚡ Ignore ESLint en build
+    ignoreDuringBuilds: true, 
   },
   typescript: {
-    ignoreBuildErrors: true, // ⚡ Ignore TS en build
+    ignoreBuildErrors: true, 
   },
+
+  
+  generateBuildId: async () => {
+    return process.env.GIT_SHA || `${new Date().getTime()}`;
+  },
+
+  
+  assetPrefix: undefined,
 };
 
 export default nextConfig;
