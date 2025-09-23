@@ -1,18 +1,9 @@
 import { NextResponse } from "next/server";
+import { handleContact } from "function/api/contact";
 
-export const runtime = "nodejs";       
-export const dynamic = "force-dynamic"; 
+export const runtime = "nodejs";       // Important pour Vercel
+export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
-  try {
-    const body = await req.json();
-
-    // Exemple : traitement du formulaire
-    console.log("Formulaire reçu:", body);
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error(error);
-    return NextResponse.json({ success: false, error: "Invalid request" }, { status: 400 });
-  }
+  return handleContact(req); // Réutilise ta logique
 }

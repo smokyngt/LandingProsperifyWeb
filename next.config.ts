@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+    output: "export", // 👈 obligatoire pour générer /out
+
   images: {
     unoptimized: true, 
   },
