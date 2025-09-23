@@ -3,4 +3,4 @@ main = ".open-next/worker.js"
 compatibility_date = "2024-09-23"
 
 [site]
-bucket = ".open-next/assets/_next"
+bucket = ".open-next/assets"
