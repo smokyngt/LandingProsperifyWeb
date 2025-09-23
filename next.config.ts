@@ -13,7 +13,9 @@ const nextConfig: NextConfig = {
 
   
   generateBuildId: async () => {
-    return process.env.GIT_SHA || `${new Date().getTime()}`;
+    const { execSync } = require("child_process");
+    const gitSha = process.env.GIT_SHA || execSync("git rev-parse HEAD").toString().trim();
+    return gitSha || `${new Date().getTime()}`;
   },
 
   
