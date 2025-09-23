@@ -1,10 +1,6 @@
 import { Resend } from "resend";
 import { z } from "zod";
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
-
 // Validation Zod
 export const contactSchema = z.object({
   name: z.string().min(2, "Le nom doit contenir au moins 2 caractères"),
@@ -15,7 +11,6 @@ export const contactSchema = z.object({
   message: z.string().min(5, "Le message doit contenir au moins 5 caractères"),
 });
 
-// 🔒 Simple escape pour éviter HTML injection
 function escape(str: string) {
   return str.replace(/[&<>"']/g, (match) => {
     const escapeMap: Record<string, string> = {
@@ -29,7 +24,6 @@ function escape(str: string) {
   });
 }
 
-// Génération HTML email
 function htmlTemplate(data: {
   name: string;
   company: string;
@@ -50,37 +44,31 @@ function htmlTemplate(data: {
       <div style="padding:10px; border:1px solid #ddd; border-radius:5px; background:#f9f9f9;">
         ${escape(data.message)}
       </div>
-      <p style="font-size:12px; color:#666; margin-top:20px;">
-        Cet email a été envoyé automatiquement depuis le formulaire de contact de
-        <strong>prosperify.app</strong>.
-      </p>
     </div>
   `;
 }
 
-// Handler Cloudflare Pages Function
-export async function onRequestPost({ request }: { request: Request }) {
+// ✅ Cloudflare Pages Function handler
+export async function onRequestPost({ request, env }: { request: Request; env: any }) {
   try {
     const body = await request.json();
     const parsed = contactSchema.safeParse(body);
 
     if (!parsed.success) {
-      const errors = parsed.error.issues.map((issue) => ({
-        field: issue.path[0],
-        message: issue.message,
-      }));
-      return new Response(JSON.stringify({ success: false, errors }), {
+      return new Response(JSON.stringify({ success: false, errors: parsed.error.issues }), {
         status: 400,
         headers: { "Content-Type": "application/json" },
       });
     }
 
-    if (!resend) {
+    if (!env.RESEND_API_KEY) {
       return new Response(
-        JSON.stringify({ success: false, error: "API key manquante" }),
+        JSON.stringify({ success: false, error: "RESEND_API_KEY manquante" }),
         { status: 500, headers: { "Content-Type": "application/json" } }
       );
     }
+
+    const resend = new Resend(env.RESEND_API_KEY);
 
     const { name, company, email, phone, subject, message } = parsed.data;
     const html = htmlTemplate({ name, company, email, phone, subject, message });
