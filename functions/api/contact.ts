@@ -58,42 +58,50 @@ function htmlTemplate(data: {
   `;
 }
 
-// Fonction réutilisable (Next.js + Cloudflare)
-export async function handleContact(request: Request) {
-  const body = await request.json();
-  const parsed = contactSchema.safeParse(body);
+// Handler Cloudflare Pages Function
+export async function onRequestPost({ request }: { request: Request }) {
+  try {
+    const body = await request.json();
+    const parsed = contactSchema.safeParse(body);
 
-  if (!parsed.success) {
-    const errors = parsed.error.issues.map((issue) => ({
-      field: issue.path[0],
-      message: issue.message,
-    }));
-    return new Response(JSON.stringify({ success: false, errors }), {
-      status: 400,
+    if (!parsed.success) {
+      const errors = parsed.error.issues.map((issue) => ({
+        field: issue.path[0],
+        message: issue.message,
+      }));
+      return new Response(JSON.stringify({ success: false, errors }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    if (!resend) {
+      return new Response(
+        JSON.stringify({ success: false, error: "API key manquante" }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
+
+    const { name, company, email, phone, subject, message } = parsed.data;
+    const html = htmlTemplate({ name, company, email, phone, subject, message });
+
+    await resend.emails.send({
+      from: "Prosperify <contact@prosperify.app>",
+      to: "brikielyes9@gmail.com",
+      subject: `Nouveau message de ${escape(name)}`,
+      replyTo: escape(email),
+      html,
+    });
+
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
+  } catch (err) {
+    console.error("❌ Contact API error:", err);
+    return new Response(JSON.stringify({ success: false, error: "Erreur interne" }), {
+      status: 500,
       headers: { "Content-Type": "application/json" },
     });
   }
-
-  if (!resend) {
-    return new Response(
-      JSON.stringify({ success: false, error: "API key manquante" }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
-    );
-  }
-
-  const { name, company, email, phone, subject, message } = parsed.data;
-  const html = htmlTemplate({ name, company, email, phone, subject, message });
-
-  await resend.emails.send({
-    from: "Prosperify <contact@prosperify.app>",
-    to: "brikielyes9@gmail.com",
-    subject: `Nouveau message de ${escape(name)}`,
-    replyTo: escape(email),
-    html,
-  });
-
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
 }
