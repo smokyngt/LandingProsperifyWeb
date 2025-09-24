@@ -25,7 +25,7 @@ export function NavbarDemo() {
           { name: "Workflow", link: "#workflow" },
           { name: "Intégration", link: "#integration" },
           { name: "Offres", link: "#products" },
-          { name: "architechture", link: "#architechture" },
+          { name: "architecture", link: "#architecture" },
           { name: "Roadmap", link: "/roadmap" },
         ];
 
