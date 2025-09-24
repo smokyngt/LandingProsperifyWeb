@@ -58,6 +58,16 @@ const ProsperifyLanding = () => {
 </section>
 
 
+
+<section id="workflow"className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
+      <WorkflowSection />
+      </section>
+
+<section id="integration" className="py-12 sm:py-16 px-4 sm:px-6 bg- mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
+        <WorkflowPath />
+        </section>
+
+      
       <section id="Souveraineté" className="py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
         
         
@@ -69,21 +79,6 @@ const ProsperifyLanding = () => {
       
       </section>
 
-
-<section id="workflow"className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
-      <WorkflowSection />
-      </section>
-
-<section id="integration" className="py-12 sm:py-16 px-4 sm:px-6 bg- mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
-        <WorkflowPath />
-        </section>
-
-      <section
-        id="products"
-        className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl"
-      >
-        <ProductSection />
-      </section>
 
       <section id="architechture" className="py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
       <div className="max-w-7xl mx-auto">
@@ -107,6 +102,12 @@ const ProsperifyLanding = () => {
         <ArchitectureDemo />
       </div>
     </section>
+    <section
+        id="products"
+        className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl"
+      >
+        <ProductSection />
+      </section>
       {/* FAQ Section */}
       <section id="faq" className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
         <ProsperifyFAQ />
