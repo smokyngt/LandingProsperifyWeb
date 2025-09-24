@@ -1,5 +1,3 @@
-"use client";
-
 import { NavbarDemo } from "../../components/section/nav/NavbarDemo";
 import TimelineDemo from "../../components/section/timeline/roadmap";
 
