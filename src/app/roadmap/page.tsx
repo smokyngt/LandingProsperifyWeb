@@ -3,6 +3,12 @@
 import { NavbarDemo } from "../../components/section/nav/NavbarDemo";
 import TimelineDemo from "../../components/section/timeline/roadmap";
 
+export const metadata = {
+  title: "Roadmap - Prosperify",
+  description:
+    "Découvrez la feuille de route de Prosperify et nos prochaines évolutions en intelligence artificielle souveraine.",
+};
+
 export default function RoadmapPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-950">

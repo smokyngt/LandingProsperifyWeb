@@ -11,11 +11,36 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Prosperify - Transformez Vos Données En Levier Stratégique",
-  description: "Assistant IA intelligent pour centraliser et simplifier l'accès à vos données",
-  icons: {
-    icon: "/favicon.ico", // ton logo (dans /public)
+export const metadata = {
+  title: "Prosperify - IA Souveraine pour vos données",
+  description:
+    "Optimisez votre gestion documentaire avec l’IA souveraine de Prosperify. Sécurité, précision et intégration simple.",
+  openGraph: {
+    title: "Prosperify - IA Souveraine",
+    description:
+      "Transformez vos données en avantage compétitif grâce à Prosperify.",
+    url: "https://prosperify.app",
+    siteName: "Prosperify",
+    images: [
+      {
+        url: "https://prosperify.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "fr_FR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prosperify - IA Souveraine",
+    description:
+      "Optimisez votre gestion documentaire avec l’IA souveraine de Prosperify.",
+    images: ["https://prosperify.app/og-image.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -39,6 +64,21 @@ export default function RootLayout({
         </Script>
       </head>
       <body className={`font-sans bg-white ${inter.variable} antialiased`}>
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Prosperify",
+      url: "https://prosperify.app",
+      logo: "https://prosperify.app/logo.png",
+      sameAs: [
+        "https://www.linkedin.com/company/prosperify-ai/",
+      ],
+    }),
+  }}
+/>
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

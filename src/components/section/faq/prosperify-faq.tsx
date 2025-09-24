@@ -3,6 +3,8 @@
 import { useState } from "react"
 import { ChevronDownIcon } from "lucide-react"
 import { cn } from "../../../lib/utils"
+import Script from "next/script"
+
 
 const faqData = [
   {
@@ -79,8 +81,27 @@ export function ProsperifyFAQ() {
   const toggleItem = (index: number) => {
     setOpenItems((prev) => (prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]))
   }
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  }
 
   return (
+    <>
+    <Script
+        id="faq-jsonld"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
     
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-6">
@@ -119,6 +140,6 @@ export function ProsperifyFAQ() {
           </button>
         </div>
       </div>
-  
+  </>
   )
 }
