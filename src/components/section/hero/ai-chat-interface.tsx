@@ -4,6 +4,7 @@ import { Button } from "./ButtonComponent"
 import { Input } from "./input"
 import { ScrollArea } from "./ScrollArea"
 import { Badge } from "./Badge"
+import Logo from "../../../../public/logooo.png"
 import {
   FileText,
   Search,
@@ -31,11 +32,8 @@ export function AIChatInterface() {
           <div className="hidden md:flex md:flex-col md:w-64 bg-gray-50 border-r border-gray-200">
             {/* Header */}
             <div className="p-4 border-b border-gray-200">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-orange-500 rounded flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">P</span>
-                </div>
-                <span className="font-semibold text-gray-900">Prosperify</span>
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <img src={Logo.src} alt="Logo" className="w-30 h-18" />
               </div>
               
             </div>
@@ -103,7 +101,6 @@ export function AIChatInterface() {
                 <div className="flex items-center gap-2">
                   <span className="font-medium text-gray-900">Assistant Transaction et Finance</span>
                 </div>
-                <div className="text-sm text-gray-500">16:56</div>
               </div>
             </div>
 

@@ -22,7 +22,7 @@ export default function SovereigntySection() {
         </h2>
         <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
           Nous garantissons la pleine souveraineté de vos données avec un hébergement conforme (RGPD, ISO, SOC2…).
-          Chaque interaction est chiffrée, et repose sur des standards de sécurité de niveau entreprise.
+          Chaque interaction est chiffrée, et repose sur des standards de sécurité de niveau défense.
         </p>
       </div>
 
@@ -44,8 +44,7 @@ export default function SovereigntySection() {
               </h3>
             </div>
             <p className="text-left text-sm sm:text-base text-gray-700 leading-relaxed">
-             Nous garantissons la pleine souveraineté de vos données avec un hébergement conforme (RGPD, ISO, SOC2…).
-Chaque interaction est chiffrée, auditée, et repose sur des standards de sécurité de niveau entreprise.
+            Nous assurons la souveraineté de vos données avec un hébergement conforme (RGPD, ISO, SOC 2). Toutes les interactions sont chiffrées, auditées et répondent à des normes de sécurité de niveau défense.
             </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">

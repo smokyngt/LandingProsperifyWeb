@@ -69,17 +69,7 @@ export function NavbarDemo() {
                 <span className="block">{item.name}</span>
               </a>
             ))}
-            {pathname !== "/roadmap" && (
-              <div className="flex w-full flex-col gap-4">
-                <NavbarButton
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  variant="primary"
-                  className="w-full"
-                >
-                  Login
-                </NavbarButton>
-              </div>
-            )}
+          
           </MobileNavMenu>
         </MobileNav>
       </Navbar>

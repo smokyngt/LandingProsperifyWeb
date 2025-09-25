@@ -10,7 +10,7 @@ function WorkflowSection() {
       title: "Créer",
       value: "assistant",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-3 sm:p-6 bg-white border border-gray-200">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-3 sm:p-6 bg-white border border-gray-200 ">
           <Safari url="prosperify.ai/assistants/create">
             <div className="p-4 sm:p-8 min-h-[450px]">
               <div className="mb-4 sm:mb-6">
@@ -106,7 +106,7 @@ function WorkflowSection() {
       title: "Discuter",
       value: "response",
       content: (
-        <div className="w-full overflow-hidden relative h-full rounded-2xl p-3 sm:p-6 bg-white border border-gray-200">
+        <div className="w-full overflow-hidden relative h-full rounded-2xl p-3 sm:p-6 bg-white border border-gray-200  overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
           <Safari url="prosperify.ai/chat">
             <div className="flex flex-col sm:flex-row min-h-[500px]">
               {/* Chat Sidebar */}
@@ -275,7 +275,7 @@ function WorkflowSection() {
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         </svg>
                         <span className="hidden sm:inline">Ouvrir la source (page 10)</span>
-                        <span className="sm:hidden">Source</span>
+                        <span className="sm:hidden">Ouvrir la source (page 10)</span>
                      </div>
                     </div>
                   </div>
