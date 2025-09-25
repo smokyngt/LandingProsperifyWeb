@@ -91,7 +91,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
     <motion.div
       animate={{
         backdropFilter: visible ? "blur(10px)" : "none",
-        backgroundColor: visible ? "rgba(255,255,255,0.7)" : "transparent",
+        backgroundColor: visible ? "rgba(255,255,255,0.7)" : "rgba(255,255,255,0)",
         boxShadow: "none", // 👈 suppression du shadow
         width: visible ? "40%" : "100%",
         y: visible ? 20 : 0,

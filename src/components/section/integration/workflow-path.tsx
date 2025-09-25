@@ -123,7 +123,7 @@ export default function WorkflowPath() {
       >
         {s.title}
       </h3>
-      <p className="text-[0.6rem] text-gray-600 leading-snug">
+      <p className="text-[0.8rem] text-gray-600 leading-snug">
         {s.description}
       </p>
     </div>
