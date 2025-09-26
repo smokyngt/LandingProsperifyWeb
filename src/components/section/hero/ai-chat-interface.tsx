@@ -85,7 +85,7 @@ export function AIChatInterface() {
             </div>
 
             {/* Conversations */}
-            <div className="flex-1 p-4">
+            <div className=" p-4">
               <h3 className="text-sm font-medium text-gray-700 mb-3">CONVERSATIONS</h3>
               <div className="space-y-2">
                 <div className="p-2 rounded bg-gray-200 cursor-pointer">
@@ -104,9 +104,10 @@ export function AIChatInterface() {
             </div>
 
             {/* Assistant Integration */}
-           <div className="p-4 border-t border-gray-200  sticky bottom-0 ">
-  <div className="flex items-center gap-2 text-sm text-gray-600">
-    <div className="w-6 h-6 bg-purple-100 rounded flex items-center justify-center">
+           <div className="p-4 border-t border-gray-200 items-center">
+  <div className="text-xs text-gray-500 mb-1">Connecté en tant que</div>
+  <div className="flex  gap-2 text-sm text-gray-600">
+    <div className="w-6 h-6 bg-purple-100 rounded flex items-center justify-center font-semibold text-purple-600">
       <span className="text-purple-600 text-xs">MD</span>
     </div>
     <span>Marie Dupont</span>
