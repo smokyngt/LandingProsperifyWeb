@@ -158,14 +158,14 @@ export function AIChatInterface() {
                     Bonjour ! Je peux vous aider à rechercher dans vos documents PDF indexés. Posez-moi une question sur
                     vos documents.
                   </p>
-                  <div className="text-xs text-gray-500 mt-2">16:56</div>
                 </div>
+                                  <div className="text-xs text-gray-500 mt-2">16:56</div>
 
                 <div className="bg-black text-white rounded-lg p-3 max-w-md ml-auto">
                   <p className="text-sm">Quelle est la durée initiale du contrat Verdi et est-il renouvelable ?</p>
-                  <div className="text-xs text-gray-300 mt-2">16:57</div>
+                  
                 </div>
-
+              <div className="text-xs text-gray-500 mt-2">16:57</div>
                 <div className="bg-gray-100 rounded-lg border border-gray-200 p-3 max-w-lg">
                   <p className="text-sm text-gray-800">
                     D'après le document <span className="font-medium">"Contrat Verdi.pdf"</span> (article 2, page 10),
