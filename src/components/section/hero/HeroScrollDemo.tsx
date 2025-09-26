@@ -8,6 +8,8 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
+<div className="mt-22 sm:mt-0 pt-6 sm:pt-10">
+
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black dark:text-white text-center px-4">
               Libérer la puissance <br />
               <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] font-bold mt-1 leading-none block">
@@ -17,6 +19,7 @@ export function HeroScrollDemo() {
             <p className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto px-4">
               Transformez vos documents en insights exploitables avec Prosperify
             </p>
+          </div>
           </>
         }
       >

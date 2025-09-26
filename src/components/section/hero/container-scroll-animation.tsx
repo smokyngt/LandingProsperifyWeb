@@ -35,10 +35,10 @@ export const ContainerScroll = ({
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-<div className="h-[52rem] sm:h-[40rem] md:h-[40rem] lg:h-[80rem] flex justify-center relative p-2 md:p-20"
+    <div className="min-h-[20rem] sm:min-h-[59rem] md:min-h-[60rem] lg:min-h-[70rem] xl:min-h-[80rem] flex justify-center relative p-2 md:p-20"
       ref={containerRef}>
       <div
-        className="py-10 md:py-40 w-full relative"
+        className="py-32 md:py-20 w-full relative"
         style={{
           perspective: "1000px",
         }}
@@ -58,7 +58,7 @@ export const Header = ({ translate, titleComponent }: any) => {
       style={{
         translateY: translate,
       }}
-      className="div max-w-5xl mx-auto text-center"
+      className=" max-w-5xl mx-auto text-center"
     >
       {titleComponent}
     </motion.div>
@@ -87,9 +87,10 @@ export const Card = ({
   `
 }}
 
-      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      // className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      className="max-w-5xl mx-auto min-h-[30rem] md:min-h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl flex flex-col"
     >
-      <div className=" h-full w-full  overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
+      <div className=" h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
         {children}
       </div>
     </motion.div>

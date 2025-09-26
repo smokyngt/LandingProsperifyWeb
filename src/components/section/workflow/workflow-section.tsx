@@ -23,7 +23,8 @@ function WorkflowSection() {
                   <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">Nom de l&apos;assistant</label>
                   <input
                     type="text"
-                    value="Assistant Finance et Transaction"
+                    value="Assistant Transaction & Juridique
+"
                     className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                     readOnly
                   />
@@ -114,7 +115,8 @@ function WorkflowSection() {
                 {/* Header */}
                 <div className="flex items-center gap-2 mb-3 sm:mb-4">
                   <Bot className="text-orange-500 flex-shrink-0" size={18} />
-                  <span className="font-medium text-gray-900 text-sm sm:text-base truncate">Assistant Finance et Transaction</span>
+                  <span className="font-medium text-gray-900 text-sm sm:text-base truncate">Assistant Transaction & Juridique
+</span>
                 </div>
 
                 {/* Search Input */}
@@ -274,8 +276,8 @@ function WorkflowSection() {
                           <path d="M10 14 21 3" />
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         </svg>
-                        <span className="hidden sm:inline">Ouvrir la source (page 10)</span>
-                        <span className="sm:hidden">Ouvrir la source (page 10)</span>
+                        <span className="hidden sm:inline"> Contrat_Verdi.pdf (page 10)</span>
+                        <span className="sm:hidden">Contrat_Verdi.pdf (page 10)</span>
                      </div>
                     </div>
                   </div>

@@ -49,7 +49,7 @@ const ProsperifyLanding = () => {
       </div>
       <section
   id="accueil"
-  className="pt-12 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6  mx-2 sm:mx-4 "
+  className="pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4"
 >
 
       {/* Hero Section */}
@@ -59,7 +59,7 @@ const ProsperifyLanding = () => {
 
 
 
-<section id="workflow"className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
+<section id="workflow"className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 ">
       <WorkflowSection />
       </section>
 
