@@ -8,9 +8,9 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
-<div className="mt-22 sm:mt-0 pt-6 sm:pt-10">
+<div className=" sm:mt-0 pt-6 sm:pt-10">
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black dark:text-white text-center px-4">
+            <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-black dark:text-white text-center px-4">
               Libérer la puissance <br />
               <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[6rem] font-bold mt-1 leading-none block">
                 de vos <span className="text-orange-500">données</span>

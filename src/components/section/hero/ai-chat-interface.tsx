@@ -37,11 +37,7 @@ export function AIChatInterface() {
           className="flex h-full bg-white transform scale-75 origin-top-left"
           style={{ width: "133.33%", height: "133.33%" }}
         >
-          <div className="md:hidden absolute top-4 left-4 z-10">
-            <Button variant="ghost" size="sm" onClick={() => setSidebarOpen(!sidebarOpen)}>
-              <Menu className="w-4 h-4" />
-            </Button>
-          </div>
+          
 
           <div
             className={`
