@@ -206,6 +206,7 @@ export function AIChatInterface() {
               <div className="flex items-center gap-2">
                 <div className="flex-1 relative min-w-0">
                   <Input
+                  disabled
                     placeholder="Posez une question sur vos documents... (Vous pouvez glisser-déposer des PDFs)"
                     className="pr-10"
                   />
