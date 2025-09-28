@@ -21,8 +21,7 @@ export default function SovereigntySection() {
           Et Souveraines
         </h2>
         <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-          Nous garantissons la pleine souveraineté de vos données avec un hébergement conforme (RGPD, ISO, SOC2…).
-          Chaque interaction est chiffrée, et repose sur des standards de sécurité de niveau défense.
+         Nous garantissons la pleine souveraineté de vos données avec un hébergement conforme au RGPD et aligné sur les pratiques les plus exigeantes en matière de sécurité.
         </p>
       </div>
 
@@ -44,16 +43,15 @@ export default function SovereigntySection() {
               </h3>
             </div>
             <p className="text-left text-sm sm:text-base text-gray-700 leading-relaxed">
-            Nous assurons la souveraineté de vos données avec un hébergement conforme (RGPD, ISO, SOC 2). Toutes les interactions sont chiffrées, auditées et répondent à des normes de sécurité de niveau défense.
-            </p>
+Nous assurons la souveraineté de vos données avec un hébergement conforme au RGPD. Toutes les interactions sont chiffrées, tracées et alignées sur les standards de sécurité les plus exigeants.            </p>
           </div>
-          <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
+          <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out w-full">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
                 Protection 
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-              RGPD
+              Confidentialité
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
                 Traçabilité
@@ -106,8 +104,8 @@ export default function SovereigntySection() {
               </h3>
             </div>
             <p className="text-left text-sm text-gray-700 leading-relaxed">
-              AES-256, TLS 1.3 et chiffrement homomorphe pour une sécurité maximale.
-            </p>
+              AES-256, TLS et chiffrement DCPE (Distance Comparison Privacy Encryption) pour une sécurité maximale. 
+              </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -118,7 +116,7 @@ export default function SovereigntySection() {
                 TLS 1.3
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Homomorphe
+                DCPE
               </span>
             </div>
           </div>
@@ -142,10 +140,10 @@ export default function SovereigntySection() {
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Kubernetes
+                Scalabilité
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                99.9% SLA
+                Résilience
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
                 Isolé
@@ -166,19 +164,19 @@ export default function SovereigntySection() {
               </h3>
             </div>
             <p className="text-left text-sm text-gray-700 leading-relaxed">
-              Anonymisation et pseudonymisation automatiques selon les standards RGPD.
+      Protection des données sensibles avec un haut niveau de sécurité, en accord avec le RGPD.
             </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Anonymisation
+                Sécurité
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
                 RGPD
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Automatique
+                Conformité
               </span>
             </div>
           </div>
@@ -226,7 +224,7 @@ export default function SovereigntySection() {
                 Transparence
               </span>
               <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Conformité
+                Intégrité
               </span>
             </div>
           </div>

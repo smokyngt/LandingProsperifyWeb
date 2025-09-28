@@ -51,35 +51,18 @@ const ProsperifyLanding = () => {
   id="accueil"
   className="pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4"
 >
-
       {/* Hero Section */}
-
   <HeroScrollDemo />
 </section>
-
-
-
 <section id="workflow"className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 ">
       <WorkflowSection />
       </section>
-
 <section id="integration" className="py-12 sm:py-16 px-4 sm:px-6 bg- mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
         <WorkflowPath />
         </section>
-
-      
       <section id="Souveraineté" className="py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
-        
-        
-         
             <SovereigntySection />
-       
-
-          
-      
       </section>
-
-
       <section id="architecture" className="py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-6">
@@ -98,7 +81,6 @@ const ProsperifyLanding = () => {
             Chaque étape optimisée pour des réponses fiables, sourcées et pertinentes
           </p>
         </div>
-
         <ArchitectureDemo />
       </div>
     </section>

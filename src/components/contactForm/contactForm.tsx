@@ -99,6 +99,7 @@ export default function ContactForm() {
         name="name"
         placeholder="Votre nom complet"
         value={form.name}
+        maxLength={20}
         onChange={handleChange}
         required
         className="w-full border rounded-lg p-3"
@@ -111,6 +112,7 @@ export default function ContactForm() {
         name="company"
         placeholder="Nom de votre entreprise"
         value={form.company}
+        maxLength={20}
         onChange={handleChange}
         required
         className="w-full border rounded-lg p-3"
@@ -121,6 +123,7 @@ export default function ContactForm() {
       <input
         type="email"
         name="email"
+        maxLength={30}
         placeholder="Votre email"
         value={form.email}
         onChange={handleChange}
@@ -130,14 +133,20 @@ export default function ContactForm() {
       {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
 
       {/* Téléphone */}
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Téléphone (optionnel)"
-        value={form.phone}
-        onChange={handleChange}
-        className="w-full border rounded-lg p-3"
-      />
+     <div className="flex gap-2">
+
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Téléphone (optionnel)"
+    value={form.phone}
+    onChange={handleChange}
+    className="w-full border rounded-lg p-3"
+    pattern="[0-9+]{6,15}"
+    maxLength={15}
+  />
+</div>
+{errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
       {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
 
       {/* Sujet (Select Shadcn) */}
@@ -148,7 +157,6 @@ export default function ContactForm() {
         <SelectContent>
           <SelectItem value="information">Demande d’information</SelectItem>
           <SelectItem value="partnership">Devis / Partenariat</SelectItem>
-          <SelectItem value="support">Support technique</SelectItem>
           <SelectItem value="other">Autre</SelectItem>
         </SelectContent>
       </Select>
@@ -156,14 +164,16 @@ export default function ContactForm() {
 
       {/* Message */}
       <textarea
-        name="message"
-        placeholder="Votre message"
-        value={form.message}
-        onChange={handleChange}
-        required
-        rows={5}
-        className="w-full border rounded-lg p-3"
-      />
+  name="message"
+  placeholder="Votre message"
+  value={form.message}
+  onChange={handleChange}
+  required
+  rows={5}
+  minLength={10}
+  maxLength={1000}
+  className="w-full border rounded-lg p-3 resize-y min-h-[120px] max-h-[300px]"
+/>
       {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
 
       {/* Bouton */}

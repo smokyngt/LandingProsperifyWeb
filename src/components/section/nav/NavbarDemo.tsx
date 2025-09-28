@@ -17,17 +17,15 @@ export function NavbarDemo() {
   const pathname = usePathname();
 
   // 🌍 Définir les liens différemment selon la page
-  const navItems =
-    pathname === "/roadmap"
-      ? [{ name: "Accueil", link: "/" }] // seulement "Accueil" sur /roadmap
-      : [
-          { name: "Souveraineté", link: "#Souveraineté" },
-          { name: "Workflow", link: "#workflow" },
-          { name: "Intégration", link: "#integration" },
-          { name: "Offres", link: "#products" },
-          { name: "architecture", link: "#architecture" },
-          { name: "Roadmap", link: "/roadmap" },
-        ];
+ const navItems = [
+  { name: "Souveraineté", link: "#Souveraineté" },
+  { name: "Workflow", link: "#workflow" },
+  { name: "Intégration", link: "#integration" },
+  { name: "Offres", link: "#products" },
+  { name: "Architecture", link: "#architecture" },
+  { name: "Roadmap", link: "/roadmap" },
+];
+
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

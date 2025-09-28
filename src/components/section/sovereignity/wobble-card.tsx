@@ -19,8 +19,8 @@ export const WobbleCard = ({
   const handleMouseMove = (event: React.MouseEvent<HTMLElement>) => {
     const { clientX, clientY } = event
     const rect = event.currentTarget.getBoundingClientRect()
-    const x = (clientX - (rect.left + rect.width / 2)) / 20
-    const y = (clientY - (rect.top + rect.height / 2)) / 20
+    const x = (clientX - (rect.left + rect.width / 2)) / 35
+    const y = (clientY - (rect.top + rect.height / 2)) / 35
     setMousePosition({ x, y })
   }
   return (

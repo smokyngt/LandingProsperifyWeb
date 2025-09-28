@@ -104,16 +104,16 @@ export function AIChatInterface() {
             </div>
 
             {/* Assistant Integration */}
-           <div className="p-4 border-t border-gray-200 items-center">
-  <div className="text-xs text-gray-500 mb-1">Connecté en tant que</div>
+           <div className="p-4 border-t border-gray-200 ">
+  <div className="text-xs text-green-600 bg-green-100 p-1 font-bold mb-1 w-fit ">Connecté en tant que</div>
   <div className="flex  gap-2 text-sm text-gray-600">
-    <div className="w-6 h-6 bg-purple-100 rounded flex items-center justify-center font-semibold text-purple-600">
-      <span className="text-purple-600 text-xs">MD</span>
+    <div className=" bg-purple-100 rounded flex items-center justify-center font-semibold text-purple-600">
+      <span className="text-purple-600 text-xs px-1">ED</span>
     </div>
-    <span>Marie Dupont</span>
+    <span>Eric Dupont</span>
   </div>
-  <div className="text-xs text-gray-500 mx-1">
-    Assistante RH & Gestion des contrats
+  <div className="text-xs text-gray-500  font-bold">
+    Contrôleur Financier & Juridique
   </div>
 </div>
           </div>
