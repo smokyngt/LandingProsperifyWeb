@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef } from "react"
 import { useScroll, useTransform, motion, type MotionValue } from "motion/react"
+import { useSpring } from "framer-motion"
 
 export const ContainerScroll = ({
   titleComponent,
@@ -33,6 +34,10 @@ export const ContainerScroll = ({
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0])
   const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions())
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const rawRotate = useTransform(scrollYProgress, [0, 1], [20, 0])
+  // smoothRotate = version lissée avec spring
+  const smoothRotate = useSpring(rawRotate, { stiffness: 80, damping: 20 })
+
 
   return (
     <div className="min-h-[20rem] sm:min-h-[50rem] md:min-h-[60rem] lg:min-h-[70rem] xl:min-h-[80rem] flex justify-center relative p-2 md:p-20"
@@ -44,7 +49,7 @@ className="py-20 sm:py-12 w-full relative"
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale}>
+        <Card rotate={rotate} translate={translate} scale={scale} isMobile={isMobile}>
           {children}
         </Card>
       </div>
@@ -69,10 +74,12 @@ export const Card = ({
   rotate,
   scale,
   children,
+  isMobile,
 }: {
   rotate: MotionValue<number>
   scale: MotionValue<number>
   translate: MotionValue<number>
+  isMobile: boolean
   children: React.ReactNode
 }) => {
   return (
@@ -80,11 +87,12 @@ export const Card = ({
  style={{
   rotateX: rotate,
   scale,
-  boxShadow: `
-    0 10px 5px rgba(0,0,0,0.25),
-    0 20px 10px rgba(0,0,0,0.2),
-    0 40px 20px rgba(0,0,0,0.15)
-  `
+  willChange: "transform",
+
+  boxShadow: isMobile 
+  ? "0 5px 10px rgba(0,0,0,0.2)" 
+  : "0 10px 5px rgba(0,0,0,0.25), 0 20px 10px rgba(0,0,0,0.2), 0 40px 20px rgba(0,0,0,0.15)"
+
 }}
 
       // className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
