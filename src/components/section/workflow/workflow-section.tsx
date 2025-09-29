@@ -122,6 +122,7 @@ function WorkflowSection() {
                 {/* Search Input */}
                 <div className="relative mb-2 sm:mb-3">
                   <input
+                  readOnly
                     type="text"
                     placeholder="Rechercher..."
                     className="w-full pl-7 sm:pl-8 pr-3 py-1.5 sm:py-2 bg-gray-100 text-xs sm:text-sm border border-gray-300 rounded-lg outline-none"
