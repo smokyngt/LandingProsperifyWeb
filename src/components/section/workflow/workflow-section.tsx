@@ -286,6 +286,7 @@ function WorkflowSection() {
                 <div className="border-t border-gray-200 p-3 sm:p-4">
                   <div className="flex gap-2">
                     <input
+                      readOnly
                       type="text"
                       placeholder="Posez une question..."
                       className="flex-1 px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-lg text-xs sm:text-sm"
