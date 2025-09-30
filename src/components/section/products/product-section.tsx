@@ -13,7 +13,7 @@ export default function SovereigntySection() {
 
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-            Une Solution, Trois Niveaux De <span className="text-orange-500">Contrôle</span>
+            Une Solution, Trois  Niveaux<br /> De <span className="text-orange-500">Contrôle</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
             Choisissez le niveau de contrôle qui vous convient : cloud sécurisé, solution hybride ou déploiement local.

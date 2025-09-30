@@ -73,8 +73,8 @@ const ProsperifyLanding = () => {
 
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-            Une Architecture Pensée Pour
-            <br />
+            Une Architecture Pensée <br />Pour
+            
             La <span className="text-orange-500">Précision</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
