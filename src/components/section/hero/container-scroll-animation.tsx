@@ -31,25 +31,27 @@ export const ContainerScroll = ({
     return isMobile ? [0.7, 0.9] : [1.05, 1]
   }
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0])
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions())
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
+  // rawRotate = transform brut
   const rawRotate = useTransform(scrollYProgress, [0, 1], [20, 0])
   // smoothRotate = version lissée avec spring
-  const smoothRotate = useSpring(rawRotate, { stiffness: 80, damping: 20 })
+  const smoothRotate = useSpring(rawRotate, { stiffness: 200, damping: 40 })
 
+  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions())
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <div className="min-h-[20rem] sm:min-h-[50rem] md:min-h-[60rem] lg:min-h-[70rem] xl:min-h-[80rem] flex justify-center relative p-2 md:p-20"
-      ref={containerRef}>
+    <div
+      className="min-h-[20rem] sm:min-h-[50rem] md:min-h-[60rem] lg:min-h-[70rem] xl:min-h-[80rem] flex justify-center relative p-2 md:p-20"
+      ref={containerRef}
+    >
       <div
-className="py-20 sm:py-12 w-full relative"
+        className="py-20 sm:py-12 w-full relative"
         style={{
           perspective: "1000px",
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale} isMobile={isMobile}>
+        <Card rotate={smoothRotate} translate={translate} scale={scale} isMobile={isMobile}>
           {children}
         </Card>
       </div>
@@ -63,7 +65,7 @@ export const Header = ({ translate, titleComponent }: any) => {
       style={{
         translateY: translate,
       }}
-      className=" max-w-5xl mx-auto text-center"
+      className="max-w-5xl mx-auto text-center"
     >
       {titleComponent}
     </motion.div>
@@ -84,21 +86,17 @@ export const Card = ({
 }) => {
   return (
     <motion.div
- style={{
-  rotateX: rotate,
-  scale,
-  willChange: "transform",
-
-  boxShadow: isMobile 
-  ? "0 5px 10px rgba(0,0,0,0.2)" 
-  : "0 10px 5px rgba(0,0,0,0.25), 0 20px 10px rgba(0,0,0,0.2), 0 40px 20px rgba(0,0,0,0.15)"
-
-}}
-
-      // className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      style={{
+        rotateX: rotate,
+        scale,
+        // willChange: "transform",
+        boxShadow: isMobile
+          ? "0 5px 10px rgba(0,0,0,0.2)"
+          : "0 10px 5px rgba(0,0,0,0.25), 0 20px 10px rgba(0,0,0,0.2), 0 40px 20px rgba(0,0,0,0.15)",
+      }}
       className="max-w-5xl mx-auto min-h-[30rem] md:min-h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl flex flex-col"
     >
-      <div className=" h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
+      <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
         {children}
       </div>
     </motion.div>
