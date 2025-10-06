@@ -44,7 +44,7 @@ const features = [
   {
     id: "orchestration",
     icon: Bot,
-    title: "Logique agent",
+    title: "orchestration agentique",
     shortTitle: "Intelligence",
     subtitle: "Auto-correction proactive",
     description:
@@ -195,7 +195,7 @@ Une plateforme unifiée qui transforme vos documents en insights exploitables, a
                 transition={{ duration: 0.3 }}
                 className="absolute inset-0"
               >
-                <div className="h-full flex flex-col justify-center bg-gradient-to-br from-orange-50/30 to-white rounded-2xl p-6 sm:p-8 lg:p-12 shadow-sm">
+                <div className="h-full flex flex-col justify-center bg-gradient-to-br from-orange-50/30 to-white rounded-2xl p-6 sm:p-8 lg:p-12 border border-gray-200">
                   {/* Icon */}
                   <div className="mb-6 sm:mb-8">
                     {(() => {
