@@ -146,18 +146,19 @@ const ProsperifyLanding = () => {
             </a>
           </li>
           <li>
-            <a href="#Souveraineté" className="hover:text-primary transition-colors">
-              Souveraineté
-            </a>
-          </li>
-          <li>
             <a href="#workflow" className="hover:text-primary transition-colors">
               Workflow
             </a>
+            
           </li>
           <li>
-            <a href="#products" className="hover:text-primary transition-colors">
-              Offres
+            <a href="#integration" className="hover:text-primary transition-colors">
+              Intégration
+            </a>
+          </li>
+          <li>
+              <a href="#Souveraineté" className="hover:text-primary transition-colors">
+              Souveraineté
             </a>
           </li>
           <li>
@@ -166,10 +167,16 @@ const ProsperifyLanding = () => {
             </a>
           </li>
           <li>
-            <a href="/roadmap" className="hover:text-primary transition-colors">
-              Roadmap
+            <a href="#Fonctionnalités" className="hover:text-primary transition-colors">
+              Fonctionnalités
             </a>
           </li>
+          <li>
+            <a href="#products" className="hover:text-primary transition-colors">
+              Offres
+            </a>
+          </li>
+          
         </ul>
       </div>
 
@@ -177,11 +184,7 @@ const ProsperifyLanding = () => {
       <div>
         <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Support</h3>
         <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
-          <li>
-            <a href="#integration" className="hover:text-primary transition-colors">
-              Intégration
-            </a>
-          </li>
+          
           <li>
             <a href="#faq" className="hover:text-primary transition-colors">
               FAQ
@@ -190,6 +193,11 @@ const ProsperifyLanding = () => {
           <li>
             <a href="#contact" className="hover:text-primary transition-colors">
               Contact
+            </a>
+          </li>
+          <li>
+            <a href="/roadmap" className="hover:text-primary transition-colors">
+              Roadmap
             </a>
           </li>
         </ul>
