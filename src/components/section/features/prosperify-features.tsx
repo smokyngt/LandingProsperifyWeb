@@ -44,7 +44,7 @@ const features = [
   {
     id: "Orchestration",
     icon: Bot,
-    title: "Orchestration agentique",
+    title: "Orchestration agrentique",
     shortTitle: "Intelligence",
     subtitle: "Auto-correction proactive",
     description:
