@@ -42,8 +42,9 @@ export default function SovereigntySection() {
 <br/> Et Souveraines  
               </h3>
             </div>
-            <p className="text-left text-sm sm:text-base text-gray-700 leading-relaxed">
-Nous assurons la souveraineté de vos données avec un hébergement conforme au RGPD. Toutes les interactions sont chiffrées, tracées et alignées sur les standards de sécurité les plus exigeants.            </p>
+            <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
+L’infrastructure Prosperify est hébergée en Europe, au sein de centres de données situés en Allemagne et en France, conformément au RGPD.
+Toutes les interactions sont chiffrées, tracées et respectent les plus hauts standards de sécurité et de confidentialité.           </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out w-full">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -69,7 +70,7 @@ Nous assurons la souveraineté de vos données avec un hébergement conforme au 
                 Cloud Dédié
               </h3>
             </div>
-            <p className="text-left text-sm sm:text-base text-gray-700 leading-relaxed">
+            <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
               Déploiement hybride ou 100% local selon vos besoins de souveraineté. Architecture personnalisable et
               évolutive.
             </p>
@@ -103,7 +104,7 @@ Nous assurons la souveraineté de vos données avec un hébergement conforme au 
                 Chiffrement Avancé
               </h3>
             </div>
-            <p className="text-left text-sm text-gray-700 leading-relaxed">
+            <p className="text-left text-base text-gray-700 leading-relaxed">
               AES-256, TLS et chiffrement DCPE (Distance Comparison Privacy Encryption) pour une sécurité maximale. 
               </p>
           </div>
@@ -133,7 +134,7 @@ Nous assurons la souveraineté de vos données avec un hébergement conforme au 
                 Infrastructure Kubernetes
               </h3>
             </div>
-            <p className="text-left text-sm text-gray-700 leading-relaxed">
+            <p className="text-left text-base text-gray-700 leading-relaxed">
               Architecture isolée et résiliente avec haute disponibilité garantie.
             </p>
           </div>
@@ -163,9 +164,8 @@ Nous assurons la souveraineté de vos données avec un hébergement conforme au 
                 Protection Données
               </h3>
             </div>
-            <p className="text-left text-sm text-gray-700 leading-relaxed">
-      Protection des données sensibles avec un haut niveau de sécurité, en accord avec le RGPD.
-            </p>
+            <p className="text-left text-base text-gray-700 leading-relaxed">
+Protection des données sensibles avec un haut niveau de sécurité, conforme au RGPD, à la directive NIS2, au règlement AI Act et aux normes ISO 27001 / SOC 2.            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -195,7 +195,7 @@ Nous assurons la souveraineté de vos données avec un hébergement conforme au 
                     surveillance continue
                   </h3>
                 </div>
-                <p className="text-left text-sm sm:text-base text-gray-700 leading-relaxed">
+                <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
                   Contrôle d&apos;accès basé sur les rôles (RBAC) et surveillance continue des systèmes pour garantir une transparence totale.
                 </p>
               </div>
