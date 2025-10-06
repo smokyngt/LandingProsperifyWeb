@@ -48,7 +48,7 @@ const features = [
     shortTitle: "Intelligence",
     subtitle: "Auto-correction proactive",
     description:
-      "Orchestration intelligente : l'assistant évalue la qualité des résultats avant de produire une réponse. Auto-correction, relance et interaction proactive en cas d'ambiguïté. Validation renforcée : chaque réponse est enrichie de citations phrase-par-phrase et vérifiée.",
+      "L'assistant évalue la qualité des résultats avant de produire une réponse. Auto-correction, relance et interaction proactive en cas d'ambiguïté. Validation renforcée : chaque réponse est enrichie de citations phrase-par-phrase et vérifiée.",
   },
   {
     id: "differentiation",
