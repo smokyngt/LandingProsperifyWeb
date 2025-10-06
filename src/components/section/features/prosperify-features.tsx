@@ -42,9 +42,9 @@ const features = [
       "Cloisonnement strict par assistant : aucun partage de documents entre équipes sans autorisation explicite. Contrôles de rôle précis (qui peut importer, qui peut consulter, etc.).",
   },
   {
-    id: "orchestration",
+    id: "Orchestration",
     icon: Bot,
-    title: "orchestration agentique",
+    title: "Orchestration agentique",
     shortTitle: "Intelligence",
     subtitle: "Auto-correction proactive",
     description:
