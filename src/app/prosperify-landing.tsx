@@ -45,26 +45,26 @@ const ProsperifyLanding = () => {
     <>
     <div className="min-h-screen bg-transparent text-foreground">
       {/* Navigation */}
-<div className="flex items-center justify-center mt-8 bg-transparent mx-2 sm:mx-4 rounded-t-xl sm:rounded-t-2xl">
+<div className="scroll-animate flex items-center justify-center mt-8 bg-transparent mx-2 sm:mx-4 rounded-t-xl sm:rounded-t-2xl">
         <NavbarDemo />
       </div>
       <section
   id="accueil"
-  className="pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4"
+  className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4"
 >
       {/* Hero Section */}
   <HeroScrollDemo />
 </section>
-<section id="workflow"className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 ">
+<section id="workflow"className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 ">
       <WorkflowSection />
       </section>
-<section id="integration" className="py-12 sm:py-16 px-4 sm:px-6 bg- mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
+<section id="integration" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6 bg- mx-2 sm:mx-4 mt-0 sm:mt-6 rounded-xl sm:rounded-2xl">
         <WorkflowPath />
         </section>
-      <section id="Souveraineté" className="py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+      <section id="Souveraineté" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
             <SovereigntySection />
       </section>
-      <section id="architecture" className="py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+      <section id="architecture" className="scroll-animate py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
@@ -85,21 +85,21 @@ const ProsperifyLanding = () => {
         <ArchitectureDemo />
       </div>
     </section>
-    <section id="Features" className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+    <section id="Fonctionnalités" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
         <ProsperifyFeatures />
       </section>
     <section
         id="products"
-        className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl"
+        className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl"
       >
         <ProductSection />
       </section>
       {/* FAQ Section */}
-      <section id="faq" className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+      <section id="faq" className=" scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
         <ProsperifyFAQ />
       </section>
 
-      <section id="contact" className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+      <section id="contact" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
           <div className="flex justify-center mb-6">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
             CONTACT
@@ -122,7 +122,7 @@ const ProsperifyLanding = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 sm:py-12 px-4 sm:px-6 mx-2 sm:mx-4 mt-6 sm:mt-8 mb-2 sm:mb-4 rounded-xl sm:rounded-2xl border-t border-gray-100">
+      <footer className=" scroll-animate py-8 sm:py-12 px-4 sm:px-6 mx-2 sm:mx-4 mt-6 sm:mt-8 mb-2 sm:mb-4 rounded-xl sm:rounded-2xl border-t border-gray-100">
   <div className="max-w-7xl mx-auto">
     <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
       

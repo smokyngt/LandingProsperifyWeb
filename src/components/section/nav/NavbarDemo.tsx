@@ -23,6 +23,7 @@ export function NavbarDemo() {
   { name: "Intégration", link: "#integration" },
   { name: "Offres", link: "#products" },
   { name: "Architecture", link: "#architecture" },
+  { name: "Fonctionnalités", link: "#Fonctionnalités" },
   { name: "Roadmap", link: "/roadmap" },
 ];
 
