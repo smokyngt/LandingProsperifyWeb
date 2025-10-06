@@ -74,7 +74,7 @@ export default function ProsperifyFeatures() {
 
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-          Une Intelligence Documentaire <br /> De <span className="text-orange-500"> Tout-en-Un </span>
+          Une Intelligence Documentaire <br />  <span className="text-orange-500"> Tout-en-Un </span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
 Une plateforme unifiée qui transforme vos documents en insights exploitables, avec précision et gouvernance. </p>        </div>
