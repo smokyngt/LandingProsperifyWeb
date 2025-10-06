@@ -10,6 +10,7 @@ import ProductSection from "@/components/section/products/product-section"
 import { ArchitectureDemo } from "@/components/section/architechture/architecture-demo"
 import { ProsperifyFAQ } from "@/components/section/faq/prosperify-faq"
 import ContactForm from "@/components/contactForm/contactForm"
+import ProsperifyFeatures from "@/components/section/features/prosperify-features"
 const ProsperifyLanding = () => {
 
   useEffect(() => {
@@ -84,6 +85,9 @@ const ProsperifyLanding = () => {
         <ArchitectureDemo />
       </div>
     </section>
+    <section id="Features" className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+        <ProsperifyFeatures />
+      </section>
     <section
         id="products"
         className="py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl"
