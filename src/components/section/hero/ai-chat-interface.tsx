@@ -160,11 +160,9 @@ export function AIChatInterface() {
                     vos documents.
                   </p>
                 </div>
-                                  <div className="text-xs text-gray-500 mt-2">16:56</div>
-
+                <div className="text-xs text-gray-500 mt-2">16:56</div>
                 <div className="bg-black text-white rounded-lg p-3 max-w-md ml-auto">
-                  <p className="text-sm">Quelle est la durée initiale du contrat Verdi et est-il renouvelable ?</p>
-                  
+                  <p className="text-sm">Quelle est la durée initiale du contrat Verdi et est-il renouvelable ?</p>                  
                 </div>
               <div className="text-xs text-gray-500 mt-2">16:57</div>
                 <div className="bg-gray-100 rounded-lg border border-gray-200 p-3 max-w-lg">
@@ -174,7 +172,6 @@ export function AIChatInterface() {
                     <span className="bg-yellow-200 px-1 rounded">trois (3) ans</span>. Il pourra être renouvelé par
                     accord exprès et écrit des Parties.
                   </p>
-
                   <div className="mt-2 sm:mt-3 border-t border-gray-200 pt-2 flex justify-between">
                     <div className="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-orange-600 transition-colors cursor-pointer">
                       <svg
@@ -214,7 +211,7 @@ export function AIChatInterface() {
                     <Paperclip className="w-4 h-4" />
                   </Button>
                 </div>
-                <Button size="sm" className="bg-orange-600 cursor-pointer flex-shrink-0">
+                <Button size="sm" className="flex-shrink-0">
                   <Send className="w-4 h-4" />
                 </Button>
               </div>
