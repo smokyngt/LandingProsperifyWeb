@@ -292,7 +292,7 @@ function WorkflowSection() {
                       placeholder="Posez une question..."
                       className="flex-1 px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-lg text-xs sm:text-sm"
                     />
-                    <button className="px-3 sm:px-4 py-1.5 sm:py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors flex-shrink-0">
+                    <button className="px-3 sm:px-4 py-1.5 sm:py-2 bg-black text-white rounded-lg hover:bg-orange-600 transition-colors flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
