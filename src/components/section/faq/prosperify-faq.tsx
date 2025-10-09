@@ -45,7 +45,7 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
   return (
-    <div className="border border-gray-100 rounded-lg bg-white hover:border-orange-200 transition-all duration-200">
+    <div className="border border-gray-100 rounded-lg bg-white hover:border-orange-200 transition-all duration-200 ">
       <button
         onClick={onToggle}
         className="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-orange-500/20 rounded-lg group cursor-pointer"
@@ -121,7 +121,7 @@ const faqJsonLd = {
           </p>
         </div>
 
-        <div className="space-y-4 max-w-4xl mx-auto cursor-pointer">
+        <div className="space-y-4 max-w-4xl mx-auto ">
           {faqData.map((item, index) => (
             <FAQItem
               key={index}
