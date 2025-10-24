@@ -17,7 +17,7 @@ export function NavbarDemo() {
   const pathname = usePathname();
 
   // 🌍 Définir les liens différemment selon la page
- const navItems = [
+ const baseItems = [
   { name: "Souveraineté", link: "#Souveraineté" },
   { name: "Workflow", link: "#workflow" },
   { name: "Intégration", link: "#integration" },
@@ -29,6 +29,13 @@ export function NavbarDemo() {
 
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+const resolveLink = (link: string) => {
+    if (link.startsWith("#")) return pathname === "/" ? link : `/${link}`;
+    return link;
+  };
+
+    const navItems = baseItems.map(i => ({ ...i, link: resolveLink(i.link) }));
 
   return (
     <div className="relative w-full">
@@ -57,6 +64,7 @@ export function NavbarDemo() {
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
+            className="mt-5 border border-orange-200 rounded-lg z-[9999]"
           >
             {navItems.map((item, idx) => (
               <a

@@ -45,9 +45,10 @@ const ProsperifyLanding = () => {
     <>
     <div className="min-h-screen bg-transparent text-foreground">
       {/* Navigation */}
-<div className="scroll-animate flex items-center justify-center mt-8 bg-transparent mx-2 sm:mx-4 rounded-t-xl sm:rounded-t-2xl">
+<div className="scroll-animate absolute z-[9999] flex items-center justify-center mt-8 bg-transparent mx-2 sm:mx-4 rounded-t-xl sm:rounded-t-2xl w-full">
         <NavbarDemo />
       </div>
+      <div className="min-h-screen bg-transparent">
       <section
   id="accueil"
   className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4"
@@ -120,6 +121,7 @@ const ProsperifyLanding = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* Footer */}
       <footer className=" scroll-animate py-8 sm:py-12 px-4 sm:px-6 mx-2 sm:mx-4 mt-6 sm:mt-8 mb-2 sm:mb-4 rounded-xl sm:rounded-2xl border-t border-gray-100">
