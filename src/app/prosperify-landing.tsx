@@ -45,7 +45,7 @@ const ProsperifyLanding = () => {
     <>
     <div className="min-h-screen bg-transparent text-foreground">
       {/* Navigation */}
-<div className="scroll-animate absolute z-[9999] flex items-center justify-center mt-8 bg-transparent mx-2 sm:mx-4 rounded-t-xl sm:rounded-t-2xl">
+<div className="scroll-animate absolut z-[9999] flex items-center justify-center mt-8 bg-transparent mx-2 sm:mx-4 rounded-t-xl sm:rounded-t-2xl">
         <NavbarDemo />
       </div>
       <div className="min-h-screen bg-transparent">
