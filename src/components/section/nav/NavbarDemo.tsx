@@ -38,7 +38,7 @@ const resolveLink = (link: string) => {
     const navItems = baseItems.map(i => ({ ...i, link: resolveLink(i.link) }));
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full z-[10000]">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -64,7 +64,7 @@ const resolveLink = (link: string) => {
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
-            className="mt-5 border border-orange-200 rounded-lg z-[9999]"
+            className="mt-5 border z-[10000] border-orange-200 rounded-lg bg-white flex items-center justify-center"
           >
             {navItems.map((item, idx) => (
               <a

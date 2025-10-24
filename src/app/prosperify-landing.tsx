@@ -43,15 +43,15 @@ const ProsperifyLanding = () => {
 
   return (
     <>
-    <div className="min-h-screen bg-transparent text-foreground">
+    <div className="min-h-screen bg-white text-foreground">
       {/* Navigation */}
-<div className="scroll-animate absolut z-[9999] flex items-center justify-center mt-8 bg-transparent mx-2 sm:mx-4 rounded-t-xl sm:rounded-t-2xl">
-        <NavbarDemo />
+      <div className="relative mt-4 w-full z-[10000]">
+      <NavbarDemo />
       </div>
       <div className="min-h-screen bg-transparent">
       <section
   id="accueil"
-  className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4"
+  className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4 "
 >
       {/* Hero Section */}
   <HeroScrollDemo />
