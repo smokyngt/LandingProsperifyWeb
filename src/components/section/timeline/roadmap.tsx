@@ -63,7 +63,7 @@ export function TimelineDemo() {
     Rendez-vous avec l&apos;Agence Spatiale Européenne pour une première revue de design.
   </p>
   <p className="text-sm text-gray-600 dark:text-neutral-400 leading-relaxed mb-4">
-    Rencontre axée sur la compréhension des <span className="font-semibold">standards de sécurité</span> 
+    Rencontre axée sur la compréhension des <span className="font-semibold">standards de sécurité </span> 
     et de <span className="font-semibold">souveraineté</span> exigés par ce type d&apos;agences,
     tout en explorant leur intérêt pour une <span className="font-semibold"> technologie de recherche documentaire </span> 
     adaptée à leurs besoins spécifiques.
