@@ -77,10 +77,10 @@ export function TimelineDemo() {
       title: "02/01/2025",
       content: (
         <div>
-          <h1 className="text-2xl font-medium text-neutral-800 dark:text-neutral-200 mb-2">
+          <h1 className="text-2xl font-medium text-neutral-800 dark:text-neutral-300 mb-2">
             Intégration Pépite France
           </h1>
-          <p className="text-sm font-medium text-gray-400 dark:text-neutral-200 mb-2">
+          <p className="text-sm font-medium text-gray--00 dark:text-neutral-200 mb-2">
             Prosperify rejoint le réseau Pépite France pour soutenir l&apos;innovation étudiante.
           </p>
          <img src="/pep.png" alt="Pépite France"  className="h-64" />
