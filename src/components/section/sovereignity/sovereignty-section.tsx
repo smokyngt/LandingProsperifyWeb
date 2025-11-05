@@ -192,7 +192,7 @@ Protection des données sensibles avec un haut niveau de sécurité, conforme au
                     <Eye className="text-orange-500" size={20} />
                   </div>
                   <h3 className="text-left text-balance text-lg sm:text-xl md:text-2xl font-semibold tracking-[-0.015em] text-gray-900">
-                    surveillance continue
+                    Surveillance continue
                   </h3>
                 </div>
                 <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">

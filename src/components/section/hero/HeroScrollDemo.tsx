@@ -9,7 +9,7 @@ export function HeroScrollDemo() {
         titleComponent={
           <div className="sm:mt-6 pt-6 sm:pt-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-black dark:text-white text-center px-4">
-              Libérer la puissance <br />
+              Libérez la puissance <br />
               <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[6rem] font-bold mt-1 leading-none block">
                 de vos <span className="text-orange-500">données</span>
               </span>
