@@ -21,7 +21,7 @@ export default function SovereigntySection() {
           Et Souveraines
         </h2>
         <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-         Nous garantissons la pleine souveraineté de vos données avec un hébergement conforme au RGPD et aligné sur les pratiques les plus exigeantes en matière de sécurité.
+          Hébergement européen conforme RGPD. Sécurité maximale, souveraineté garantie.
         </p>
       </div>
 
@@ -43,8 +43,8 @@ export default function SovereigntySection() {
               </h3>
             </div>
             <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
-L’infrastructure Prosperify est hébergée en Europe, au sein de centres de données situés en Allemagne et en France, conformément au RGPD.
-Toutes les interactions sont chiffrées, tracées et respectent les plus hauts standards de sécurité et de confidentialité.           </p>
+              Centres de données en Allemagne et France. Chiffrement bout en bout, traçabilité complète, conformité RGPD native.
+            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out w-full">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -71,9 +71,7 @@ Toutes les interactions sont chiffrées, tracées et respectent les plus hauts s
               </h3>
             </div>
             <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
-              Déploiement hybride ou 100% local selon vos besoins de souveraineté. Architecture personnalisable et
-              évolutive.
-            </p>
+Déploiement hybride ou 100% local selon vos besoins de souveraineté. Architecture personnalisable et évolutive.            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -105,8 +103,8 @@ Toutes les interactions sont chiffrées, tracées et respectent les plus hauts s
               </h3>
             </div>
             <p className="text-left text-base text-gray-700 leading-relaxed">
-              AES-256, TLS et chiffrement DCPE (Distance Comparison Privacy Encryption) pour une sécurité maximale. 
-              </p>
+              AES-256 et TLS  pour vos données en transit et au repos. Protection maximale contre toute intrusion.
+            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -135,8 +133,7 @@ Toutes les interactions sont chiffrées, tracées et respectent les plus hauts s
               </h3>
             </div>
             <p className="text-left text-base text-gray-700 leading-relaxed">
-              Architecture isolée et résiliente avec haute disponibilité garantie.
-            </p>
+Architecture isolée et résiliente avec haute disponibilité garantie.            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -165,7 +162,8 @@ Toutes les interactions sont chiffrées, tracées et respectent les plus hauts s
               </h3>
             </div>
             <p className="text-left text-base text-gray-700 leading-relaxed">
-Protection des données sensibles avec un haut niveau de sécurité, conforme au RGPD, à la directive NIS2, au règlement AI Act et aux normes ISO 27001 / SOC 2.            </p>
+              Conformité RGPD, NIS2, AI Act et certifications ISO 27001 / SOC 2. Vos données sensibles entre de bonnes mains.
+            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -196,8 +194,7 @@ Protection des données sensibles avec un haut niveau de sécurité, conforme au
                   </h3>
                 </div>
                 <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
-                  Contrôle d&apos;accès basé sur les rôles (RBAC) et surveillance continue des systèmes pour garantir une transparence totale.
-                </p>
+Contrôle d'accès basé sur les rôles (RBAC) et surveillance continue des systèmes pour garantir une transparence totale.                </p>
               </div>
               <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 w-full lg:w-auto">
                 <div className="flex items-center gap-2">
