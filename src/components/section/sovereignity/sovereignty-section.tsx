@@ -190,7 +190,7 @@ Architecture isolée et résiliente avec haute disponibilité garantie.         
                     <Eye className="text-orange-500" size={20} />
                   </div>
                   <h3 className="text-left text-balance text-lg sm:text-xl md:text-2xl font-semibold tracking-[-0.015em] text-gray-900">
-                    Surveillance continue
+                    Supervision continue
                   </h3>
                 </div>
                 <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">

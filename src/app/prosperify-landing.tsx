@@ -41,7 +41,7 @@ const ProsperifyLanding = () => {
     <>
     <div className="min-h-screen bg-white text-foreground">
       {/* Navigation */}
-      <div className="relative mt-4 w-full z-[10000]">
+      <div className="relative mt-1 w-full ">
       <NavbarDemo />
       </div>
       <div className="min-h-screen bg-transparent">
