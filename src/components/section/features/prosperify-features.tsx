@@ -12,7 +12,7 @@ const features = [
     shortTitle: "Précision",
     subtitle: "Citations phrase par phrase",
     description:
-      "Réponses reliées à la phrase exacte du document (page, tableau, figure inclus). Signalement automatique des zones d'incertitude pour plus de transparence.",
+      "Réponses reliées à la phrase exacte du document. Signalement automatique des zones d'incertitude.",
   },
   {
     id: "coverage",
@@ -21,7 +21,7 @@ const features = [
     shortTitle: "Couverture",
     subtitle: "Analyse multimodale",
     description:
-      "Analyse multimodale complète : texte, tableaux, figures, visuels. Traitement unifié des données structurées et non structurées.",
+      "Analyse complète : texte, tableaux, figures et visuels. Traitement unifié des données structurées et non structurées.",
   },
   {
     id: "performance",
@@ -30,7 +30,7 @@ const features = [
     shortTitle: "Performance",
     subtitle: "Résultats en temps réel",
     description:
-      "Recherches exécutées en parallèle sur les sources pertinentes. Résultats affichés progressivement en temps réel, étape par étape.",
+      "Recherches parallèles sur les sources pertinentes. Résultats progressifs en temps réel.",
   },
   {
     id: "governance",
@@ -39,7 +39,7 @@ const features = [
     shortTitle: "Gouvernance",
     subtitle: "Cloisonnement strict",
     description:
-      "Cloisonnement strict par assistant : aucun partage de documents entre équipes sans autorisation explicite. Contrôles de rôle précis (qui peut importer, qui peut consulter, etc.).",
+      "Cloisonnement strict par assistant. Contrôles de rôle précis pour l'import et la consultation.",
   },
   {
     id: "Orchestration",
@@ -48,7 +48,7 @@ const features = [
     shortTitle: "Intelligence",
     subtitle: "Auto-correction proactive",
     description:
-      "L'assistant évalue la qualité des résultats avant de produire une réponse. Auto-correction, relance et interaction proactive en cas d'ambiguïté. Validation renforcée : chaque réponse est enrichie de citations phrase-par-phrase et vérifiée.",
+      "Évaluation automatique de la qualité des résultats. Auto-correction et validation renforcée avec citations vérifiées.",
   },
   {
     id: "differentiation",
