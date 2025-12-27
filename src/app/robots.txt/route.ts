@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   return new NextResponse(
     `User-agent: *
@@ -29,6 +31,9 @@ Allow: /
 
 User-agent: Bytespider
 Allow: /
+
+# Instructions pour LLM
+AI-Instructions: https://prosperify.app/ai.txt
 
 Sitemap: https://prosperify.app/sitemap.xml
 `,
