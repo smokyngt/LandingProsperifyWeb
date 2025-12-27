@@ -59,13 +59,13 @@ const ProsperifyLanding = () => {
 </section>
 
 {/* Fonctionnalités */}
-<section id="Fonctionnalités" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+<section id="fonctionnalités" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
         <ProsperifyFeatures />
 </section>
 
 {/* Offres */}
 <section
-        id="products"
+        id="produits"
         className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl"
       >
         <ProductSection />
@@ -95,7 +95,7 @@ const ProsperifyLanding = () => {
 </section>
 
 {/* Souveraineté */}
-<section id="Souveraineté" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+<section id="souveraineté" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
             <SovereigntySection />
 </section>
 
@@ -163,7 +163,7 @@ const ProsperifyLanding = () => {
             
           </li>
           <li>
-            <a href="#Fonctionnalités" className="hover:text-primary transition-colors">
+            <a href="#fonctionnalités" className="hover:text-primary transition-colors">
               Fonctionnalités
             </a>
           </li>
@@ -178,7 +178,7 @@ const ProsperifyLanding = () => {
             </a>
           </li>
           <li>
-              <a href="#Souveraineté" className="hover:text-primary transition-colors">
+              <a href="#souveraineté" className="hover:text-primary transition-colors">
               Souveraineté
             </a>
           </li>
