@@ -18,12 +18,12 @@ export function NavbarDemo() {
 
   // 🌍 Définir les liens différemment selon la page
  const baseItems = [
-  { name: "Souveraineté", link: "#souveraineté" },
+  { name: "Souveraineté", link: "#sovereignty" },
   { name: "Workflow", link: "#workflow" },
   { name: "Intégration", link: "#integration" },
   { name: "Offres", link: "#products" },
   { name: "Architecture", link: "#architecture" },
-  { name: "Fonctionnalités", link: "#fonctionnalités" },
+  { name: "Fonctionnalités", link: "#features" },
   { name: "Roadmap", link: "/roadmap" },
 ];
 

@@ -47,7 +47,7 @@ const ProsperifyLanding = () => {
       <div className="min-h-screen bg-transparent">
       <section
   id="accueil"
-  className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6 mx-2 sm:mx-4 "
+  className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6  sm:mx-4 "
 >
       {/* Hero Section */}
   <HeroScrollDemo />
@@ -59,13 +59,13 @@ const ProsperifyLanding = () => {
 </section>
 
 {/* Fonctionnalités */}
-<section id="fonctionnalités" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+<section id="features" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
         <ProsperifyFeatures />
 </section>
 
 {/* Offres */}
 <section
-        id="produits"
+        id="products"
         className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl"
       >
         <ProductSection />
@@ -95,7 +95,7 @@ const ProsperifyLanding = () => {
 </section>
 
 {/* Souveraineté */}
-<section id="souveraineté" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+<section id="sovereignty" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
             <SovereigntySection />
 </section>
 
