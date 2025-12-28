@@ -16,10 +16,30 @@ import { useTranslation } from "react-i18next";
 import { usePathname } from "next/navigation"; // 👈 pour savoir où on est
 import i18n from "@/lib/i18n"; // initialise i18next et expose la langue courante
 import Link from "next/link";
+import { motion } from "motion/react";
 
 export function NavbarDemo() {
   const { t } = useTranslation();
   const pathname = usePathname();
+
+  const pathLang = pathname.startsWith("/en")
+    ? "en"
+    : pathname.startsWith("/fr")
+      ? "fr"
+      : i18n.language === "en"
+        ? "en"
+        : "fr";
+
+  const [currentLang, setCurrentLang] = useState<"fr" | "en">(pathLang as "fr" | "en");
+
+  const switchLanguage = (targetLang: "fr" | "en") => {
+    if (targetLang === currentLang) return;
+
+    i18n.changeLanguage(targetLang).catch(() => {
+      // ignore
+    });
+    setCurrentLang(targetLang);
+  };
 
   const baseItems: { nameKey: string; link: string }[] = [
     { nameKey: "footer.links.sovereignty", link: "#sovereignty" },
@@ -57,7 +77,44 @@ export function NavbarDemo() {
           <NavbarLogo />
           <NavItems items={navItems} />
           {pathname !== "/roadmap" && (
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 relative z-20">
+              <div className="flex items-center gap-1 text-xs border border-orange-300 rounded-full px-2 py-1 bg-orange-50/90 text-orange-600 shadow-sm">
+                <motion.button
+                  type="button"
+                  onClick={() => switchLanguage("fr")}
+                  className={
+                    currentLang === "fr"
+                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5"
+                      : "text-orange-500 px-2 py-0.5"
+                  }
+                  whileTap={{ scale: 0.9 }}
+                  animate={{
+                    opacity: currentLang === "fr" ? 1 : 0.4,
+                    scale: currentLang === "fr" ? 1.08 : 0.94,
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  FR
+                </motion.button>
+                <span className="text-gray-400">/</span>
+                <motion.button
+                  type="button"
+                  onClick={() => switchLanguage("en")}
+                  className={
+                    currentLang === "en"
+                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5"
+                      : "text-orange-500 px-2 py-0.5"
+                  }
+                  whileTap={{ scale: 0.9 }}
+                  animate={{
+                    opacity: currentLang === "en" ? 1 : 0.4,
+                    scale: currentLang === "en" ? 1.08 : 0.94,
+                  }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                >
+                  EN
+                </motion.button>
+              </div>
               <NavbarButton href="#contact" variant="primary">
                 {t("footer.links.contact")} 
               </NavbarButton>
@@ -80,6 +137,43 @@ export function NavbarDemo() {
             onClose={() => setIsMobileMenuOpen(false)}
             className="mt-5 border z-[10000] border-orange-200 rounded-lg bg-white flex items-center justify-center"
           >
+            <div className="flex items-center gap-2 mb-4">
+              <motion.button
+                type="button"
+                onClick={() => switchLanguage("fr")}
+                className={
+                  currentLang === "fr"
+                    ? "font-semibold text-white bg-orange-500 rounded-full px-3 py-1"
+                    : "text-orange-500 px-3 py-1"
+                }
+                whileTap={{ scale: 0.9 }}
+                animate={{
+                  opacity: currentLang === "fr" ? 1 : 0.4,
+                  scale: currentLang === "fr" ? 1.08 : 0.94,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                FR
+              </motion.button>
+              <span className="text-gray-400">/</span>
+              <motion.button
+                type="button"
+                onClick={() => switchLanguage("en")}
+                className={
+                  currentLang === "en"
+                    ? "font-semibold text-white bg-orange-500 rounded-full px-3 py-1"
+                    : "text-orange-500 px-3 py-1"
+                }
+                whileTap={{ scale: 0.9 }}
+                animate={{
+                  opacity: currentLang === "en" ? 1 : 0.4,
+                  scale: currentLang === "en" ? 1.08 : 0.94,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                EN
+              </motion.button>
+            </div>
             {navItems.map((item, idx) => (
               <Link
                 key={`mobile-link-${idx}`}
