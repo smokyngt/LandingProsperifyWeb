@@ -24,14 +24,16 @@ import {
   ChevronRight,
 } from "lucide-react"
 import { useState } from "react"
+import { useTranslation } from "react-i18next"
 
 export function AIChatInterface() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [pdfPanelOpen, setPdfPanelOpen] = useState(true)
+  const { t } = useTranslation()
 
   return (
     <div className="w-full max-w-7xl mx-auto">
-      <Safari url="prosperify.ai/assistant" className="w-full h-[600px] ">
+      <Safari url="prosperify.ai/chat" className="w-full h-[600px] ">
 
         <div
           className="flex h-full bg-white transform scale-75 origin-top-left"
@@ -64,48 +66,48 @@ export function AIChatInterface() {
             <div className="p-4 space-y-2 cursor-pointer">
               <Button variant="ghost" className="w-full justify-start gap-2 text-sm cursor-pointer">
                 <MessageSquare className="w-4 h-4" />
-                Nouvelle conversation
+                {t("aiChat.sidebar.newConversation")}
               </Button>
               <Button variant="ghost" className="w-full justify-start gap-2 text-sm cursor-pointer">
                 <Search className="w-4 h-4" />
-                Rechercher
+                {t("aiChat.sidebar.search")}
               </Button>
               <Button variant="ghost" className="w-full justify-start gap-2 text-sm cursor-pointer">
                 <Filter className="w-4 h-4" />
-                Filtres
+                {t("aiChat.sidebar.filters")}
               </Button>
               <Button variant="ghost" className="w-full justify-start gap-2 text-sm cursor-pointer">
                 <History className="w-4 h-4" />
-                Historique
+                {t("aiChat.sidebar.history")}
               </Button>
               <Button variant="ghost" className="w-full justify-start gap-2 text-sm">
                 <Settings className="w-4 h-4" />
-                Paramètres
+                {t("aiChat.sidebar.settings")}
               </Button>
             </div>
 
             {/* Conversations */}
             <div className=" p-4">
-              <h3 className="text-sm font-medium text-gray-700 mb-3">CONVERSATIONS</h3>
+              <h3 className="text-sm font-medium text-gray-700 mb-3">{t("aiChat.conversationsTitle")}</h3>
               <div className="space-y-2">
                 <div className="p-2 rounded bg-gray-200 cursor-pointer">
-                  <div className="text-sm font-medium text-gray-900">contrat verdi</div>
+                  <div className="text-sm font-medium text-gray-900">{t("aiChat.conversations.example1")}</div>
                 </div>
                 <div className="p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <div className="text-sm text-gray-700">Budget Q4</div>
+                  <div className="text-sm text-gray-700">{t("aiChat.conversations.example2")}</div>
                 </div>
                 <div className="p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <div className="text-sm text-gray-700">Procédures RH</div>
+                  <div className="text-sm text-gray-700">{t("aiChat.conversations.example3")}</div>
                 </div>
                 <div className="p-2 rounded hover:bg-gray-100 cursor-pointer">
-                  <div className="text-sm text-gray-700">Rapport mensuel</div>
+                  <div className="text-sm text-gray-700">{t("aiChat.conversations.example4")}</div>
                 </div>
               </div>
             </div>
 
             {/* Assistant Integration */}
            <div className="p-4 border-t border-gray-200 ">
-  <div className="text-xs text-green-600 bg-green-100 p-1 font-bold mb-1 w-fit ">Connecté en tant que</div>
+  <div className="text-xs text-green-600 bg-green-100 p-1 font-bold mb-1 w-fit ">{t("aiChat.connectedAs")}</div>
   <div className="flex  gap-2 text-sm text-gray-600">
     <div className=" bg-purple-100 rounded flex items-center justify-center font-semibold text-purple-600">
       <span className="text-purple-600 text-xs px-1">ED</span>
@@ -113,7 +115,7 @@ export function AIChatInterface() {
     <span>Eric Dupont</span>
   </div>
   <div className="text-xs text-gray-500  font-bold">
-    Contrôleur Financier & Juridique
+    {t("aiChat.userRole")}
   </div>
 </div>
           </div>
@@ -135,7 +137,7 @@ export function AIChatInterface() {
             <div className="p-4 border-b border-gray-200 bg-white">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 min-w-0">
-                  <span className="font-medium text-gray-900 truncate">Assistant Transaction & Juridique</span>
+                  <span className="font-medium text-gray-900 truncate">{t("workflowTabs.chat.assistantName")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Button
@@ -156,21 +158,19 @@ export function AIChatInterface() {
               <div className="space-y-4">
                 <div className="bg-gray-100 rounded-lg p-3 max-w-md border border-gray-200">
                   <p className="text-sm text-gray-800">
-                    Bonjour ! Je peux vous aider à rechercher dans vos documents PDF indexés. Posez-moi une question sur
-                    vos documents.
+                    {t("workflowTabs.chat.botWelcome")}
                   </p>
                 </div>
                 <div className="text-xs text-gray-500 mt-2">16:56</div>
                 <div className="bg-black text-white rounded-lg p-3 max-w-md ml-auto">
-                  <p className="text-sm">Quelle est la durée initiale du contrat Verdi et est-il renouvelable ?</p>                  
+                  <p className="text-sm">{t("workflowTabs.chat.userQuestion")}</p>                  
                 </div>
               <div className="text-xs text-gray-500 mt-2">16:57</div>
                 <div className="bg-gray-100 rounded-lg border border-gray-200 p-3 max-w-lg">
                   <p className="text-sm text-gray-800">
-                    D'après le document <span className="font-medium">"Contrat Verdi.pdf"</span> (article 2, page 10),
-                    le présent contrat entre en vigueur à la date de signature pour une durée initiale de
-                    <span className="bg-yellow-200 px-1 rounded">trois (3) ans</span>. Il pourra être renouvelé par
-                    accord exprès et écrit des Parties.
+                    {t("workflowTabs.chat.answer.prefix")} <span className="font-medium">"Contrat Verdi.pdf"</span> (article 2, page 10),{" "}
+                    {t("workflowTabs.chat.answer.middle")} {" "}
+                    <span className="bg-yellow-200 px-1 rounded">{t("workflowTabs.chat.answer.highlight")}</span>. {t("workflowTabs.chat.answer.suffix")}
                   </p>
                   <div className="mt-2 sm:mt-3 border-t border-gray-200 pt-2 flex justify-between">
                     <div className="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-orange-600 transition-colors cursor-pointer">
@@ -190,8 +190,8 @@ export function AIChatInterface() {
                         <path d="M10 14 21 3" />
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                       </svg>
-                      <span className="hidden sm:inline">Ouvrir Contrat_Verdi.pdf (page 10)</span>
-                      <span className="sm:hidden"> Contrat_Verdi.pdf (page 10)</span>
+                      <span className="hidden sm:inline">{t("aiChat.openDocumentFull")}</span>
+                      <span className="sm:hidden"> {t("aiChat.openDocumentShort")}</span>
                     </div>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export function AIChatInterface() {
                 <div className="flex-1 relative min-w-0">
                   <Input
                   readOnly
-                    placeholder="Posez une question sur vos documents... (Vous pouvez glisser-déposer des PDFs)"
+                    placeholder={t("aiChat.inputPlaceholder")}
                     className="pr-10"
                   />
                   <Button size="sm" variant="ghost" className="absolute right-1 top-1/2 -translate-y-1/2 h-8 w-8 p-0">
@@ -216,7 +216,7 @@ export function AIChatInterface() {
                 </Button>
               </div>
               <div className="text-xs text-gray-500 mt-2">
-                Appuyez sur Entrée pour envoyer, Maj+Entrée pour une nouvelle ligne
+                {t("aiChat.inputHint")}
               </div>
             </div>
             {/* Input zone */}
@@ -246,11 +246,11 @@ export function AIChatInterface() {
                 <div className="flex items-center justify-around m-2">
                   <Badge variant="outline" className="text-orange-600 border-orange-200">
                     <FileText className="w-3 h-3 m-1" />
-                    Contrat_Verdi.pdf
+                    {t("aiChat.pdf.contractNameMain")}
                   </Badge>
                   <Badge variant="outline" className="text-blue-600 border-blue-200">
                     <FileText className="w-3 h-3 mr-1" />
-                    Rapport_Financier_Q4.pdf
+                    {t("aiChat.pdf.contractNameSecondary")}
                   </Badge>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export function AIChatInterface() {
                   </Button>
                 </div>
                 <Button size="sm" variant="outline" className="hidden sm:flex bg-transparent">
-                  Rechercher...
+                  {t("workflowTabs.chat.searchPlaceholder")}
                 </Button>
               </div>
             </div>
@@ -283,51 +283,44 @@ export function AIChatInterface() {
             <div className="flex-1 p-4 bg-gray-50 overflow-auto">
               <div className="bg-white rounded border p-4 h-full">
                 <div className="text-center mb-4">
-                  <h3 className="font-bold text-lg">Contrat Verdi.pdf</h3>
+                  <h3 className="font-bold text-lg">{t("aiChat.pdf.title")}</h3>
                   <div className="flex items-center justify-between text-sm text-gray-500 mt-2">
-                    <span>Précédent</span>
-                    <span>Page 1 sur 15</span>
-                    <span>Suivant</span>
+                    <span>{t("aiChat.pdf.prev")}</span>
+                    <span>{t("aiChat.pdf.pageInfo")}</span>
+                    <span>{t("aiChat.pdf.next")}</span>
                   </div>
                 </div>
 
                 <div className="space-y-4 text-sm">
                     <div>
-                    <p className="font-semibold">ARTICLE 1 – OBJET DU CONTRAT :</p>
+                    <p className="font-semibold">{t("aiChat.pdf.article1Title")}</p>
                     <p className="text-gray-700">
-                      Le présent Contrat a pour objet d'organiser la collaboration entre VERDI et le PARTENAIRE,
-                      incluant la définition de périmètre de recherche, la mise en commun de moyens matériels et
-                      humains, la production de rapports, ainsi que la valorisation des résultats obtenus.
+                      {t("aiChat.pdf.article1Body")}
                     </p>
                   </div>
 
                   <div>
-                    <p className="font-semibold">ARTICLE 2 – DURÉE :</p>
+                    <p className="font-semibold">{t("aiChat.pdf.article2Title")}</p>
                     <p className="text-gray-700">
-                      Le présent Contrat entre en vigueur à la date de signature pour{" "}
-                      une durée initiale de <span className="bg-yellow-200">trois (3) ans</span>. <span className="bg-green-200">Il pourra être renouvelé par accord exprès et écrit des
-                        Parties. En cas de non-renouvellement, les obligations relatives à la confidentialité et à la
-                        propriété intellectuelle resteront en vigueur.</span>
-                    
-                      Cette disposition constitue une garantie de continuité, même au terme de la collaboration.
+                      {t("aiChat.pdf.article2Part1")} <span className="bg-yellow-200">{t("aiChat.pdf.article2Highlight1")}</span>. <span className="bg-green-200">{t("aiChat.pdf.article2Highlight2")}</span>
+                      {" "}
+                      {t("aiChat.pdf.article2Part3")}
                     </p>
                   </div>
 
                   <div>
-                    <p className="font-semibold">ARTICLE 3 – DÉFINITIONS :</p>
+                    <p className="font-semibold">{t("aiChat.pdf.article3Title")}</p>
                     <p className="text-gray-700">
-                      « Résultats » désigne toute donnée, méthode, prototype, logiciel, rapport ou publication générée.
+                      {t("aiChat.pdf.article3Body")}
                     </p>
                   </div>
 
                   <div>
-                    <p className="font-semibold">ARTICLE 4 – OBLIGATIONS DES PARTIES :</p>
+                    <p className="font-semibold">{t("aiChat.pdf.article4Title")}</p>
                     <p className="text-gray-700">
-                      VERDI s'engage à mettre à disposition ses compétences scientifiques, ses laboratoires et son
-                      personnel qualifié.{" "}
+                      {t("aiChat.pdf.article4Part1")} {" "}
                       <span className="bg-yellow-200">
-                        De plus, les principes d'éthique scientifique et de sécurité devront être respectés à tout
-                        moment.
+                        {t("aiChat.pdf.article4Highlight1")}
                       </span>
                     </p>
                   </div>

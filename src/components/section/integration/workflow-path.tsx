@@ -1,41 +1,43 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 
 export default function WorkflowPath() {
+  const { t } = useTranslation()
   const steps = [
     {
       id: 1,
-      title: "IDENTIFICATION DES BESOINS",
-      description: "Choisissez le nombre d'assistants IA, de fichiers à traiter et d'utilisateurs, etc...",
+      titleKey: "integration.steps.0.title",
+      descriptionKey: "integration.steps.0.description",
       position: { x: 50, y: 10 },
       color: "#ff6a13",
     },
     {
       id: 2,
-      title: "RASSEMBLER LES DOCUMENTS",
-      description: "Chaque équipe sélectionne et organise les fichiers importants.",
+      titleKey: "integration.steps.1.title",
+      descriptionKey: "integration.steps.1.description",
       position: { x: 25, y: 40 },
       color: "#ff6a13",
     },
     {
       id: 3,
-      title: "MISE EN PLACE DE LA SOLUTION",
-      description: "Importation des documents et configuration des accès aux documents/assistants.",
+      titleKey: "integration.steps.2.title",
+      descriptionKey: "integration.steps.2.description",
       position: { x: 70, y: 50 },
       color: "#ff6a13",
     },
     {
       id: 4,
-      title: "FORMER LES ÉQUIPES",
-      description: "Explication des fonctionnalités et bonnes pratiques.",
+      titleKey: "integration.steps.3.title",
+      descriptionKey: "integration.steps.3.description",
       position: { x: 30, y: 75 },
       color: "#ff6a13",
     },
     {
       id: 5,
-      title: "GÉRER ET METTRE À JOUR",
-      description: "Ajouter, archiver ou supprimer les documents au fil du temps.",
+      titleKey: "integration.steps.4.title",
+      descriptionKey: "integration.steps.4.description",
       position: { x: 65, y: 90 },
       color: "#ff6a13",
     },
@@ -63,19 +65,19 @@ export default function WorkflowPath() {
     {/* Badge */}
     <div className="flex justify-center mb-6">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
-            INTÉGRATION SIMPLIFIÉE
+            {t("integration.badge")}
           </div>
         </div>
 
     {/* Titre + description */}
     <div className="text-center mb-12 sm:mb-16">
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-        Intégration <span className="text-orange-500">Ultra-Rapide</span>,
+        {t("integration.titlePrefix")} <span className="text-orange-500">{t("integration.titleHighlight")}</span>,
         <br />
-        Zéro Refonte
+        {t("integration.titleSuffix")}
       </h2>
       <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-        Déployez Prosperify en quelques minutes. Pas besoin de modifier vos outils ou flux de travail existants.
+        {t("integration.subtitle")}
       </p>
     </div>
 
@@ -121,10 +123,10 @@ export default function WorkflowPath() {
         className="font-bold text-xs mb-1 leading-tight"
         style={{ color: s.color }}
       >
-        {s.title}
+        {t(s.titleKey)}
       </h3>
       <p className="text-[0.8rem] text-gray-600 leading-snug">
-        {s.description}
+        {t(s.descriptionKey)}
       </p>
     </div>
   ))}
@@ -185,11 +187,11 @@ text-xs sm:text-sm lg:text-base rounded-full flex items-center justify-center sh
  sm:text-sm mb-1 leading-tight"
                 style={{ color: s.color }}
               >
-                {s.title}
+                {t(s.titleKey)}
               </h3>
               <p className="text-[0.55rem] sm:text-[0.65rem] lg:text-xs
  sm:text-xs text-gray-600 leading-snug">
-                {s.description}
+                {t(s.descriptionKey)}
               </p>
             </div>
           </div>

@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useMemo, useState } from "react"
 import { motion } from "motion/react"
 import { cn } from "@/lib/utils"
 
@@ -25,16 +25,22 @@ export const AnimatedTabs = ({
   tabClassName?: string
   contentClassName?: string
 }) => {
-  const [active, setActive] = useState<Tab>(propTabs[0])
-  const [tabs, setTabs] = useState<Tab[]>(propTabs)
+  const [activeValue, setActiveValue] = useState<string>(propTabs[0]?.value)
 
   const moveSelectedTabToTop = (idx: number) => {
-    const newTabs = [...propTabs]
-    const selectedTab = newTabs.splice(idx, 1)
-    newTabs.unshift(selectedTab[0])
-    setTabs(newTabs)
-    setActive(newTabs[0])
+    setActiveValue(propTabs[idx].value)
   }
+
+  const tabs = useMemo(() => {
+    if (!propTabs || propTabs.length === 0) return []
+    const newTabs = [...propTabs]
+    const currentIndex = newTabs.findIndex((t) => t.value === activeValue)
+    if (currentIndex > 0) {
+      const [selectedTab] = newTabs.splice(currentIndex, 1)
+      newTabs.unshift(selectedTab)
+    }
+    return newTabs
+  }, [propTabs, activeValue])
 
   const [hovering, setHovering] = useState(false)
 
@@ -59,7 +65,7 @@ export const AnimatedTabs = ({
               transformStyle: "preserve-3d",
             }}
           >
-            {active.value === tab.value && (
+            {activeValue === tab.value && (
               <motion.div
                 layoutId="clickedbutton"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
@@ -73,8 +79,7 @@ export const AnimatedTabs = ({
       </div>
       <FadeInDiv
         tabs={tabs}
-        active={active}
-        key={active.value}
+        key={activeValue}
         hovering={hovering}
         className={cn("mt-32", contentClassName)}
       />
@@ -90,7 +95,6 @@ export const FadeInDiv = ({
   className?: string
   key?: string
   tabs: Tab[]
-  active: Tab
   hovering?: boolean
 }) => {
   const isActive = (tab: Tab) => {

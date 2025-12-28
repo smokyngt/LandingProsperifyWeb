@@ -3,81 +3,77 @@
 import { useState } from "react"
 import { Brain, BookOpen, Zap, Shield, Bot, Globe } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import { useTranslation } from "react-i18next"
 
 const features = [
   {
     id: "precision",
     icon: Brain,
-    title: "Précision & Confiance",
-    shortTitle: "Précision",
-    subtitle: "Citations phrase par phrase",
-    description:
-      "Réponses reliées à la phrase exacte du document. Signalement automatique des zones d'incertitude.",
+    shortTitleKey: "features.items.precision.shortTitle",
+    titleKey: "features.items.precision.title",
+    subtitleKey: "features.items.precision.subtitle",
+    descriptionKey: "features.items.precision.description",
   },
   {
     id: "coverage",
     icon: BookOpen,
-    title: "Couverture documentaire",
-    shortTitle: "Couverture",
-    subtitle: "Analyse multimodale",
-    description:
-      "Analyse complète : texte, tableaux, figures et visuels. Traitement unifié des données structurées et non structurées.",
+    shortTitleKey: "features.items.coverage.shortTitle",
+    titleKey: "features.items.coverage.title",
+    subtitleKey: "features.items.coverage.subtitle",
+    descriptionKey: "features.items.coverage.description",
   },
   {
     id: "performance",
     icon: Zap,
-    title: "Performance & Expérience",
-    shortTitle: "Performance",
-    subtitle: "Résultats en temps réel",
-    description:
-      "Recherches parallèles sur les sources pertinentes. Résultats progressifs en temps réel.",
+    shortTitleKey: "features.items.performance.shortTitle",
+    titleKey: "features.items.performance.title",
+    subtitleKey: "features.items.performance.subtitle",
+    descriptionKey: "features.items.performance.description",
   },
   {
     id: "governance",
     icon: Shield,
-    title: "Gouvernance & Isolation",
-    shortTitle: "Gouvernance",
-    subtitle: "Cloisonnement strict",
-    description:
-      "Cloisonnement strict par assistant. Contrôles de rôle précis pour l'import et la consultation.",
+    shortTitleKey: "features.items.governance.shortTitle",
+    titleKey: "features.items.governance.title",
+    subtitleKey: "features.items.governance.subtitle",
+    descriptionKey: "features.items.governance.description",
   },
   {
-    id: "Orchestration",
+    id: "orchestration",
     icon: Bot,
-    title: "Orchestration agentique",
-    shortTitle: "Intelligence",
-    subtitle: "Auto-correction proactive",
-    description:
-      "Évaluation automatique de la qualité des résultats. Auto-correction et validation renforcée avec citations vérifiées.",
+    shortTitleKey: "features.items.orchestration.shortTitle",
+    titleKey: "features.items.orchestration.title",
+    subtitleKey: "features.items.orchestration.subtitle",
+    descriptionKey: "features.items.orchestration.description",
   },
   {
     id: "differentiation",
     icon: Globe,
-    title: "Différenciation stratégique",
-    shortTitle: "Souveraineté",
-    subtitle: "Solution européenne souveraine",
-    description:
-      "Alternative européenne souveraine face aux solutions américaines. Bien plus qu'une recherche textuelle : une intelligence documentaire complète et vérifiable.",
+    shortTitleKey: "features.items.differentiation.shortTitle",
+    titleKey: "features.items.differentiation.title",
+    subtitleKey: "features.items.differentiation.subtitle",
+    descriptionKey: "features.items.differentiation.description",
   },
 ]
 
 export default function ProsperifyFeatures() {
+  const { t } = useTranslation()
   const [activeTab, setActiveTab] = useState(0)
 
   return (
     <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
-           FONCTIONNALITÉS
+           {t("features.badge")}
           </div>
         </div>
 
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-          Une Intelligence Documentaire <br />  <span className="text-orange-500"> Tout-en-Un </span>
+          {t("features.title")} <br />  <span className="text-orange-500"> {t("features.titleHighlight")} </span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-Une plateforme unifiée qui transforme vos documents en insights exploitables, avec précision et gouvernance. </p>        </div>
+{t("features.subtitle")} </p>        </div>
 
         {/* Tabs Layout */}
         <div className="lg:grid lg:grid-cols-[400px_1fr] lg:gap-12 xl:gap-16">
@@ -116,7 +112,7 @@ Une plateforme unifiée qui transforme vos documents en insights exploitables, a
                           }`}
                         >
                           <span className="sm:hidden">{index + 1}</span>
-                          <span className="hidden sm:inline">{feature.shortTitle}</span>
+                          <span className="hidden sm:inline">{t(feature.shortTitleKey)}</span>
                         </div>
                       </div>
                     </button>
@@ -167,14 +163,14 @@ Une plateforme unifiée qui transforme vos documents en insights exploitables, a
                             isActive ? "text-gray-900" : "text-gray-600 group-hover:text-gray-900"
                           }`}
                         >
-                          {feature.title}
+                          {t(feature.titleKey)}
                         </h3>
                         <p
                           className={`text-sm transition-colors duration-300 ${
                             isActive ? "text-orange-600" : "text-gray-400 group-hover:text-gray-600"
                           }`}
                         >
-                          {feature.subtitle}
+                          {t(feature.subtitleKey)}
                         </p>
                       </div>
                     </div>
@@ -206,17 +202,17 @@ Une plateforme unifiée qui transforme vos documents en insights exploitables, a
 
                   {/* Title */}
                   <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 text-balance">
-                    {features[activeTab].title}
+                    {t(features[activeTab].titleKey)}
                   </h3>
 
                   {/* Subtitle */}
                   <p className="text-base sm:text-lg text-orange-600 font-medium mb-4 sm:mb-6">
-                    {features[activeTab].subtitle}
+                    {t(features[activeTab].subtitleKey)}
                   </p>
 
                   {/* Description */}
                   <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-pretty">
-                    {features[activeTab].description}
+                    {t(features[activeTab].descriptionKey)}
                   </p>
 
                   {/* Decorative element */}

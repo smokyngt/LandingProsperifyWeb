@@ -9,6 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { useTranslation } from "react-i18next";
 
 interface FormData {
   name: string;
@@ -20,6 +21,7 @@ interface FormData {
 }
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [form, setForm] = useState<FormData>({
     name: "",
     company: "",
@@ -44,7 +46,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    setStatus("⏳ Envoi en cours...");
+    setStatus(t("contact.form.statusSending"));
     setErrors({});
 
     // 🔒 Nettoyage côté client
@@ -67,7 +69,7 @@ export default function ContactForm() {
       const data = await res.json();
 
       if (data.success) {
-        setStatus("✅ Message envoyé !");
+        setStatus(t("contact.form.statusSuccess"));
         setForm({
           name: "",
           company: "",
@@ -82,12 +84,12 @@ export default function ContactForm() {
           errorMap[err.field] = err.message;
         });
         setErrors(errorMap);
-        setStatus("❌ Merci de corriger les erreurs ci-dessus.");
+        setStatus(t("contact.form.statusFixErrors"));
       } else {
-        setStatus("❌ Erreur inattendue.");
+        setStatus(t("contact.form.statusUnexpected"));
       }
     } catch {
-      setStatus("❌ Erreur d’envoi.");
+      setStatus(t("contact.form.statusSendError"));
     }
   };
 
@@ -97,7 +99,7 @@ export default function ContactForm() {
       <input
         type="text"
         name="name"
-        placeholder="Votre nom complet"
+        placeholder={t("contact.form.namePlaceholder")}
         value={form.name}
         maxLength={20}
         onChange={handleChange}
@@ -110,7 +112,7 @@ export default function ContactForm() {
       <input
         type="text"
         name="company"
-        placeholder="Nom de votre entreprise"
+        placeholder={t("contact.form.companyPlaceholder")}
         value={form.company}
         maxLength={20}
         onChange={handleChange}
@@ -124,7 +126,7 @@ export default function ContactForm() {
         type="email"
         name="email"
         maxLength={30}
-        placeholder="Votre email"
+        placeholder={t("contact.form.emailPlaceholder")}
         value={form.email}
         onChange={handleChange}
         required
@@ -138,7 +140,7 @@ export default function ContactForm() {
   <input
     type="tel"
     name="phone"
-    placeholder="Téléphone (optionnel)"
+    placeholder={t("contact.form.phonePlaceholder")}
     value={form.phone}
     onChange={handleChange}
     className="w-full border rounded-lg p-3"
@@ -152,12 +154,12 @@ export default function ContactForm() {
       {/* Sujet (Select Shadcn) */}
       <Select onValueChange={handleSubjectChange} value={form.subject}>
         <SelectTrigger className="w-full border rounded-lg p-3">
-          <SelectValue placeholder="Sélectionnez l’objet" />
+          <SelectValue placeholder={t("contact.form.subjectPlaceholder")} />
         </SelectTrigger>
         <SelectContent>
-          <SelectItem value="information">Demande d’information</SelectItem>
-          <SelectItem value="partnership">Devis / Partenariat</SelectItem>
-          <SelectItem value="other">Autre</SelectItem>
+          <SelectItem value="information">{t("contact.form.subjectInformation")}</SelectItem>
+          <SelectItem value="partnership">{t("contact.form.subjectPartnership")}</SelectItem>
+          <SelectItem value="other">{t("contact.form.subjectOther")}</SelectItem>
         </SelectContent>
       </Select>
       {errors.subject && <p className="text-red-500 text-sm">{errors.subject}</p>}
@@ -165,7 +167,7 @@ export default function ContactForm() {
       {/* Message */}
       <textarea
   name="message"
-  placeholder="Votre message"
+  placeholder={t("contact.form.messagePlaceholder")}
   value={form.message}
   onChange={handleChange}
   required
@@ -179,10 +181,10 @@ export default function ContactForm() {
       {/* Bouton */}
       <button
         type="submit"
-        disabled={status === "⏳ Envoi en cours..."}
+        disabled={status === t("contact.form.statusSending")}
         className="w-full bg-white text-orange-500 font-medium py-3 rounded-lg hover:bg-orange-500 hover:text-white cursor-pointer transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Envoyer
+        {t("contact.form.submit")}
       </button>
 
       {status && <p className="mt-4 text-center text-sm">{status}</p>}

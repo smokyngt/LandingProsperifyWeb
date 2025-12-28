@@ -1,38 +1,35 @@
-"use client"
+﻿"use client"
 
 import { useState } from "react"
 import { ChevronDownIcon } from "lucide-react"
 import { cn } from "../../../lib/utils"
 import Script from "next/script"
-
+import { useTranslation } from "react-i18next"
 
 const faqData = [
   {
-    question: "Mes données sont-elles accessibles à des tiers ou à vos équipes ?",
-    answer: "Non. Vos données sont isolées, chiffrées et jamais partagées. Même nos équipes n'y ont pas accès.",
+    questionKey: "faq.items.0.question",
+    answerKey: "faq.items.0.answer",
   },
   {
-    question: "L'IA apprend-elle en continu à partir de mes données ?",
-    answer:
-      "Non. Vos données ne sont jamais utilisées pour entraîner nos modèles. Cependant, vous pouvez ajouter ou mettre à jour vos documents à tout moment pour enrichir les réponses de votre assistant.",
+    questionKey: "faq.items.1.question",
+    answerKey: "faq.items.1.answer",
   },
   {
-    question: "Est-ce adapté aux documents confidentiels ou juridiques ?",
-    answer:
-      "Oui. Prosperify est conçu pour traiter des documents sensibles en toute sécurité, dans le respect des normes légales.",
+    questionKey: "faq.items.2.question",
+    answerKey: "faq.items.2.answer",
   },
   {
-    question: "Combien d'utilisateurs peuvent utiliser Prosperify en même temps ?",
-    answer: "Autant que vous le souhaitez. Le système est pensé pour les équipes, quelle que soit leur taille.",
+    questionKey: "faq.items.3.question",
+    answerKey: "faq.items.3.answer",
   },
   {
-    question: "Combien de temps faut-il pour déployer Prosperify dans mon entreprise ?",
-    answer: "Le délai dépend surtout de vous : une fois vos documents prêts, le déploiement prend 2 à 3 jours.",
+    questionKey: "faq.items.4.question",
+    answerKey: "faq.items.4.answer",
   },
   {
-    question: "Faut-il former les utilisateurs ?",
-    answer:
-      "Non. L'interface est intuitive et simple à prendre en main. Quelques minutes suffisent pour être opérationnel. Un accompagnement est également prévu pour vous assurer une bonne prise en main et adopter les meilleures pratiques dès le départ.",
+    questionKey: "faq.items.5.question",
+    answerKey: "faq.items.5.answer",
   },
 ]
 
@@ -76,6 +73,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
 }
 
 export function ProsperifyFAQ() {
+  const { t } = useTranslation()
   const [openItems, setOpenItems] = useState<number[]>([])
 
   const toggleItem = (index: number) => {
@@ -84,12 +82,12 @@ export function ProsperifyFAQ() {
 const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqData.map((item) => ({
+    mainEntity: faqData.map((item, index) => ({
       "@type": "Question",
-      name: item.question,
+      name: t(`faq.items.${index}.question`),
       acceptedAnswer: {
         "@type": "Answer",
-        text: item.answer,
+        text: t(`faq.items.${index}.answer`),
       },
     })),
   }
@@ -106,18 +104,18 @@ const faqJsonLd = {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-center mb-6">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
-            FAQ
+            {t("faq.badge")}
           </div>
         </div>
 
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-            Questions <span className="text-orange-500">Fréquemment</span>
+            {t("faq.titleLine1")} <span className="text-orange-500">{t("faq.titleHighlight")}</span>
             <br />
-            Posées
+            {t("faq.titleLine2")}
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-            Tout ce que vous devez savoir sur Prosperify et la sécurité de vos données
+            {t("faq.subtitle")}
           </p>
         </div>
 
@@ -125,8 +123,8 @@ const faqJsonLd = {
           {faqData.map((item, index) => (
             <FAQItem
               key={index}
-              question={item.question}
-              answer={item.answer}
+              question={t(item.questionKey)}
+              answer={t(item.answerKey)}
               isOpen={openItems.includes(index)}
               onToggle={() => toggleItem(index)}
             />

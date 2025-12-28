@@ -2,26 +2,28 @@
 
 import { Shield, Lock, Server, Key, Eye, CheckCircle } from "lucide-react"
 import { WobbleCard } from "./wobble-card"
+import { useTranslation } from "react-i18next"
 
 export default function SovereigntySection() {
+  const { t } = useTranslation()
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       {/* Badge */}
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
-          SÉCURITÉ & SOUVERAINETÉ
+          {t("sovereignty.badge")}
         </div>
       </div>
 
       {/* Titre + description */}
       <div className="text-center mb-12 sm:mb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-          Vos Données, <span className="text-orange-500">Protégées</span>
+          {t("sovereignty.titlePrefix")} <span className="text-orange-500">{t("sovereignty.titleHighlight")}</span>
           <br />
-          Et Souveraines
+          {t("sovereignty.titleSuffix")}
         </h2>
         <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-          Hébergement européen conforme RGPD. Sécurité maximale, souveraineté garantie.
+          {t("sovereignty.subtitle")}
         </p>
       </div>
 
@@ -38,25 +40,31 @@ export default function SovereigntySection() {
                <Shield className="text-orange-500" size={20} />
               </div>
               <h3 className="text-left text-balance text-lg sm:text-xl font-semibold tracking-[-0.015em] text-gray-900">
-               Vos Données, Protégées
-<br/> Et Souveraines  
+               {t("sovereignty.mainCard.titleLine1")}
+<br/> {t("sovereignty.mainCard.titleLine2")}  
               </h3>
             </div>
             <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
-              Centres de données en Allemagne et France. Chiffrement bout en bout, traçabilité complète, conformité RGPD native.
+              {t("sovereignty.mainCard.description")}
             </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out w-full">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Protection 
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-              Confidentialité
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Traçabilité
-              </span>
+              {t("sovereignty.mainCard.chips.0") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.mainCard.chips.0")}
+                </span>
+              )}
+              {t("sovereignty.mainCard.chips.1") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.mainCard.chips.1")}
+                </span>
+              )}
+              {t("sovereignty.mainCard.chips.2") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.mainCard.chips.2")}
+                </span>
+              )}
             </div>
           </div>
         </WobbleCard>
@@ -67,26 +75,34 @@ export default function SovereigntySection() {
                 <Server className="text-orange-500" size={20} />
               </div>
               <h3 className="text-left text-balance text-lg sm:text-xl font-semibold tracking-[-0.015em] text-gray-900">
-                Cloud Dédié
+                {t("sovereignty.cloud.title")}
               </h3>
             </div>
             <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
-Déploiement hybride ou 100% local selon vos besoins de souveraineté. Architecture personnalisable et évolutive.            </p>
+{t("sovereignty.cloud.description")}            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Hybride
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Local
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Évolutif
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Personnalisable
-              </span>
+              {t("sovereignty.cloud.chips.0") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.cloud.chips.0")}
+                </span>
+              )}
+              {t("sovereignty.cloud.chips.1") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.cloud.chips.1")}
+                </span>
+              )}
+              {t("sovereignty.cloud.chips.2") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.cloud.chips.2")}
+                </span>
+              )}
+              {t("sovereignty.cloud.chips.3") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.cloud.chips.3")}
+                </span>
+              )}
             </div>
           </div>
         </WobbleCard>
@@ -99,24 +115,30 @@ Déploiement hybride ou 100% local selon vos besoins de souveraineté. Architect
                 <Lock className="text-orange-500" size={20} />
               </div>
               <h3 className="text-left text-balance text-base sm:text-lg font-semibold tracking-[-0.015em] text-gray-900">
-                Chiffrement Avancé
+                {t("sovereignty.encryption.title")}
               </h3>
             </div>
             <p className="text-left text-base text-gray-700 leading-relaxed">
-              AES-256 et TLS  pour vos données en transit et au repos. Protection maximale contre toute intrusion.
+              {t("sovereignty.encryption.description")}
             </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                AES-256
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                TLS 1.3
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                DCPE
-              </span>
+              {t("sovereignty.encryption.chips.0") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.encryption.chips.0")}
+                </span>
+              )}
+              {t("sovereignty.encryption.chips.1") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.encryption.chips.1")}
+                </span>
+              )}
+              {t("sovereignty.encryption.chips.2") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.encryption.chips.2")}
+                </span>
+              )}
             </div>
           </div>
         </WobbleCard>
@@ -129,23 +151,29 @@ Déploiement hybride ou 100% local selon vos besoins de souveraineté. Architect
                 <Key className="text-orange-500" size={20} />
               </div>
               <h3 className="text-left text-balance text-base sm:text-lg font-semibold tracking-[-0.015em] text-gray-900">
-                Infrastructure Kubernetes
+                {t("sovereignty.kubernetes.title")}
               </h3>
             </div>
             <p className="text-left text-base text-gray-700 leading-relaxed">
-Architecture isolée et résiliente avec haute disponibilité garantie.            </p>
+{t("sovereignty.kubernetes.description")}            </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Scalabilité
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Résilience
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Isolé
-              </span>
+              {t("sovereignty.kubernetes.chips.0") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.kubernetes.chips.0")}
+                </span>
+              )}
+              {t("sovereignty.kubernetes.chips.1") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.kubernetes.chips.1")}
+                </span>
+              )}
+              {t("sovereignty.kubernetes.chips.2") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.kubernetes.chips.2")}
+                </span>
+              )}
             </div>
           </div>
         </WobbleCard>
@@ -158,24 +186,30 @@ Architecture isolée et résiliente avec haute disponibilité garantie.         
                 <Shield className="text-orange-500" size={20} />
               </div>
               <h3 className="text-left text-balance text-base sm:text-lg font-semibold tracking-[-0.015em] text-gray-900">
-                Protection Données
+                {t("sovereignty.dataProtection.title")}
               </h3>
             </div>
             <p className="text-left text-base text-gray-700 leading-relaxed">
-              Conformité RGPD, NIS2, AI Act et certifications ISO 27001 / SOC 2. Vos données sensibles entre de bonnes mains.
+              {t("sovereignty.dataProtection.description")}
             </p>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Sécurité
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                RGPD
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Conformité
-              </span>
+              {t("sovereignty.dataProtection.chips.0") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.dataProtection.chips.0")}
+                </span>
+              )}
+              {t("sovereignty.dataProtection.chips.1") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.dataProtection.chips.1")}
+                </span>
+              )}
+              {t("sovereignty.dataProtection.chips.2") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.dataProtection.chips.2")}
+                </span>
+              )}
             </div>
           </div>
         </WobbleCard>
@@ -190,39 +224,45 @@ Architecture isolée et résiliente avec haute disponibilité garantie.         
                     <Eye className="text-orange-500" size={20} />
                   </div>
                   <h3 className="text-left text-balance text-lg sm:text-xl md:text-2xl font-semibold tracking-[-0.015em] text-gray-900">
-                    Supervision continue
+                    {t("sovereignty.supervision.title")}
                   </h3>
                 </div>
                 <p className="text-left text-base sm:text-base text-gray-700 leading-relaxed">
-Contrôle d'accès basé sur les rôles (RBAC) et surveillance continue des systèmes pour garantir une transparence totale.                </p>
+{t("sovereignty.supervision.description")}                </p>
               </div>
               <div className="flex flex-wrap sm:flex-nowrap items-center gap-3 sm:gap-4 w-full lg:w-auto">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="text-green-500 sm:w-5 sm:h-5 w-4 h-4" />
-                  <span className="text-gray-700 text-xs sm:text-sm font-medium">100% Conforme</span>
+                  <span className="text-gray-700 text-xs sm:text-sm font-medium">{t("sovereignty.supervision.badges.0")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="text-green-500 sm:w-5 sm:h-5 w-4 h-4" />
-                  <span className="text-gray-700 text-xs sm:text-sm font-medium">Surveillance Active</span>
+                  <span className="text-gray-700 text-xs sm:text-sm font-medium">{t("sovereignty.supervision.badges.1")}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle className="text-green-500 sm:w-5 sm:h-5 w-4 h-4" />
-                  <span className="text-gray-700 text-xs sm:text-sm font-medium">Souverain</span>
+                  <span className="text-gray-700 text-xs sm:text-sm font-medium">{t("sovereignty.supervision.badges.2")}</span>
                 </div>
               </div>
             </div>
           </div>
           <div className="absolute inset-x-0 bottom-0 bg-white p-3 sm:p-4 transition-colors duration-300 ease-out">
             <div className="flex flex-wrap gap-1.5 sm:gap-2">
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                RBAC
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Transparence
-              </span>
-              <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
-                Intégrité
-              </span>
+              {t("sovereignty.supervision.chips.0") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.supervision.chips.0")}
+                </span>
+              )}
+              {t("sovereignty.supervision.chips.1") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.supervision.chips.1")}
+                </span>
+              )}
+              {t("sovereignty.supervision.chips.2") && (
+                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-white border border-orange-500 rounded-full text-orange-500 text-xs sm:text-sm font-medium transition-colors duration-300 group-hover:bg-orange-500 group-hover:text-white">
+                  {t("sovereignty.supervision.chips.2")}
+                </span>
+              )}
             </div>
           </div>
         </WobbleCard>

@@ -1,6 +1,6 @@
 "use client"
 
-import {  useEffect } from "react"
+import { useEffect } from "react"
 import { HeroScrollDemo } from "@/components/section/hero/HeroScrollDemo"
 import { NavbarDemo } from "@/components/section/nav/NavbarDemo"
 import SovereigntySection from "@/components/section/sovereignity/sovereignty-section"
@@ -11,9 +11,24 @@ import { ArchitectureDemo } from "@/components/section/architechture/architectur
 import { ProsperifyFAQ } from "@/components/section/faq/prosperify-faq"
 import ContactForm from "@/components/contactForm/contactForm"
 import ProsperifyFeatures from "@/components/section/features/prosperify-features"
-const ProsperifyLanding = () => {
+import { useTranslation } from "react-i18next"
+import i18n from "@/lib/i18n"
+
+interface ProsperifyLandingProps {
+  lang?: string
+}
+
+const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
+
+  const { t } = useTranslation()
 
   useEffect(() => {
+    if (lang === "fr" || lang === "en") {
+      i18n.changeLanguage(lang).catch(() => {
+        // ignore
+      })
+    }
+
     const observerOptions = {
       threshold: 0.1,
       rootMargin: "0px 0px -50px 0px",
@@ -35,7 +50,7 @@ const ProsperifyLanding = () => {
     return () => {
       observer.disconnect()
     }
-  }, [])
+  }, [lang])
 
   return (
     <>
@@ -60,7 +75,7 @@ const ProsperifyLanding = () => {
 
 {/* Fonctionnalités */}
 <section id="features" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
-        <ProsperifyFeatures />
+<ProsperifyFeatures />
 </section>
 
 {/* Offres */}
@@ -82,12 +97,12 @@ const ProsperifyLanding = () => {
 
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-            Une Architecture Pensée <br />Pour
-            
-            La <span className="text-orange-500">Précision</span>
+            {t("architecture.titlePrefix")} <br />Pour
+
+            La <span className="text-orange-500">{t("architecture.titleHighlight")}</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-            Chaque étape optimisée pour des réponses fiables, sourcées et pertinentes
+            {t("architecture.subtitle")}
           </p>
         </div>
         <ArchitectureDemo />
@@ -112,18 +127,17 @@ const ProsperifyLanding = () => {
       <section id="contact" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
           <div className="flex justify-center mb-6">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
-            CONTACT
+            {t("contact.badge")}
           </div>
         </div>
         <div className="max-w-4xl mx-auto text-center scroll-animate">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-            Passez À La Vitesse Supérieure,
+            {t("contact.titleLine1")}
             <br />
-            En Toute <span style={{ color: "#ff6a13" }}>Sécurité</span>
+            En Toute <span style={{ color: "#ff6a13" }}>{t("contact.titleHighlight")}</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
-            Rejoignez les entreprises qui ont déjà fait le choix de l&apos;intelligence artificielle pour optimiser leur
-            gestion documentaire.
+            {t("contact.subtitle")}
           </p>
           <div  className="flex flex-col sm:flex-row gap-4 justify-center">
             <ContactForm />
@@ -143,48 +157,48 @@ const ProsperifyLanding = () => {
           Prosperify
         </div>
         <p className="text-muted-foreground text-xs sm:text-sm">
-          Transformez vos données en avantage concurrentiel.
+          {t("footer.tagline")}
         </p>
       </div>
 
       {/* Product */}
       <div>
-        <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Produit</h3>
+        <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.product")}</h3>
         <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
           <li>
             <a href="#accueil" className="hover:text-primary transition-colors">
-              Accueil
+              {t("footer.links.home")}
             </a>
           </li>
           <li>
             <a href="#workflow" className="hover:text-primary transition-colors">
-              Workflow
+              {t("footer.links.workflow")}
             </a>
             
           </li>
           <li>
             <a href="#fonctionnalités" className="hover:text-primary transition-colors">
-              Fonctionnalités
+              {t("footer.links.features")}
             </a>
           </li>
           <li>
             <a href="#products" className="hover:text-primary transition-colors">
-              Offres
+              {t("footer.links.products")}
             </a>
           </li>
           <li>
             <a href="#architecture" className="hover:text-primary transition-colors">
-              Architecture
+              {t("footer.links.architecture")}
             </a>
           </li>
           <li>
               <a href="#souveraineté" className="hover:text-primary transition-colors">
-              Souveraineté
+              {t("footer.links.sovereignty")}
             </a>
           </li>
           <li>
             <a href="#integration" className="hover:text-primary transition-colors">
-              Intégration
+              {t("footer.links.integration")}
             </a>
           </li>
           
@@ -193,22 +207,22 @@ const ProsperifyLanding = () => {
 
       {/* Support */}
       <div>
-        <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Support</h3>
+        <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.support")}</h3>
         <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
           
           <li>
             <a href="#faq" className="hover:text-primary transition-colors">
-              FAQ
+              {t("footer.links.faq")}
             </a>
           </li>
           <li>
             <a href="#contact" className="hover:text-primary transition-colors">
-              Contact
+              {t("footer.links.contact")}
             </a>
           </li>
           <li>
             <a href="/roadmap" className="hover:text-primary transition-colors">
-              Roadmap
+              {t("footer.links.roadmap")}
             </a>
           </li>
         </ul>
@@ -216,21 +230,21 @@ const ProsperifyLanding = () => {
 
       {/* Légal */}
       <div>
-        <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Légal</h3>
+        <h3 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t("footer.legal")}</h3>
         <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-muted-foreground">
           <li>
             <a href="#confidentialite" className="hover:text-primary transition-colors">
-              Confidentialité
+              {t("footer.links.privacy")}
             </a>
           </li>
           <li>
             <a href="#conditions" className="hover:text-primary transition-colors">
-              Conditions
+              {t("footer.links.terms")}
             </a>
           </li>
           <li>
             <a href="#rgpd" className="hover:text-primary transition-colors">
-              RGPD
+              {t("footer.links.rgpd")}
             </a>
           </li>
         </ul>
@@ -239,7 +253,7 @@ const ProsperifyLanding = () => {
 
     <div className="border-t border-gray-100 mt-6 sm:mt-8 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
-        © 2025 Prosperify. Tous droits réservés.
+        {t("footer.copyright")}
       </p>
       <div className="flex items-center gap-4">
         <a
