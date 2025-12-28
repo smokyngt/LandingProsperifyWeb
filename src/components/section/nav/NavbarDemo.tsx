@@ -18,6 +18,31 @@ import i18n from "@/lib/i18n"; // initialise i18next et expose la langue courant
 import Link from "next/link";
 import { motion } from "motion/react";
 
+const FlagFR = () => (
+  <span
+    aria-label="Français"
+    className="inline-flex h-3 w-4 items-center justify-center overflow-hidden rounded-[2px] border border-orange-300 align-middle"
+  >
+    <span className="flex h-full w-full">
+      <span className="h-full w-1/3 bg-[#0055A4]" />
+      <span className="h-full w-1/3 bg-white" />
+      <span className="h-full w-1/3 bg-[#EF4135]" />
+    </span>
+  </span>
+);
+
+const FlagEN = () => (
+  <span
+    aria-label="Anglais"
+    className="inline-flex h-3 w-4 items-center justify-center overflow-hidden rounded-[2px] border border-orange-300 bg-white align-middle"
+  >
+    <span className="relative block h-full w-full">
+      <span className="absolute inset-y-0 left-1/2 w-[30%] -translate-x-1/2 bg-red-600" />
+      <span className="absolute inset-x-0 top-1/2 h-[30%] -translate-y-1/2 bg-red-600" />
+    </span>
+  </span>
+);
+
 export function NavbarDemo() {
   const { t } = useTranslation();
   const pathname = usePathname();
@@ -84,8 +109,8 @@ export function NavbarDemo() {
                   onClick={() => switchLanguage("fr")}
                   className={
                     currentLang === "fr"
-                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5"
-                      : "text-orange-500 px-2 py-0.5"
+                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5 flex items-center justify-center"
+                      : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
                   }
                   whileTap={{ scale: 0.9 }}
                   animate={{
@@ -94,7 +119,7 @@ export function NavbarDemo() {
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  FR
+                  <FlagFR />
                 </motion.button>
                 <span className="text-gray-400">/</span>
                 <motion.button
@@ -102,8 +127,8 @@ export function NavbarDemo() {
                   onClick={() => switchLanguage("en")}
                   className={
                     currentLang === "en"
-                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5"
-                      : "text-orange-500 px-2 py-0.5"
+                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5 flex items-center justify-center"
+                      : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
                   }
                   whileTap={{ scale: 0.9 }}
                   animate={{
@@ -112,7 +137,7 @@ export function NavbarDemo() {
                   }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 >
-                  EN
+                  <FlagEN />
                 </motion.button>
               </div>
               <NavbarButton href="#contact" variant="primary">
@@ -143,8 +168,8 @@ export function NavbarDemo() {
                 onClick={() => switchLanguage("fr")}
                 className={
                   currentLang === "fr"
-                    ? "font-semibold text-white bg-orange-500 rounded-full px-3 py-1"
-                    : "text-orange-500 px-3 py-1"
+                    ? "font-semibold text-white bg-orange-500 rounded-full px-3 py-1 flex items-center justify-center"
+                    : "text-orange-500 px-3 py-1 flex items-center justify-center"
                 }
                 whileTap={{ scale: 0.9 }}
                 animate={{
@@ -153,7 +178,7 @@ export function NavbarDemo() {
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                FR
+                <FlagFR />
               </motion.button>
               <span className="text-gray-400">/</span>
               <motion.button
@@ -161,8 +186,8 @@ export function NavbarDemo() {
                 onClick={() => switchLanguage("en")}
                 className={
                   currentLang === "en"
-                    ? "font-semibold text-white bg-orange-500 rounded-full px-3 py-1"
-                    : "text-orange-500 px-3 py-1"
+                    ? "font-semibold text-white bg-orange-500 rounded-full px-3 py-1 flex items-center justify-center"
+                    : "text-orange-500 px-3 py-1 flex items-center justify-center"
                 }
                 whileTap={{ scale: 0.9 }}
                 animate={{
@@ -171,7 +196,7 @@ export function NavbarDemo() {
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                EN
+                <FlagEN />
               </motion.button>
             </div>
             {navItems.map((item, idx) => (
