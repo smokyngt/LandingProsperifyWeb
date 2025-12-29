@@ -86,17 +86,19 @@ export function NavbarDemo() {
     // Si ce n'est pas une ancre (#...), on renvoie tel quel (/roadmap, etc.)
     if (!link.startsWith("#")) return link;
 
-    // Sur les pages de landing (/fr, /en, /), on reste sur la même page
-    if (pathname === "/" || pathname.startsWith("/fr") || pathname.startsWith("/en")) {
+    // Sur la page de landing (/), on reste sur la même page
+    if (pathname === "/") {
       return link;
     }
 
-    // Depuis /roadmap (ou autre), on renvoie vers la page d'accueil avec la bonne langue
-    const lang = i18n.language === "en" ? "en" : "fr";
-    return `/${lang}${link}`;
+    // Depuis /roadmap (ou autre), on renvoie vers la page d'accueil sans segment de langue
+    return `/${link}`;
   };
 
   const navItems = baseItems.map((i) => ({ name: t(i.nameKey), link: resolveLink(i.link) }));
+
+  const isHome = pathname === "/";
+  const contactHref = isHome ? "#contact" : "/#contact";
 
   return (
     <div className="relative w-full z-[10000]">
@@ -105,50 +107,56 @@ export function NavbarDemo() {
         <NavBody>
           <NavbarLogo />
           <NavItems items={navItems} />
-          {pathname !== "/roadmap" && (
-            <div className="flex items-center gap-4 relative z-20">
-              <div className="flex items-center gap-1 text-xs border border-orange-300 rounded-full px-2 py-2 bg-orange-50/90 text-orange-600 shadow-sm">
-                <motion.button
-                  type="button"
-                  onClick={() => switchLanguage("fr")}
-                  className={
-                    currentLang === "fr"
-                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-1 flex items-center justify-center"
-                      : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
-                  }
-                  whileTap={{ scale: 0.9 }}
-                  animate={{
-                    opacity: currentLang === "fr" ? 1 : 0.4,
-                    scale: currentLang === "fr" ? 1.08 : 0.94,
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <FlagFR />
-                </motion.button>
-                <span className="text-gray-400">/</span>
-                <motion.button
-                  type="button"
-                  onClick={() => switchLanguage("en")}
-                  className={
-                    currentLang === "en"
-                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-1 flex items-center justify-center"
-                      : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
-                  }
-                  whileTap={{ scale: 0.9 }}
-                  animate={{
-                    opacity: currentLang === "en" ? 1 : 0.4,
-                    scale: currentLang === "en" ? 1.08 : 0.94,
-                  }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                >
-                  <FlagEN />
-                </motion.button>
-              </div>
-              <NavbarButton href="#contact" variant="primary">
-                {t("footer.links.contact")} 
-              </NavbarButton>
+          <div className="flex items-center gap-4 relative z-20">
+            <div className="flex items-center gap-1 text-xs border border-orange-300 rounded-full px-2 py-2 bg-orange-50/90 text-orange-600 shadow-sm">
+              <motion.button
+                type="button"
+                onClick={() => switchLanguage("fr")}
+                className={
+                  currentLang === "fr"
+                    ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-1 flex items-center justify-center"
+                    : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
+                }
+                whileTap={{ scale: 0.9 }}
+                animate={{
+                  opacity: currentLang === "fr" ? 1 : 0.4,
+                  scale: currentLang === "fr" ? 1.08 : 0.94,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <FlagFR />
+              </motion.button>
+              <span className="text-gray-400">/</span>
+              <motion.button
+                type="button"
+                onClick={() => switchLanguage("en")}
+                className={
+                  currentLang === "en"
+                    ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-1 flex items-center justify-center"
+                    : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
+                }
+                whileTap={{ scale: 0.9 }}
+                animate={{
+                  opacity: currentLang === "en" ? 1 : 0.4,
+                  scale: currentLang === "en" ? 1.08 : 0.94,
+                }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              >
+                <FlagEN />
+              </motion.button>
             </div>
-          )}
+              {isHome ? (
+                <NavbarButton href={contactHref} variant="primary">
+                  {t("footer.links.contact")} 
+                </NavbarButton>
+              ) : (
+                <Link href={contactHref} scroll>
+                  <NavbarButton as="span" variant="primary">
+                    {t("footer.links.contact")} 
+                  </NavbarButton>
+                </Link>
+              )}
+          </div>
         </NavBody>
 
         {/* Mobile Navigation */}

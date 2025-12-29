@@ -1,19 +1,20 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import ProsperifyLanding from "./prosperify-landing";
+import i18n from "@/lib/i18n";
 
 export default function Home() {
-  const router = useRouter();
-
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const navigatorLang = (navigator.language || "").toLowerCase();
     const lang = navigatorLang.startsWith("fr") ? "fr" : "en";
 
-    router.replace(`/${lang}`);
-  }, [router]);
+    i18n.changeLanguage(lang).catch(() => {
+      // ignore
+    });
+  }, []);
 
-  return null;
+  return <ProsperifyLanding />;
 }
