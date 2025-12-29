@@ -141,7 +141,7 @@
   "architecture": {
     "titlePrefix": "Une Architecture Pensée",
     "titleHighlight": "Précision",
-    "subtitle": "Chaque étape optimisée pour des réponses fiables, sourcées et pertinentes",
+    "subtitle": "Chaque étape optimisée pour des réponses fiables, sourcées et pertinentes.",
     "steps": [
       {
         "title": "Collecte et Prétraitement",
@@ -311,7 +311,7 @@
     "titleLine1": "Questions",
     "titleHighlight": "Fréquemment",
     "titleLine2": "Posées",
-    "subtitle": "Tout ce que vous devez savoir sur Prosperify et la sécurité de vos données",
+    "subtitle": "Tout ce que vous devez savoir sur Prosperify et la sécurité de vos données.",
     "items": [
       {
         "question": "Mes données sont-elles accessibles à des tiers ou à vos équipes ?",
