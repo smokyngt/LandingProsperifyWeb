@@ -33,10 +33,14 @@ const FlagFR = () => (
 
 const FlagEN = () => (
   <span
-    aria-label="Anglais"
-    className="inline-flex h-3 w-4 items-center justify-center overflow-hidden rounded-[2px] border border-orange-300 bg-white align-middle"
+    aria-label="Royaume-Uni"
+    className="inline-flex h-3 w-4 items-center justify-center overflow-hidden rounded-[2px] border border-orange-300 bg-[#012169] align-middle"
   >
     <span className="relative block h-full w-full">
+      {/* Croix blanche */}
+      <span className="absolute inset-y-0 left-1/2 w-[60%] -translate-x-1/2 bg-white" />
+      <span className="absolute inset-x-0 top-1/2 h-[60%] -translate-y-1/2 bg-white" />
+      {/* Croix rouge */}
       <span className="absolute inset-y-0 left-1/2 w-[30%] -translate-x-1/2 bg-red-600" />
       <span className="absolute inset-x-0 top-1/2 h-[30%] -translate-y-1/2 bg-red-600" />
     </span>
@@ -109,7 +113,7 @@ export function NavbarDemo() {
                   onClick={() => switchLanguage("fr")}
                   className={
                     currentLang === "fr"
-                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5 flex items-center justify-center"
+                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-1 flex items-center justify-center"
                       : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
                   }
                   whileTap={{ scale: 0.9 }}
@@ -127,7 +131,7 @@ export function NavbarDemo() {
                   onClick={() => switchLanguage("en")}
                   className={
                     currentLang === "en"
-                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-0.5 flex items-center justify-center"
+                      ? "font-semibold text-white bg-orange-500 rounded-full px-2 py-1 flex items-center justify-center"
                       : "text-orange-500 px-2 py-0.5 flex items-center justify-center"
                   }
                   whileTap={{ scale: 0.9 }}
