@@ -103,7 +103,7 @@ export function NavbarDemo() {
           <NavItems items={navItems} />
           {pathname !== "/roadmap" && (
             <div className="flex items-center gap-4 relative z-20">
-              <div className="flex items-center gap-1 text-xs border border-orange-300 rounded-full px-2 py-1 bg-orange-50/90 text-orange-600 shadow-sm">
+              <div className="flex items-center gap-1 text-xs border border-orange-300 rounded-full px-2 py-2 bg-orange-50/90 text-orange-600 shadow-sm">
                 <motion.button
                   type="button"
                   onClick={() => switchLanguage("fr")}
