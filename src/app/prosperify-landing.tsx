@@ -177,7 +177,7 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
             
           </li>
           <li>
-            <a href="#fonctionnalités" className="hover:text-primary transition-colors">
+            <a href="#features" className="hover:text-primary transition-colors">
               {t("footer.links.features")}
             </a>
           </li>
