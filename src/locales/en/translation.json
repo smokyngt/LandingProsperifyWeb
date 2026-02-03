@@ -1,0 +1,507 @@
+{
+  "meta": {
+    "title": "Prosperify - Sovereign AI for your data",
+    "description": "Optimize your document management with Prosperify's sovereign AI. Security, accuracy and seamless integration."
+  },
+  "hero": {
+    "titleLine1": "Unlock the power",
+    "titleLine2Prefix": "of your",
+    "titleLine2Highlight": "data",
+    "subtitle": "Turn your documents into actionable insights with Prosperify"
+  },
+  "workflow": {
+    "badge": "WORKFLOW",
+    "title": "A",
+    "titleHighlight": "Streamlined",
+    "titleSuffix": "Workflow for Your Teams",
+    "subtitle": "Fewer clicks, more impact. Save time at every step of your document management."
+  },
+  "workflowTabs": {
+    "create": {
+      "title": "Create",
+      "heading": "Create an Assistant",
+      "subtitle": "Configure your specialized assistant",
+      "assistantNameLabel": "Assistant name",
+      "assistantNameValue": "Transaction & Legal Assistant",
+      "documentsLabel": "Linked documents",
+      "documentsTransactionsName": "Transactions_2024.xlsx",
+      "button": "Create Assistant"
+    },
+    "unify": {
+      "title": "Unify",
+      "subtitle": "All types of data: structured or unstructured",
+      "dropHere": "Drag and drop your files here",
+      "browse": "Browse files",
+      "heading": "Import Your Documents",
+      "formatsInfo": "PDF, Word, Excel, PowerPoint, CSV, JSON...",
+      "filetypePdf": "PDF",
+      "filetypeCsv": "CSV",
+      "filetypeDocx": "DOCX",
+      "filetypeJson": "JSON"
+    },
+    "chat": {
+      "title": "Chat",
+      "assistantName": "Transaction & Legal Assistant",
+      "searchPlaceholder": "Search...",
+      "newChat": "New Chat",
+      "botWelcome": "Hello! I can help you search through your indexed PDF documents. Ask me a question about your documents.",
+      "userQuestion": "What is the initial term of the Verdi contract and is it renewable?",
+      "answer": {
+        "prefix": "According to the document",
+        "middle": "the initial term of the contract is",
+        "highlight": "three (3) years",
+        "suffix": "It may be renewed by express written agreement of the Parties."
+      },
+      "inputPlaceholder": "Ask a question..."
+    }
+  },
+  "features": {
+    "badge": "FEATURES",
+    "title": "An All-in-One",
+    "titleHighlight": "Document Intelligence",
+    "subtitle": "A unified platform that turns your documents into actionable insights with accuracy and governance.",
+    "items": {
+      "precision": {
+        "title": "Accuracy & Trust",
+        "shortTitle": "Accuracy",
+        "subtitle": "Sentence-level citations",
+        "description": "Answers linked to the exact sentence in the document. Automatic flagging of uncertainty zones."
+      },
+      "coverage": {
+        "title": "Document coverage",
+        "shortTitle": "Coverage",
+        "subtitle": "Multimodal analysis",
+        "description": "Full analysis: text, tables, figures and visuals. Unified processing of structured and unstructured data."
+      },
+      "performance": {
+        "title": "Performance & Experience",
+        "shortTitle": "Performance",
+        "subtitle": "Real-time results",
+        "description": "Parallel search across relevant sources. Progressive, real-time results."
+      },
+      "governance": {
+        "title": "Governance & Isolation",
+        "shortTitle": "Governance",
+        "subtitle": "Strict compartmentalization",
+        "description": "Strict assistant-level isolation. Fine-grained role controls for import and consultation."
+      },
+      "orchestration": {
+        "title": "Agentic orchestration",
+        "shortTitle": "Intelligence",
+        "subtitle": "Proactive self-correction",
+        "description": "Automatic evaluation of answer quality. Self-correction and reinforced validation with verified citations."
+      },
+      "differentiation": {
+        "title": "Strategic differentiation",
+        "shortTitle": "Sovereignty",
+        "subtitle": "Sovereign European solution",
+        "description": "European sovereign alternative to US solutions. Far beyond text search: a complete and verifiable document intelligence."
+      }
+    }
+  },
+  "sovereignty": {
+    "badge": "SECURITY & SOVEREIGNTY",
+    "titlePrefix": "Your Data,",
+    "titleHighlight": "Protected",
+    "titleSuffix": "and Sovereign",
+    "subtitle": "European hosting compliant with GDPR. Maximum security, guaranteed sovereignty.",
+    "mainCard": {
+      "titleLine1": "Your Data, Protected",
+      "titleLine2": "and Sovereign",
+      "description": "Data centers in Germany and France. End-to-end encryption, full traceability, native GDPR compliance.",
+      "chips": ["Protection", "Confidentiality", "Traceability"]
+    },
+    "cloud": {
+      "title": "Dedicated Cloud",
+      "description": "Hybrid or fully on-prem deployment depending on your sovereignty needs. Customizable and scalable architecture.",
+      "chips": ["Hybrid", "On-prem", "Scalable", "Customizable"]
+    },
+    "encryption": {
+      "title": "Advanced Encryption",
+      "description": "AES-256 and TLS for your data in transit and at rest. Maximum protection against any intrusion.",
+      "chips": ["AES-256", "TLS 1.3", "DCPE"]
+    },
+    "kubernetes": {
+      "title": "Kubernetes Infrastructure",
+      "description": "Isolated and resilient architecture with guaranteed high availability.",
+      "chips": ["Scalability", "Resilience", "Isolation"]
+    },
+    "dataProtection": {
+      "title": "Data Protection",
+      "description": "GDPR, NIS2, AI Act compliance. Your sensitive data in safe hands.",
+      "chips": ["Security", "GDPR", "Compliance"]
+    },
+    "supervision": {
+      "title": "Continuous monitoring",
+      "description": "Role-based access control (RBAC) and continuous system monitoring to guarantee full transparency.",
+      "chips": ["RBAC", "Transparency", "Integrity"],
+      "badges": ["100% Compliant", "Active Monitoring", "Sovereign"]
+    }
+  },
+  "architecture": {
+    "titlePrefix": "An Architecture Designed",
+    "titleHighlight": "Accuracy",
+    "subtitle": "Each step optimized for reliable, sourced and relevant answers.",
+    "steps": [
+      {
+        "title": "Collection & Preprocessing",
+        "description": "Automatic centralization of your documents from all sources with optimized cleaning and normalization."
+      },
+      {
+        "title": "Analysis & Labeling",
+        "description": "Automatic content extraction and AI-optimized representations for contextual understanding."
+      },
+      {
+        "title": "Segmentation & Indexing",
+        "description": "Intelligent chunking and advanced indexing for instant retrieval of relevant information."
+      },
+      {
+        "title": "Query Understanding",
+        "description": "Smart intent analysis to maximize the relevance and accuracy of results."
+      },
+      {
+        "title": "Hybrid Search",
+        "description": "Simultaneous multi-source querying: textual, visual and contextual for exhaustive coverage."
+      },
+      {
+        "title": "Filtering & Traceability",
+        "description": "Qualified results with full citations to guarantee transparency and source verification."
+      },
+      {
+        "title": "Interactive Display",
+        "description": "Intuitive, customizable interface for instant access to your critical information."
+      }
+    ]
+  },
+  "integration": {
+    "badge": "EASY INTEGRATION",
+    "titlePrefix": "Ultra-fast",
+    "titleHighlight": "Integration",
+    "titleSuffix": "Zero Rebuild",
+    "subtitle": "Deploy Prosperify in a few days without reworking your existing tools.",
+    "steps": [
+      {
+        "title": "Scoping & objectives",
+        "description": "Choose the number of AI assistants, files to process, users, etc."
+      },
+      {
+        "title": "Connecting your documents",
+        "description": "Each team selects and organizes the key files."
+      },
+      {
+        "title": "Assistant configuration",
+        "description": "Configure assistants, business rules and confidentiality levels."
+      },
+      {
+        "title": "Testing & adjustments",
+        "description": "Explaining features and best practices."
+      },
+      {
+        "title": "Manage & update",
+        "description": "Add, archive or delete documents over time."
+      }
+    ]
+  },
+  "aiChat": {
+    "sidebar": {
+      "newConversation": "New conversation",
+      "search": "Search",
+      "filters": "Filters",
+      "history": "History",
+      "settings": "Settings"
+    },
+    "conversationsTitle": "CONVERSATIONS",
+    "conversations": {
+      "example1": "Verdi contract",
+      "example2": "Q4 Budget",
+      "example3": "HR Procedures",
+      "example4": "Monthly report"
+    },
+    "connectedAs": "Connected as",
+    "userRole": "Financial & Legal Controller",
+    "inputPlaceholder": "Ask a question about your documents... (You can drag and drop PDFs)",
+    "inputHint": "Press Enter to send, Shift+Enter for a new line",
+    "openDocumentFull": "Open Contrat_Verdi.pdf (page 10)",
+    "openDocumentShort": "Contrat_Verdi.pdf (page 10)",
+    "pdf": {
+      "prev": "Previous",
+      "pageInfo": "Page 1 of 15",
+      "next": "Next",
+      "contractNameMain": "Verdi_Contract.pdf",
+      "contractNameSecondary": "Q4_Financial_Report.pdf",
+      "title": "Verdi Contract.pdf",
+      "article1Title": "ARTICLE 1 – PURPOSE OF THE CONTRACT:",
+      "article1Body": "This Contract aims to organize the collaboration between VERDI and the PARTNER, including defining the research scope, pooling material and human resources, producing reports, and valorizing the results obtained.",
+      "article2Title": "ARTICLE 2 – TERM:",
+      "article2Part1": "This Contract enters into force on the date of signature for an initial term of",
+      "article2Highlight1": "three (3) years",
+      "article2Highlight2": "It may be renewed by express written agreement of the Parties. In the event of non-renewal, the obligations relating to confidentiality and intellectual property shall remain in force.",
+      "article2Part3": "This provision constitutes a guarantee of continuity, even after the end of the collaboration.",
+      "article3Title": "ARTICLE 3 – DEFINITIONS:",
+      "article3Body": "\"Results\" means any data, method, prototype, software, report or publication generated.",
+      "article4Title": "ARTICLE 4 – OBLIGATIONS OF THE PARTIES:",
+      "article4Part1": "VERDI undertakes to provide its scientific expertise, laboratories and qualified staff.",
+      "article4Highlight1": "In addition, the principles of scientific ethics and safety must be respected at all times."
+    }
+  },
+  "products": {
+    "badge": "OUR PLANS",
+    "titlePrefix": "One Solution, Three Levels",
+    "titleMiddle": "Of",
+    "titleHighlight": "Control",
+    "subtitle": "Choose the level of control that fits you best: secure cloud, hybrid deployment or fully local.",
+    "offers": [
+      {
+        "badge": "RECOMMENDED",
+        "title": "Dedicated Cloud",
+        "description": {
+          "part1": "A",
+          "highlight1": "fully hosted",
+          "part2": "cloud solution with dedicated infrastructure for",
+          "highlight2": "optimal performance",
+          "part3": "and",
+          "highlight3": "reinforced security"
+        },
+        "features": [
+          "High-performance dedicated infrastructure",
+          "Guaranteed security and compliance",
+          "Automatic maintenance and updates",
+          "Instant scalability"
+        ]
+      },
+      {
+        "badge": "ENHANCED SECURITY",
+        "title": "Hybrid",
+        "description": {
+          "highlight1": "Model hosted by us",
+          "part1": ", your data and infrastructure stay with you. The perfect balance between",
+          "highlight2": "innovation",
+          "part2": "and",
+          "highlight3": "control"
+        },
+        "features": [
+          "Your data stays on your infrastructure",
+          "AI model hosted and maintained by us",
+          "Maximum regulatory compliance",
+          "Full control over your information"
+        ]
+      },
+      {
+        "badge": "MAXIMUM SECURITY",
+        "title": "100% Local",
+        "description": {
+          "part1": "A solution",
+          "highlight1": "fully deployed",
+          "part2": "on your own infrastructure.",
+          "highlight2": "Full sovereignty",
+          "part3": "over your data with",
+          "highlight3": "complete autonomy"
+        },
+        "features": [
+          "Deployment on your infrastructure",
+          "Full data sovereignty",
+          "No external dependency",
+          "Maximum customization"
+        ]
+      }
+    ]
+  },
+  "faq": {
+    "badge": "FAQ",
+    "titleLine1": "Frequently",
+    "titleHighlight": "Asked",
+    "titleLine2": "Questions",
+    "subtitle": "Everything you need to know about Prosperify and the security of your data.",
+    "items": [
+      {
+        "question": "Are my data accessible to third parties or to your teams?",
+        "answer": "No. Your data are isolated, encrypted and never shared. Even our teams do not have access to them."
+      },
+      {
+        "question": "Does the AI continuously learn from my data?",
+        "answer": "No. Your data are never used to train our models. However, you can add or update your documents at any time to enrich your assistant's answers."
+      },
+      {
+        "question": "Is this suitable for confidential or legal documents?",
+        "answer": "Yes. Prosperify is designed to process sensitive documents securely, in compliance with legal standards."
+      },
+      {
+        "question": "How many users can use Prosperify at the same time?",
+        "answer": "As many as you need. The system is built for teams of any size."
+      },
+      {
+        "question": "How long does it take to deploy Prosperify in my company?",
+        "answer": "The timeline mainly depends on you: once your documents are ready, deployment takes 2 to 3 days."
+      },
+      {
+        "question": "Do users need training?",
+        "answer": "No. The interface is intuitive and easy to use. A few minutes are enough to get started. We also offer onboarding to help you adopt best practices from day one."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "CONTACT",
+    "titleLine1": "Level Up Your Operations,",
+    "titleHighlight": "Security",
+    "subtitle": "Join the companies that already leverage AI to optimize their document management.",
+    "form": {
+      "namePlaceholder": "Your full name",
+      "companyPlaceholder": "Your company name",
+      "emailPlaceholder": "Your email",
+      "phonePlaceholder": "Phone (optional)",
+      "subjectPlaceholder": "Select a subject",
+      "subjectInformation": "Request for information",
+      "subjectPartnership": "Quote / Partnership",
+      "subjectOther": "Other",
+      "messagePlaceholder": "Your message",
+      "submit": "Send",
+      "statusSending": "⏳ Sending...",
+      "statusSuccess": "✅ Message sent!",
+      "statusFixErrors": "❌ Please correct the errors above.",
+      "statusUnexpected": "❌ Unexpected error.",
+      "statusSendError": "❌ Sending error."
+    }
+  },
+  "footer": {
+    "tagline": "Turn your data into a competitive advantage.",
+    "product": "Product",
+    "support": "Support",
+    "legal": "Legal",
+    "links": {
+      "home": "Home",
+      "workflow": "Workflow",
+      "features": "Features",
+      "products": "Plans",
+      "architecture": "Architecture",
+      "sovereignty": "Sovereignty",
+      "integration": "Integration",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "roadmap": "Roadmap",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "rgpd": "GDPR"
+    },
+    "copyright": "© 2025 Prosperify. All rights reserved."
+  },
+  "roadmap": {
+    "metaTitle": "Roadmap - Prosperify",
+    "metaDescription": "Discover Prosperify's roadmap and our upcoming developments in sovereign AI.",
+    "items": [
+      {
+        "date": "06/14/2024",
+        "titlePrefix": "Start of the",
+        "titleHighlight": "Prosperify",
+        "lead": "Official launch of Prosperify, with a simple idea: revolutionize enterprise search and data management.",
+        "bodyPart1": "This milestone marks the birth of an ambitious project built around a single vision: enabling organizations to",
+        "bodyHighlight1": "fully leverage their data",
+        "bodyPart2": "by breaking information silos and opening the door to new opportunities thanks to a",
+        "bodyHighlight2": "smart document search technology",
+        "bodyPart3": ".",
+        "imageAlt": "Prosperify (logo, early stage)",
+        "imageSrc": "/logoo.png",
+        "imageClass": "h-35"
+      },
+      {
+        "date": "09/26/2024",
+        "titlePrefix": "Contact with",
+        "titleHighlight": "Orpi",
+        "lead": "First discussion with Orpi to explore a potential collaboration.",
+        "body": "A meeting dedicated to understanding the barriers related to data exploitation in French mid-sized companies, and to analysing the impact of information fragmentation on missed business opportunities.",
+        "imageAlt": "Orpi",
+        "imageSrc": "/orpi.webp",
+        "imageClass": "h-34"
+      },
+      {
+        "date": "10/03/2024",
+        "titlePrefix": "Design review with",
+        "titleHighlight": "ESA",
+        "lead": "Meeting with the European Space Agency for a first design review.",
+        "bodyPart1": "A discussion focused on understanding the",
+        "bodyHighlight1": "security standards",
+        "bodyPart2": "and",
+        "bodyHighlight2": "sovereignty requirements",
+        "bodyPart3": "demanded by such agencies, while exploring their interest in a",
+        "bodyHighlight3": "document search technology",
+        "bodyPart4": "adapted to their specific needs.",
+        "imageAlt": "ESA",
+        "imageSrc": "/esa.png",
+        "imageClass": "h-40"
+      },
+      {
+        "date": "01/02/2025",
+        "title": "Joining Pépite France",
+        "lead": "Prosperify joins the Pépite France network to support student innovation.",
+        "imageAlt": "Pépite France",
+        "imageSrc": "/pep.png",
+        "imageClass": "h-64"
+      },
+      {
+        "date": "01/04/2025",
+        "titlePrefix": "Meeting with",
+        "titleHighlight": "TUBA",
+        "lead": "Discussion with the TUBA ecosystem around urban innovation and new digital uses.",
+        "bodyPart1": "This meeting made it possible to explore the",
+        "bodyHighlight1": "challenges of leveraging data in urban environments",
+        "bodyPart2": "and to identify opportunities offered by Prosperify in a context of",
+        "bodyHighlight2": "territorial innovation",
+        "bodyPart3": ". A key moment to understand how our technology can address the challenges of",
+        "bodyHighlight3": "information centralization",
+        "bodyPart4": "and",
+        "bodyHighlight4": "data valorization",
+        "bodyPart5": "for local stakeholders.",
+        "imageAlt": "TUBA",
+        "imageSrc": "/tuba.png",
+        "imageClass": "h-44"
+      },
+      {
+        "date": "02/17/2025",
+        "titlePrefix": "Contact with",
+        "titleHighlight": "AXA",
+        "lead": "First discussion with AXA about a potential strategic collaboration.",
+        "bodyPart1": "A two-step meeting: first, an analysis of the",
+        "bodyHighlight1": "barriers related to document search",
+        "bodyPart2": "in large groups, as well as of the",
+        "bodyHighlight2": "tools currently in use",
+        "bodyPart3": ". Then, a",
+        "bodyHighlight3": "presentation of Prosperify",
+        "bodyPart4": ", its mission and the",
+        "bodyHighlight4": "technology used",
+        "bodyPart5": "to address these challenges.",
+        "imageAlt": "AXA",
+        "imageSrc": "/axaa.png",
+        "imageClass": "h-40"
+      },
+      {
+        "date": "05/12/2025",
+        "titlePrefix": "Joining",
+        "titleHighlight": "La French Tech",
+        "lead": "Prosperify joins La French Tech to become part of a national innovation ecosystem.",
+        "bodyPart1": "This integration marks a new milestone in Prosperify's development as a",
+        "bodyHighlight1": "member start-up",
+        "bodyPart2": ". It opens access to an",
+        "bodyHighlight2": "ultra-dynamic ecosystem of young companies",
+        "bodyPart3": ", offering unique opportunities in terms of synergies, partnerships and visibility within the French innovation network.",
+        "imageAlt": "La French Tech",
+        "imageSrc": "/fr.png",
+        "imageClass": "h-54"
+      },
+      {
+        "date": "08/2025",
+        "titlePrefix": "Official launch of",
+        "titleHighlight": "Prosperify",
+        "lead": "Go-to-market of the solution after several months of design, testing and strategic partnerships.",
+        "bodyPart1": "The launch represents the achievement of a vision: providing companies with a",
+        "bodyHighlight1": "sovereign AI assistant",
+        "bodyPart2": "capable of",
+        "bodyHighlight2": "centralizing",
+        "bodyPart3": "and",
+        "bodyHighlight3": "simplifying access to data",
+        "bodyPart4": ", while guaranteeing security, compliance and efficiency.",
+        "imageAlt": "Prosperify (launch)",
+        "imageSrc": "/logooo.png",
+        "imageClass": "h-auto"
+      }
+    ]
+  }
+}
