@@ -128,7 +128,7 @@
     },
     "dataProtection": {
       "title": "Protection Données",
-      "description": "Conformité RGPD, NIS2, AI Act. Vos données sensibles entre de bonnes mains.",
+      "description": "Conformité RGPD, NIS2, AI Act. Vos données sensibles ne quittent jamais leur environnement de confiance.",
       "chips": ["Sécurité", "RGPD", "Conformité"]
     },
     "supervision": {

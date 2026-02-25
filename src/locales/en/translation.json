@@ -128,7 +128,7 @@
     },
     "dataProtection": {
       "title": "Data Protection",
-      "description": "GDPR, NIS2, AI Act compliance. Your sensitive data in safe hands.",
+      "description": "Compliance with GDPR, NIS2, and the AI Act. Your sensitive data remains within your trusted environment at all times.",
       "chips": ["Security", "GDPR", "Compliance"]
     },
     "supervision": {
