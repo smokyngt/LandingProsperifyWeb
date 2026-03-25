@@ -251,6 +251,37 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
       </div>
     </div>
 
+    {/* Partenaires & Accompagnement */}
+    <div className="border-t border-gray-100 mt-6 sm:mt-8 pt-6 sm:pt-8">
+      <p className="text-xs sm:text-sm text-muted-foreground text-center mb-4 font-medium uppercase tracking-widest">
+        Accompagnement & Partenaires
+      </p>
+      <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+        {/* Pépite BEELYSS */}
+        <div className="flex flex-col items-center gap-1 group">
+          <img
+            src="/pep.png"
+            alt="Pépite BEELYSS Lyon Saint-Étienne"
+            className="h-10 sm:h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+          />
+          <span className="text-[10px] sm:text-xs text-muted-foreground text-center">
+            Pépite BEELYSS · Lyon Saint-Étienne
+          </span>
+        </div>
+        {/* French Tech */}
+        <div className="flex flex-col items-center gap-1 group">
+          <img
+            src="/fr.png"
+            alt="La French Tech"
+            className="h-10 sm:h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+          />
+          <span className="text-[10px] sm:text-xs text-muted-foreground text-center">
+            La French Tech
+          </span>
+        </div>
+      </div>
+    </div>
+
     <div className="border-t border-gray-100 mt-6 sm:mt-8 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
       <p className="text-muted-foreground text-xs sm:text-sm text-center sm:text-left">
         {t("footer.copyright")}
