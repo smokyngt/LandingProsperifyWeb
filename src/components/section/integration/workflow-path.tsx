@@ -6,6 +6,7 @@ import {
   useScroll,
   useTransform,
   useMotionValueEvent,
+  useSpring,
 } from "motion/react"
 import { useRef, useState, useEffect } from "react"
 import { Target, Link, Settings, ShieldCheck, Rocket } from "lucide-react"
@@ -242,51 +243,48 @@ export default function WorkflowPath() {
   const timelineRef = useRef<HTMLDivElement>(null)
   const [timelineHeight, setTimelineHeight] = useState(0)
   const [activeStep, setActiveStep] = useState(0)
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    if (timelineRef.current) {
-      const observer = new ResizeObserver(() => {
-        if (timelineRef.current) {
-          setTimelineHeight(timelineRef.current.getBoundingClientRect().height)
-        }
-      })
-      observer.observe(timelineRef.current)
-      return () => observer.disconnect()
-    }
-  }, [steps])
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+      if (timelineRef.current) {
+        setTimelineHeight(timelineRef.current.getBoundingClientRect().height);
+      }
+    };
+    
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [steps]);
 
-  // Scroll-based progress for the animated line
-  const { scrollYProgress } = useScroll({
-    target: timelineRef,
+  // Single scroll progress
+  const { scrollYProgress: rawProgress } = useScroll({
+    target: containerRef,
     offset: ["start 10%", "end 40%"],
   })
 
-  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, timelineHeight])
-  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
+  // Synchronized movement values
+  const heightTransform = useTransform(rawProgress, [0, 1], [0, timelineHeight])
+  const opacityTransform = useTransform(rawProgress, [0, 0.1], [0, 1])
 
-  // Track active step based on scroll
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    const totalSteps = steps.length
-    // Use Math.ceil so that as soon as you enter a section, it activates
-    const step = Math.ceil(latest * totalSteps)
-    setActiveStep(Math.min(step, totalSteps))
+  useMotionValueEvent(rawProgress, "change", (latest) => {
+    const step = Math.ceil(latest * steps.length)
+    setActiveStep(Math.min(step, steps.length))
   })
 
   return (
     <div className="max-w-7xl mx-auto">
-      {/* Badge */}
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
           {t("integration.badge")}
         </div>
       </div>
 
-      {/* Titre + description — centré en haut */}
       <div className="text-center mb-8 sm:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 leading-tight tracking-tight">
           {t("integration.titlePrefix")}{" "}
-    
-          <span className="text-orange-500">{t("integration.titleHighlight")}</span>{" "} <br />
+          <span className="text-orange-500">{t("integration.titleHighlight")}</span> <br />
           {t("integration.titleSuffix")}
         </h2>
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
@@ -294,97 +292,83 @@ export default function WorkflowPath() {
         </p>
       </div>
 
-      {/* Two-column layout */}
       <div
         ref={containerRef}
         className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start w-full"
       >
-        {/* ── Left: Timeline ── */}
+        {/* Timeline Content */}
         <div className="flex-1 w-full font-sans md:px-6 lg:px-10">
-          <div ref={timelineRef} className="relative max-w-3xl mx-auto pb-20">
+          <div ref={timelineRef} className="relative max-w-3xl mx-auto pb-40">
             {steps.map((step, index) => {
               const isActive = activeStep > index;
-              const Icon = index === 0 ? Target : index === 1 ? Link : index === 2 ? Settings : index === 3 ? ShieldCheck : Rocket;
+              const Icon = [Target, Link, Settings, ShieldCheck, Rocket][index] || Rocket;
+              
               return (
-              <div
-                key={index}
-                className="flex justify-start pt-10 md:pt-32 md:gap-10"
-              >
-                {/* Sticky dot + tag label */}
-                <div className="sticky flex flex-col md:flex-row z-20 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-                  <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
-                    <motion.div 
-                      className="h-4 w-4 rounded-full border p-2 shadow-sm" 
+                <div key={index} className="flex justify-start pt-10 md:pt-32 md:gap-10">
+                  <div className="sticky flex flex-col md:flex-row z-20 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+                    <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
+                      <motion.div
+                        className="h-4 w-4 rounded-full border shadow-sm"
+                        animate={{
+                          backgroundColor: isActive ? "#FF6A13" : "#e5e5e5",
+                          borderColor: isActive ? "#FF6A13" : "#d4d4d4",
+                          scale: isActive ? 1.3 : 1
+                        }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </div>
+                    <motion.h3
+                      className="hidden md:block text-xl md:pl-20 md:text-4xl lg:text-5xl font-bold whitespace-nowrap"
                       animate={{
-                        backgroundColor: isActive ? "#FF6A13" : "#e5e5e5",
-                        borderColor: isActive ? "#FF6A13" : "#d4d4d4",
-                        scale: isActive ? 1.3 : 1
+                        color: isActive ? "#FF6A13" : "#737373",
+                        scale: isActive ? 1.05 : 1,
+                        x: isActive ? 10 : 0
                       }}
-                      transition={{ duration: 0.3 }}
-                    />
+                    >
+                      {step.tag}
+                    </motion.h3>
                   </div>
-                  <motion.h3 
-                    className="hidden md:block text-xl md:pl-20 md:text-4xl lg:text-5xl font-bold whitespace-nowrap"
-                    animate={{
-                      color: isActive ? "#FF6A13" : "#737373",
-                      scale: isActive ? 1.05 : 1,
-                      x: isActive ? 10 : 0
-                    }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {step.tag}
-                  </motion.h3>
-                </div>
 
-                {/* Content */}
-                <div className="relative pl-20 pr-4 md:pl-4 w-full">
-                  <motion.h3 
-                    className="md:hidden block text-2xl mb-4 text-left font-bold whitespace-nowrap"
-                    animate={{
-                      color: isActive ? "#FF6A13" : "#737373",
-                      scale: isActive ? 1.05 : 1,
-                      originX: 0
-                    }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    {step.tag}
-                  </motion.h3>
-                  <div>
-                    <h4 className="text-xl sm:text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
-                      {step.title}
-                    </h4>
-                    <p className="text-sm sm:text-base text-gray-500 dark:text-neutral-400 leading-relaxed max-w-md mb-4">
-                      {step.description}
-                    </p>
-                    {step.badge && (
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-500/10 text-orange-600 rounded-full text-xs font-semibold">
-                        <Icon size={14} className="text-orange-500" />
-                        {step.badge}
-                      </div>
-                    )}
+                  <div className="relative pl-20 pr-4 md:pl-4 w-full">
+                    <motion.h3
+                      className="md:hidden block text-2xl mb-4 text-left font-bold"
+                      animate={{ color: isActive ? "#FF6A13" : "#737373" }}
+                    >
+                      {step.tag}
+                    </motion.h3>
+                    <div>
+                      <h4 className="text-xl sm:text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
+                        {step.title}
+                      </h4>
+                      <p className="text-sm sm:text-base text-gray-500 dark:text-neutral-400 leading-relaxed max-w-md mb-4">
+                        {step.description}
+                      </p>
+                      {step.badge && (
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-500/10 text-orange-600 rounded-full text-xs font-semibold">
+                          <Icon size={14} className="text-orange-500" />
+                          {step.badge}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
               )
             })}
 
-            {/* Animated gradient line */}
+            {/* Progress Line */}
             <div
               style={{ height: timelineHeight + "px" }}
-              className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+              className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
             >
               <motion.div
-                style={{
-                  height: heightTransform,
-                  opacity: opacityTransform,
-                }}
-                className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-orange-400 via-orange-100 to-transparent from-[0%] via-[40%] to-[100%] rounded-full"
+                style={{ height: heightTransform, opacity: opacityTransform }}
+                className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-orange-400 via-orange-100 to-transparent rounded-full will-change-transform"
               />
             </div>
           </div>
         </div>
 
-        {/* ── Right: Animated API Panel (sticky) ── */}
+        {/* Sticky API Panel */}
         <div className="w-full lg:w-[400px] lg:flex-shrink-0 lg:sticky lg:top-40 self-start">
           <AnimatedApiPanel activeStep={activeStep} t={t} />
         </div>
@@ -392,3 +376,4 @@ export default function WorkflowPath() {
     </div>
   )
 }
+

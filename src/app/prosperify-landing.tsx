@@ -55,14 +55,14 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
 
   return (
     <>
-      <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <div className="min-h-screen bg-background text-foreground relative overflow-x-clip">
         {/* Background Decorative Irregular Blobs */}
         <div className="absolute top-[-10%] right-[-10%] w-[1000px] h-[1000px] bg-orange-500/10 rounded-full blur-[180px] pointer-events-none z-0" />
         <div className="absolute top-[20%] left-[-20%] w-[800px] h-[800px] bg-orange-400/5 rounded-full blur-[150px] pointer-events-none z-0" />
         <div className="absolute top-[45%] right-[-15%] w-[900px] h-[900px] bg-orange-500/5 rounded-full blur-[200px] pointer-events-none z-0" />
         <div className="absolute top-[70%] left-[10%] w-[600px] h-[600px] bg-orange-400/5 rounded-full blur-[130px] pointer-events-none z-0" />
         <div className="absolute bottom-[-10%] right-[-5%] w-[1200px] h-[1200px] bg-orange-500/10 rounded-full blur-[200px] pointer-events-none z-0" />
-        
+
         {/* Irregular small glows */}
         <div className="absolute top-[15%] right-[20%] w-[300px] h-[300px] bg-orange-300/5 rounded-full blur-[100px] pointer-events-none z-0" />
         <div className="absolute top-[60%] left-[30%] w-[400px] h-[400px] bg-orange-300/5 rounded-full blur-[120px] pointer-events-none z-0" />

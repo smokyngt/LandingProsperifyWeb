@@ -34,7 +34,7 @@ export const HoverEffect = ({
             <AnimatePresence>
               {hoveredIndex === idx && (
                 <motion.span
-                 key={idx} // ✅ unique par card
+                  key={idx} // ✅ unique par card
                   className="absolute inset-0 h-full w-full bg-orange-50 block rounded-3xl"
                   layoutId="hoverBackground"
                   initial={{ opacity: 0 }}

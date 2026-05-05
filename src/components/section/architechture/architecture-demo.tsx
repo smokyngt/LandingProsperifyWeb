@@ -35,7 +35,7 @@ export const architectureSteps = [
   {
     title: "Segmentation et Indexation",
     description:
-        "Découpage intelligent et indexation avancée pour une récupération instantanée de l'information pertinente.",
+      "Découpage intelligent et indexation avancée pour une récupération instantanée de l'information pertinente.",
     link: "#",
     icon: FolderTree,
   },
