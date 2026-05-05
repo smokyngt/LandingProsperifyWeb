@@ -55,12 +55,23 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
 
   return (
     <>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+        {/* Background Decorative Irregular Blobs */}
+        <div className="absolute top-[-10%] right-[-10%] w-[1000px] h-[1000px] bg-orange-500/10 rounded-full blur-[180px] pointer-events-none z-0" />
+        <div className="absolute top-[20%] left-[-20%] w-[800px] h-[800px] bg-orange-400/5 rounded-full blur-[150px] pointer-events-none z-0" />
+        <div className="absolute top-[45%] right-[-15%] w-[900px] h-[900px] bg-orange-500/5 rounded-full blur-[200px] pointer-events-none z-0" />
+        <div className="absolute top-[70%] left-[10%] w-[600px] h-[600px] bg-orange-400/5 rounded-full blur-[130px] pointer-events-none z-0" />
+        <div className="absolute bottom-[-10%] right-[-5%] w-[1200px] h-[1200px] bg-orange-500/10 rounded-full blur-[200px] pointer-events-none z-0" />
+        
+        {/* Irregular small glows */}
+        <div className="absolute top-[15%] right-[20%] w-[300px] h-[300px] bg-orange-300/5 rounded-full blur-[100px] pointer-events-none z-0" />
+        <div className="absolute top-[60%] left-[30%] w-[400px] h-[400px] bg-orange-300/5 rounded-full blur-[120px] pointer-events-none z-0" />
+
         {/* Navigation */}
-        <div className="relative mt-1 w-full ">
+        <div className="relative mt-1 w-full z-10">
           <NavbarDemo />
         </div>
-        <main className="min-h-screen bg-transparent">
+        <main className="min-h-screen bg-transparent relative z-10">
           <section
             id="accueil"
             className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6  sm:mx-4 "
@@ -87,28 +98,28 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
             <ProductSection />
           </section>
 
-        {/* Architecture */}
-<section id="architecture" className="scroll-animate py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-center mb-6">
-          <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
-            ARCHITECTURE
-          </div>
-        </div>
+          {/* Architecture */}
+          <section id="architecture" className="scroll-animate py-16 px-4 sm:px-6  mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex justify-center mb-6">
+                <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
+                  ARCHITECTURE
+                </div>
+              </div>
 
-        <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-            {t("architecture.titlePrefix")} <br />Pour
+              <div className="text-center mb-12 sm:mb-16">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
+                  {t("architecture.titlePrefix")} <br />Pour
 
-            La <span className="text-orange-500">{t("architecture.titleHighlight")}</span>
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
-            {t("architecture.subtitle")}
-          </p>
-        </div>
-        <ArchitectureDemo />
-      </div>
-</section>
+                  La <span className="text-orange-500">{t("architecture.titleHighlight")}</span>
+                </h2>
+                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
+                  {t("architecture.subtitle")}
+                </p>
+              </div>
+              <ArchitectureDemo />
+            </div>
+          </section>
 
           {/* Souveraineté */}
           <section id="sovereignty" className="scroll-animate py-12 sm:py-16 px-4 sm:px-6 bg-transparent mx-2 sm:mx-4 mt-6 sm:mt-8 rounded-xl sm:rounded-2xl">

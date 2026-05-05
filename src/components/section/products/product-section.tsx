@@ -25,14 +25,14 @@ export default function ProductSection() {
       {/* Badge optionnel (déjà dans votre code) */}
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
-          {t("products.badge")}
+          {t("products.badge")} 
         </div>
       </div>
 
       {/* Titre et sous-titre */}
       <div className="text-center mb-12 sm:mb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 leading-tight tracking-tight">
-          {t("products.titlePrefix")}<br /> {t("products.titleMiddle")} <span className="text-orange-500">{t("products.titleHighlight")}</span>
+          {t("products.titlePrefix")} {t("products.titleMiddle")} <span className="text-orange-500">{t("products.titleHighlight")}</span>
         </h2>
         <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
           {t("products.subtitle")}

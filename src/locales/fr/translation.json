@@ -176,7 +176,7 @@
   "integration": {
     "badge": "INTÉGRATION SIMPLIFIÉE",
     "titlePrefix": "Intégration",
-    "titleHighlight": "Ultra-Rapide",
+    "titleHighlight": "Ultra-Rapide,",
     "titleSuffix": "Zéro Refonte",
     "subtitle": "Déployez Prosperify en quelques semaines sans refondre vos outils existants.",
     "steps": [
@@ -356,8 +356,8 @@
   },
   "contact": {
     "badge": "CONTACT",
-    "titleLine1": "Passez À La Vitesse Supérieure,",
-    "titleHighlight": "Sécurité",
+    "titleLine1": "Passez À La Vitesse Supérieure, en toute",
+    "titleHighlight": " Sécurité",
     "subtitle": "Rejoignez les entreprises qui ont déjà fait le choix de l'intelligence artificielle pour optimiser leur gestion documentaire.",
     "form": {
       "namePlaceholder": "Votre nom complet",

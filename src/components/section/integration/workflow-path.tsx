@@ -285,8 +285,8 @@ export default function WorkflowPath() {
       <div className="text-center mb-8 sm:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 leading-tight tracking-tight">
           {t("integration.titlePrefix")}{" "}
-          <br />
-          <span className="text-orange-500">{t("integration.titleHighlight")}</span>{" "}
+    
+          <span className="text-orange-500">{t("integration.titleHighlight")}</span>{" "} <br />
           {t("integration.titleSuffix")}
         </h2>
         <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">

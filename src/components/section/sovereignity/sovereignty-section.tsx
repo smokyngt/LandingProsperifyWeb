@@ -18,9 +18,8 @@ export default function SovereigntySection() {
       {/* Titre + description */}
       <div className="text-center mb-12 sm:mb-16">
         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 leading-tight text-white tracking-tight">
-          {t("sovereignty.titlePrefix")} 
-          <br />
-          <span className="text-orange-500">{t("sovereignty.titleHighlight")}</span> {t("sovereignty.titleSuffix")}
+          {t("sovereignty.titlePrefix")}
+          <span className="text-orange-500"> {t("sovereignty.titleHighlight")} </span>  <br /> {t("sovereignty.titleSuffix")}
         </h2>
         <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
           {t("sovereignty.subtitle")}
