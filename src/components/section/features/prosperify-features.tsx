@@ -91,6 +91,7 @@ export default function ProsperifyFeatures() {
                   <button
                     key={feature.id}
                     onClick={() => setActiveTab(index)}
+                    aria-label={t(feature.titleKey)}
                     className={`w-full p-2 py-3 sm:p-4 rounded-lg transition-all duration-300 ${isActive
                       ? "bg-orange-500/10 border-2 border-orange-500"
                       : "bg-[#1c1c1c] border-2 border-white/5 hover:bg-white/5"
@@ -126,6 +127,7 @@ export default function ProsperifyFeatures() {
                 <button
                   key={feature.id}
                   onClick={() => setActiveTab(index)}
+                  aria-label={t(feature.titleKey)}
                   className={`w-full text-left p-6 rounded-lg transition-all duration-300 cursor-pointer group ${isActive
                     ? "bg-orange-500/10 border-l-4 border-orange-500"
                     : "bg-transparent border-l-4 border-transparent hover:bg-white/5"

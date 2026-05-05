@@ -47,6 +47,7 @@ function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
         onClick={onToggle}
         className="w-full px-6 py-5 text-left flex items-center justify-between focus:outline-none focus:ring-2 focus:ring-orange-500/20 rounded-lg group cursor-pointer"
         aria-expanded={isOpen}
+        aria-label={question}
       >
         <h3 className="text-lg font-semibold text-gray-900 text-balance pr-6 group-hover:text-orange-600 transition-colors duration-200">
           {question}

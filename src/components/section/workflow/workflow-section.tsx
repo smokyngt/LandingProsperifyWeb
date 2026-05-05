@@ -22,8 +22,9 @@ function WorkflowSection() {
 
               <div className="space-y-4 sm:space-y-6">
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">{t("workflowTabs.create.assistantNameLabel")}</label>
+                  <label htmlFor="assistantName" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">{t("workflowTabs.create.assistantNameLabel")}</label>
                   <input
+                    id="assistantName"
                     type="text"
                     value={t("workflowTabs.create.assistantNameValue")}
                     className="w-full px-3 sm:px-4 py-2 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
@@ -126,6 +127,7 @@ function WorkflowSection() {
                     readOnly
                     type="text"
                     placeholder={t("workflowTabs.chat.searchPlaceholder")}
+                    aria-label={t("workflowTabs.chat.searchPlaceholder")}
                     className="w-full pl-7 sm:pl-8 pr-3 py-1.5 sm:py-2 bg-gray-100 text-xs sm:text-sm border border-gray-300 rounded-lg outline-none"
                   />
                   <svg
@@ -288,9 +290,10 @@ function WorkflowSection() {
                       readOnly
                       type="text"
                       placeholder={t("workflowTabs.chat.inputPlaceholder")}
+                      aria-label={t("workflowTabs.chat.inputPlaceholder")}
                       className="flex-1 px-2 sm:px-3 py-1.5 sm:py-2 border border-gray-300 rounded-lg text-xs sm:text-sm"
                     />
-                    <button className="px-3 sm:px-4 py-1.5 sm:py-2 bg-black text-white rounded-lg hover:bg-orange-600 transition-colors flex-shrink-0">
+                    <button aria-label="Envoyer" className="px-3 sm:px-4 py-1.5 sm:py-2 bg-black text-white rounded-lg hover:bg-orange-600 transition-colors flex-shrink-0">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
