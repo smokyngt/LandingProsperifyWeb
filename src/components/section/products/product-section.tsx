@@ -39,10 +39,10 @@ export default function ProductSection() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto">
         
         {/* ── Card 1 : Cloud dédié ── */}
-        <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:border-orange-300 transition-all duration-500 ease-out group cursor-pointer relative z-10 hover:z-20">
+        <div className="bg-white rounded-2xl p-8 lg:p-10 xl:p-12 border border-gray-200 shadow-sm flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:border-orange-300 transition-all duration-500 ease-out group cursor-pointer relative z-10 hover:z-20">
           {/* Recommended Badge */}
           <div className="absolute -top-3 right-6">
             <span className="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-semibold group-hover:bg-orange-600 transition-colors duration-300 shadow-sm">
@@ -50,10 +50,10 @@ export default function ProductSection() {
             </span>
           </div>
 
-          <div className="w-16 h-16 rounded-full bg-[#fff7ed] border border-orange-200 flex items-center justify-center mb-6 group-hover:bg-orange-100 group-hover:scale-110 transition-all duration-300">
-            <Cloud className="text-orange-500" size={28} strokeWidth={1.5} />
+          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#fff7ed] border border-orange-200 flex items-center justify-center mb-6 group-hover:bg-orange-100 group-hover:scale-110 transition-all duration-300">
+            <Cloud className="text-orange-500 w-7 h-7 lg:w-8 lg:h-8" strokeWidth={1.5} />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">{t("products.offers.0.title")}</h3>
+          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-orange-600 transition-colors duration-300">{t("products.offers.0.title")}</h3>
           <div className="w-8 h-[2px] bg-orange-400 mb-8 rounded-full"></div>
           
           <div className="space-y-5 w-full mt-auto">
@@ -85,11 +85,11 @@ export default function ProductSection() {
         </div>
 
         {/* ── Card 2 : Hybride ── */}
-        <div className="bg-white rounded-xl p-8 border border-gray-200 shadow-sm flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:border-gray-300 transition-all duration-500 ease-out group cursor-pointer relative z-10 hover:z-20">
-          <div className="w-16 h-16 rounded-full bg-[#fff7ed] border border-orange-200 flex items-center justify-center mb-6 group-hover:bg-orange-100 group-hover:scale-110 transition-all duration-300">
-            <Database className="text-orange-500" size={28} strokeWidth={1.5} />
+        <div className="bg-white rounded-2xl p-8 lg:p-10 xl:p-12 border border-gray-200 shadow-sm flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:border-gray-300 transition-all duration-500 ease-out group cursor-pointer relative z-10 hover:z-20">
+          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-[#fff7ed] border border-orange-200 flex items-center justify-center mb-6 group-hover:bg-orange-100 group-hover:scale-110 transition-all duration-300">
+            <Database className="text-orange-500 w-7 h-7 lg:w-8 lg:h-8" strokeWidth={1.5} />
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors duration-300">{t("products.offers.1.title")}</h3>
+          <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors duration-300">{t("products.offers.1.title")}</h3>
           <div className="w-8 h-[2px] bg-orange-400 mb-8 rounded-full"></div>
           
           <div className="space-y-5 w-full mt-auto">
@@ -121,7 +121,7 @@ export default function ProductSection() {
         </div>
 
         {/* ── Card 3 : 100% Local ── */}
-        <div className="bg-white rounded-xl p-8 border border-green-500 shadow-md flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:border-green-600 transition-all duration-500 ease-out group cursor-pointer relative z-10 hover:z-20">
+        <div className="bg-white rounded-2xl p-8 lg:p-10 xl:p-12 border border-green-500 shadow-md flex flex-col items-center hover:shadow-2xl hover:scale-105 hover:border-green-600 transition-all duration-500 ease-out group cursor-pointer relative z-10 hover:z-20">
           {/* Secured Badge */}
           <div className="absolute -top-3 right-6">
             <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold group-hover:bg-green-600 transition-colors duration-300 shadow-sm">
@@ -129,10 +129,10 @@ export default function ProductSection() {
             </span>
           </div>
 
-          <div className="w-16 h-16 rounded-full bg-green-50 border border-green-200 flex items-center justify-center mb-6 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300">
-            <Lock className="text-green-500" size={28} strokeWidth={1.5} />
+          <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-green-50 border border-green-200 flex items-center justify-center mb-6 group-hover:bg-green-100 group-hover:scale-110 transition-all duration-300">
+            <Lock className="text-green-500 w-7 h-7 lg:w-8 lg:h-8" strokeWidth={1.5} />
           </div>
-          <h3 className="text-3xl font-bold text-green-500 mb-8 group-hover:text-green-600 transition-colors duration-300">{t("products.offers.2.title")}</h3>
+          <h3 className="text-3xl lg:text-4xl font-bold text-green-500 mb-8 group-hover:text-green-600 transition-colors duration-300">{t("products.offers.2.title")}</h3>
           
           <div className="space-y-5 w-full mt-auto">
             <div className="flex items-center gap-4">
