@@ -178,32 +178,37 @@
     "titlePrefix": "Ultra-fast",
     "titleHighlight": "Integration",
     "titleSuffix": "Zero Rebuild",
-    "subtitle": "Deploy Prosperify in a few days without reworking your existing tools.",
+    "subtitle": "Deploy Prosperify in a few weeks without reworking your existing tools.",
     "steps": [
       {
         "title": "Scoping & Objectives",
         "description": "Define your needs: AI assistants, volumes, users.",
-        "tag": "Day 1"
+        "tag": "Week 1",
+        "badge": "Strategic Audit"
       },
       {
         "title": "Document Connection",
         "description": "Connect your existing sources via our API.",
-        "tag": "Day 2"
+        "tag": "Week 2",
+        "badge": "API Integration"
       },
       {
         "title": "Assistant Configuration",
         "description": "Set up business rules and confidentiality levels.",
-        "tag": "Day 3"
+        "tag": "Week 3",
+        "badge": "AI Customization"
       },
       {
         "title": "Testing & Validation",
         "description": "Validate results with your teams.",
-        "tag": "Day 4"
+        "tag": "Week 4",
+        "badge": "UAT & QA"
       },
       {
         "title": "Production & Evolution",
         "description": "Launch and continuously update.",
-        "tag": "Ongoing"
+        "tag": "Week 5",
+        "badge": "Deployment"
       }
     ],
     "api": {

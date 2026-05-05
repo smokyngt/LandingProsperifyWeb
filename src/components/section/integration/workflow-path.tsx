@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "motion/react"
 import { useRef, useState, useEffect } from "react"
+import { Target, Link, Settings, ShieldCheck, Rocket } from "lucide-react"
 
 /* ------------------------------------------------------------------ */
 /*  Static data                                                        */
@@ -34,6 +35,7 @@ interface IntegrationStep {
   title: string
   description: string
   tag: string
+  badge?: string
 }
 
 function methodColor(method: string) {
@@ -302,6 +304,7 @@ export default function WorkflowPath() {
           <div ref={timelineRef} className="relative max-w-3xl mx-auto pb-20">
             {steps.map((step, index) => {
               const isActive = activeStep > index;
+              const Icon = index === 0 ? Target : index === 1 ? Link : index === 2 ? Settings : index === 3 ? ShieldCheck : Rocket;
               return (
               <div
                 key={index}
@@ -321,7 +324,7 @@ export default function WorkflowPath() {
                     />
                   </div>
                   <motion.h3 
-                    className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold"
+                    className="hidden md:block text-xl md:pl-20 md:text-4xl lg:text-5xl font-bold whitespace-nowrap"
                     animate={{
                       color: isActive ? "#FF6A13" : "#737373",
                       scale: isActive ? 1.05 : 1,
@@ -336,7 +339,7 @@ export default function WorkflowPath() {
                 {/* Content */}
                 <div className="relative pl-20 pr-4 md:pl-4 w-full">
                   <motion.h3 
-                    className="md:hidden block text-2xl mb-4 text-left font-bold"
+                    className="md:hidden block text-2xl mb-4 text-left font-bold whitespace-nowrap"
                     animate={{
                       color: isActive ? "#FF6A13" : "#737373",
                       scale: isActive ? 1.05 : 1,
@@ -350,9 +353,15 @@ export default function WorkflowPath() {
                     <h4 className="text-xl sm:text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
                       {step.title}
                     </h4>
-                    <p className="text-sm sm:text-base text-gray-500 dark:text-neutral-400 leading-relaxed max-w-md">
+                    <p className="text-sm sm:text-base text-gray-500 dark:text-neutral-400 leading-relaxed max-w-md mb-4">
                       {step.description}
                     </p>
+                    {step.badge && (
+                      <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-orange-500/10 text-orange-600 rounded-full text-xs font-semibold">
+                        <Icon size={14} className="text-orange-500" />
+                        {step.badge}
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

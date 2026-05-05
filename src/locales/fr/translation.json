@@ -4,10 +4,10 @@
     "description": "Optimisez votre gestion documentaire avec l’IA souveraine de Prosperify. Sécurité, précision et intégration simple."
   },
   "hero": {
-    "titleLine1": "Exploitez la puissance",
-    "titleLine2Prefix": "de vos",
-    "titleLine2Highlight": "données",
-    "subtitle": "Transformez vos documents en insights exploitables avec Prosperify"
+    "titleLine1": "L'intelligence documentaire,",
+    "titleLine2Prefix": "sans",
+    "titleLine2Highlight": "compromis",
+    "subtitle": "Transformez vos documents financiers, juridiques et immobiliers en insights exploitables, en toute confidentialité."
   },
   "workflow": {
     "badge": "WORKFLOW",
@@ -178,32 +178,37 @@
     "titlePrefix": "Intégration",
     "titleHighlight": "Ultra-Rapide",
     "titleSuffix": "Zéro Refonte",
-    "subtitle": "Déployez Prosperify en quelques jours sans refondre vos outils existants.",
+    "subtitle": "Déployez Prosperify en quelques semaines sans refondre vos outils existants.",
     "steps": [
       {
         "title": "Cadrage & objectifs",
         "description": "Définissez vos besoins : assistants IA, volumes, utilisateurs.",
-        "tag": "Jour 1"
+        "tag": "Semaine 1",
+        "badge": "Audit Stratégique"
       },
       {
         "title": "Connexion Documents",
         "description": "Connectez vos sources existantes via notre API.",
-        "tag": "Jour 2"
+        "tag": "Semaine 2",
+        "badge": "Intégration API"
       },
       {
         "title": "Configuration Assistants",
         "description": "Paramétrez règles métier et niveaux de confidentialité.",
-        "tag": "Jour 3"
+        "tag": "Semaine 3",
+        "badge": "Personnalisation IA"
       },
       {
         "title": "Tests & Validation",
         "description": "Validez les résultats avec vos équipes.",
-        "tag": "Jour 4"
+        "tag": "Semaine 4",
+        "badge": "UAT & Recette"
       },
       {
         "title": "Production & Évolution",
         "description": "Lancez et mettez à jour en continu.",
-        "tag": "Continu"
+        "tag": "Semaine 5",
+        "badge": "Déploiement"
       }
     ],
     "api": {
