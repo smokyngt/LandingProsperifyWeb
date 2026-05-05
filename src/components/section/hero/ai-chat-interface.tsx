@@ -175,27 +175,12 @@ function Sidebar() {
       }}
     >
       {/* Logo */}
-      <div style={{ padding: "18px 16px 14px", borderBottom: "1px solid #e5e7eb" }}>
-        <svg height={22} viewBox="0 0 160 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g>
-            <path
-              d="M8 32 L8 8 L20 8 C26 8 30 12 30 18 C30 24 26 28 20 28 L14 28 L14 32 Z M14 22 L20 22 C22.5 22 24 20.5 24 18 C24 15.5 22.5 14 20 14 L14 14 Z"
-              fill="#ff6a13"
-            />
-            <circle cx="32" cy="10" r="2.5" fill="#ff6a13" />
-          </g>
-          <text
-            x="42"
-            y="27"
-            fontFamily="Inter, sans-serif"
-            fontWeight="700"
-            fontSize="20"
-            fill="#141414"
-            letterSpacing="-0.02em"
-          >
-            Prosperify
-          </text>
-        </svg>
+      <div style={{ padding: "18px 16px 14px", borderBottom: "1px solid #e5e7eb", display: "flex", alignItems: "center", justifyItems: "center", justifyContent: "center" }}>
+        <img
+          src="/logooo.png"
+          alt="Prosperify Logo"
+          style={{ height: 26, objectFit: "contain", maxWidth: "100%" }}
+        />
       </div>
 
       {/* Navigation */}

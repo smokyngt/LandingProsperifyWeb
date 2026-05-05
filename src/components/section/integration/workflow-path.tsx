@@ -243,14 +243,20 @@ export default function WorkflowPath() {
 
   useEffect(() => {
     if (timelineRef.current) {
-      setTimelineHeight(timelineRef.current.getBoundingClientRect().height)
+      const observer = new ResizeObserver(() => {
+        if (timelineRef.current) {
+          setTimelineHeight(timelineRef.current.getBoundingClientRect().height)
+        }
+      })
+      observer.observe(timelineRef.current)
+      return () => observer.disconnect()
     }
   }, [steps])
 
   // Scroll-based progress for the animated line
   const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 10%", "end 50%"],
+    target: timelineRef,
+    offset: ["start 10%", "end 40%"],
   })
 
   const heightTransform = useTransform(scrollYProgress, [0, 1], [0, timelineHeight])
@@ -259,7 +265,8 @@ export default function WorkflowPath() {
   // Track active step based on scroll
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const totalSteps = steps.length
-    const step = Math.round(latest * totalSteps)
+    // Use Math.ceil so that as soon as you enter a section, it activates
+    const step = Math.ceil(latest * totalSteps)
     setActiveStep(Math.min(step, totalSteps))
   })
 
@@ -293,7 +300,9 @@ export default function WorkflowPath() {
         {/* ── Left: Timeline ── */}
         <div className="flex-1 w-full font-sans md:px-6 lg:px-10">
           <div ref={timelineRef} className="relative max-w-3xl mx-auto pb-20">
-            {steps.map((step, index) => (
+            {steps.map((step, index) => {
+              const isActive = activeStep > index;
+              return (
               <div
                 key={index}
                 className="flex justify-start pt-10 md:pt-32 md:gap-10"
@@ -301,18 +310,42 @@ export default function WorkflowPath() {
                 {/* Sticky dot + tag label */}
                 <div className="sticky flex flex-col md:flex-row z-20 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
                   <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
-                    <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
+                    <motion.div 
+                      className="h-4 w-4 rounded-full border p-2 shadow-sm" 
+                      animate={{
+                        backgroundColor: isActive ? "#FF6A13" : "#e5e5e5",
+                        borderColor: isActive ? "#FF6A13" : "#d4d4d4",
+                        scale: isActive ? 1.3 : 1
+                      }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </div>
-                  <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
+                  <motion.h3 
+                    className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold"
+                    animate={{
+                      color: isActive ? "#FF6A13" : "#737373",
+                      scale: isActive ? 1.05 : 1,
+                      x: isActive ? 10 : 0
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
                     {step.tag}
-                  </h3>
+                  </motion.h3>
                 </div>
 
                 {/* Content */}
                 <div className="relative pl-20 pr-4 md:pl-4 w-full">
-                  <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
+                  <motion.h3 
+                    className="md:hidden block text-2xl mb-4 text-left font-bold"
+                    animate={{
+                      color: isActive ? "#FF6A13" : "#737373",
+                      scale: isActive ? 1.05 : 1,
+                      originX: 0
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
                     {step.tag}
-                  </h3>
+                  </motion.h3>
                   <div>
                     <h4 className="text-xl sm:text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
                       {step.title}
@@ -323,7 +356,8 @@ export default function WorkflowPath() {
                   </div>
                 </div>
               </div>
-            ))}
+              )
+            })}
 
             {/* Animated gradient line */}
             <div
