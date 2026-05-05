@@ -110,6 +110,7 @@ export function NavbarDemo() {
             <div className="flex items-center gap-1 text-xs border border-orange-300 rounded-full px-2 py-2 bg-orange-50/90 text-orange-600 shadow-sm">
               <motion.button
                 type="button"
+                aria-label="Français"
                 onClick={() => switchLanguage("fr")}
                 className={
                   currentLang === "fr"
@@ -128,6 +129,7 @@ export function NavbarDemo() {
               <span className="text-gray-400">/</span>
               <motion.button
                 type="button"
+                aria-label="English"
                 onClick={() => switchLanguage("en")}
                 className={
                   currentLang === "en"
@@ -176,6 +178,7 @@ export function NavbarDemo() {
             <div className="flex items-center gap-2 mb-4">
               <motion.button
                 type="button"
+                aria-label="Français"
                 onClick={() => switchLanguage("fr")}
                 className={
                   currentLang === "fr"
@@ -194,6 +197,7 @@ export function NavbarDemo() {
               <span className="text-gray-400">/</span>
               <motion.button
                 type="button"
+                aria-label="English"
                 onClick={() => switchLanguage("en")}
                 className={
                   currentLang === "en"

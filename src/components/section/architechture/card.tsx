@@ -30,14 +30,14 @@ export const CardTitle = ({
   children: React.ReactNode
 }) => {
   return (
-    <h4
+    <h3
       className={cn(
         "text-gray-900 font-bold tracking-wide mt-4 group-hover:text-orange-600 transition-colors duration-300",
         className,
       )}
     >
       {children}
-    </h4>
+    </h3>
   )
 }
 

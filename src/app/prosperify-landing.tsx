@@ -13,6 +13,7 @@ import ContactForm from "@/components/contactForm/contactForm"
 import ProsperifyFeatures from "@/components/section/features/prosperify-features"
 import { useTranslation } from "react-i18next"
 import i18n from "@/lib/i18n"
+import Image from "next/image"
 
 interface ProsperifyLandingProps {
   lang?: string
@@ -59,7 +60,7 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
         <div className="relative mt-1 w-full ">
           <NavbarDemo />
         </div>
-        <div className="min-h-screen bg-transparent">
+        <main className="min-h-screen bg-transparent">
           <section
             id="accueil"
             className=" scroll-animate pt-6 sm:pt-16 pb-6 sm:pb-8 px-4 sm:px-6  sm:mx-4 "
@@ -144,7 +145,7 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
               </div>
             </div>
           </section>
-        </div>
+        </main>
 
         {/* Footer */}
         <footer className=" scroll-animate py-8 sm:py-12 px-4 sm:px-6 mx-2 sm:mx-4 mt-6 sm:mt-8 mb-2 sm:mb-4 rounded-xl sm:rounded-2xl border-t border-gray-100">
@@ -254,10 +255,12 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
               <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
                 {/* Pépite BEELYSS */}
                 <div className="flex flex-col items-center gap-1 group">
-                  <img
+                  <Image
                     src="/pep.png"
                     alt="Pépite BEELYSS Lyon Saint-Étienne"
-                    className="h-10 sm:h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    width={150}
+                    height={48}
+                    className="h-10 sm:h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                   />
                   <span className="text-[10px] sm:text-xs text-muted-foreground text-center">
                     Pépite BEELYSS · Lyon Saint-Étienne
@@ -265,10 +268,12 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
                 </div>
                 {/* French Tech */}
                 <div className="flex flex-col items-center gap-1 group">
-                  <img
+                  <Image
                     src="/fr.png"
                     alt="La French Tech"
-                    className="h-10 sm:h-12 object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+                    width={150}
+                    height={48}
+                    className="h-10 sm:h-12 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300"
                   />
                   <span className="text-[10px] sm:text-xs text-muted-foreground text-center">
                     La French Tech
@@ -287,6 +292,7 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
+                  aria-label="LinkedIn"
                 >
                   <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />

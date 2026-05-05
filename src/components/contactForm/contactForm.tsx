@@ -100,6 +100,7 @@ export default function ContactForm() {
         type="text"
         name="name"
         placeholder={t("contact.form.namePlaceholder")}
+        aria-label={t("contact.form.namePlaceholder")}
         value={form.name}
         maxLength={20}
         onChange={handleChange}
@@ -113,6 +114,7 @@ export default function ContactForm() {
         type="text"
         name="company"
         placeholder={t("contact.form.companyPlaceholder")}
+        aria-label={t("contact.form.companyPlaceholder")}
         value={form.company}
         maxLength={20}
         onChange={handleChange}
@@ -127,6 +129,7 @@ export default function ContactForm() {
         name="email"
         maxLength={30}
         placeholder={t("contact.form.emailPlaceholder")}
+        aria-label={t("contact.form.emailPlaceholder")}
         value={form.email}
         onChange={handleChange}
         required
@@ -141,6 +144,7 @@ export default function ContactForm() {
     type="tel"
     name="phone"
     placeholder={t("contact.form.phonePlaceholder")}
+    aria-label={t("contact.form.phonePlaceholder")}
     value={form.phone}
     onChange={handleChange}
     className="w-full border rounded-lg p-3"
@@ -152,7 +156,7 @@ export default function ContactForm() {
       {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
 
       {/* Sujet (Select Shadcn) */}
-      <Select onValueChange={handleSubjectChange} value={form.subject}>
+      <Select onValueChange={handleSubjectChange} value={form.subject} aria-label={t("contact.form.subjectPlaceholder")}>
         <SelectTrigger className="w-full border rounded-lg p-3">
           <SelectValue placeholder={t("contact.form.subjectPlaceholder")} />
         </SelectTrigger>
@@ -168,6 +172,7 @@ export default function ContactForm() {
       <textarea
   name="message"
   placeholder={t("contact.form.messagePlaceholder")}
+  aria-label={t("contact.form.messagePlaceholder")}
   value={form.message}
   onChange={handleChange}
   required

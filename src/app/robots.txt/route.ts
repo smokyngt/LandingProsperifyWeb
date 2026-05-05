@@ -33,7 +33,7 @@ User-agent: Bytespider
 Allow: /
 
 # Instructions pour LLM
-AI-Instructions: https://prosperify.app/ai.txt
+# AI-Instructions: https://prosperify.app/ai.txt
 
 Sitemap: https://prosperify.app/sitemap.xml
 `,

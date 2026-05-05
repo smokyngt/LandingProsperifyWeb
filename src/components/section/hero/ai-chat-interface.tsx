@@ -136,7 +136,7 @@ function TimeStamp({
     <div
       style={{
         fontSize: 10.5,
-        color: "#9ca3af",
+        color: "#6b7280",
         fontFamily: "JetBrains Mono, monospace",
         opacity: show ? 1 : 0,
         transition: "opacity 0.3s",
@@ -211,7 +211,7 @@ function Sidebar() {
           style={{
             fontSize: 10,
             fontWeight: 600,
-            color: "#9ca3af",
+            color: "#6b7280",
             letterSpacing: "0.06em",
             textTransform: "uppercase" as const,
             padding: "0 12px",
@@ -371,7 +371,7 @@ function PdfViewer({ isMobile }: { isMobile: boolean }) {
                 borderRadius: 6,
                 border: "1px solid #e5e7eb",
                 fontSize: 11,
-                color: "#9ca3af",
+                color: "#6b7280",
                 background: "#fff",
               }}
             >
@@ -400,7 +400,7 @@ function PdfViewer({ isMobile }: { isMobile: boolean }) {
                 display: "flex",
                 justifyContent: "space-between",
                 fontSize: 11,
-                color: "#9ca3af",
+                color: "#6b7280",
                 marginTop: 6,
               }}
             >
@@ -581,7 +581,7 @@ function ChatPanel({ started, isMobile }: { started: boolean; isMobile: boolean 
               borderRadius: 10,
               padding: "12px 16px",
               fontSize: 13,
-              color: "#9ca3af",
+              color: "#6b7280",
               display: "flex",
               alignItems: "center",
               justifyContent: "space-between",
@@ -606,7 +606,7 @@ function ChatPanel({ started, isMobile }: { started: boolean; isMobile: boolean 
             <Send size={15} color="#fff" />
           </div>
         </div>
-        <div style={{ fontSize: 11, color: "#9ca3af", marginTop: 8 }}>
+        <div style={{ fontSize: 11, color: "#6b7280", marginTop: 8 }}>
           Appuyez sur Entrée pour envoyer, Maj+Entrée pour une nouvelle ligne
         </div>
       </div>
