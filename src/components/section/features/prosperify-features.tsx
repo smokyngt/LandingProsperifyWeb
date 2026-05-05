@@ -61,7 +61,7 @@ export default function ProsperifyFeatures() {
   const [activeTab, setActiveTab] = useState(0)
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto bg-[#141414] rounded-3xl p-8 sm:p-12 lg:p-16">
       <div className="flex justify-center mb-6">
         <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 text-orange-500 rounded-full text-sm font-medium">
           {t("features.badge")}
@@ -69,10 +69,10 @@ export default function ProsperifyFeatures() {
       </div>
 
       <div className="text-center mb-12 sm:mb-16">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 leading-tight text-white tracking-tight">
           {t("features.title")} <br />  <span className="text-orange-500"> {t("features.titleHighlight")} </span>
         </h2>
-        <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg text-gray-400 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
           {t("features.subtitle")} </p>        </div>
 
       {/* Tabs Layout */}
@@ -80,11 +80,9 @@ export default function ProsperifyFeatures() {
         {/* Left: Tab List */}
         <div className="mb-8 lg:mb-0">
           {/* Mobile & Tablet: Horizontal scrollable tabs */}
-          <div className="relative lg:hidden">
-            <div className="absolute left-0 top-0 bottom-4 w-12 bg-gradient-to-r from-white via-white/80 to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-white via-white/80 to-transparent z-10 pointer-events-none" />
-
-            <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide px-2">
+          {/* Mobile & Tablet: Grid tabs */}
+          <div className="lg:hidden mb-8">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 px-1">
               {features.map((feature, index) => {
                 const Icon = feature.icon
                 const isActive = activeTab === index
@@ -93,20 +91,19 @@ export default function ProsperifyFeatures() {
                   <button
                     key={feature.id}
                     onClick={() => setActiveTab(index)}
-                    className={`flex-shrink-0 snap-start p-3 sm:p-4 rounded-lg transition-all duration-300 w-[80px] sm:w-[140px] ${isActive
-                        ? "bg-orange-50 border-2 border-orange-500"
-                        : "bg-white border-2 border-gray-200 hover:bg-gray-50"
+                    className={`w-full p-2 py-3 sm:p-4 rounded-lg transition-all duration-300 ${isActive
+                      ? "bg-orange-500/10 border-2 border-orange-500"
+                      : "bg-[#1c1c1c] border-2 border-white/5 hover:bg-white/5"
                       }`}
                   >
-                    <div className="flex flex-col items-center text-center gap-1.5 sm:gap-2">
+                    <div className="flex flex-col items-center text-center gap-1 sm:gap-2">
                       <div
-                        className={`transition-colors duration-300 ${isActive ? "text-orange-500" : "text-gray-400"}`}
+                        className={`transition-colors duration-300 ${isActive ? "text-orange-500" : "text-gray-500"}`}
                       >
                         <Icon size={20} className="sm:w-6 sm:h-6" strokeWidth={1.5} />
                       </div>
-                      {/* Show number on mobile, short title on tablet */}
                       <div
-                        className={`text-xs sm:text-sm font-semibold transition-colors duration-300 ${isActive ? "text-gray-900" : "text-gray-600"
+                        className={`text-[0.65rem] sm:text-sm font-semibold transition-colors duration-300 ${isActive ? "text-white" : "text-gray-400"
                           }`}
                       >
                         <span className="sm:hidden">{index + 1}</span>
@@ -116,17 +113,6 @@ export default function ProsperifyFeatures() {
                   </button>
                 )
               })}
-            </div>
-
-            {/* Scroll indicator dots */}
-            <div className="flex justify-center gap-1.5 mt-2">
-              {features.map((_, index) => (
-                <div
-                  key={index}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${activeTab === index ? "w-6 bg-orange-500" : "w-1.5 bg-gray-300"
-                    }`}
-                />
-              ))}
             </div>
           </div>
 
@@ -141,26 +127,26 @@ export default function ProsperifyFeatures() {
                   key={feature.id}
                   onClick={() => setActiveTab(index)}
                   className={`w-full text-left p-6 rounded-lg transition-all duration-300 cursor-pointer group ${isActive
-                      ? "bg-orange-50 border-l-4 border-orange-500"
-                      : "bg-white border-l-4 border-transparent hover:bg-gray-50"
+                    ? "bg-orange-500/10 border-l-4 border-orange-500"
+                    : "bg-transparent border-l-4 border-transparent hover:bg-white/5"
                     }`}
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={`flex-shrink-0 transition-colors duration-300 ${isActive ? "text-orange-500" : "text-gray-400 group-hover:text-orange-400"
+                      className={`flex-shrink-0 transition-colors duration-300 ${isActive ? "text-orange-500" : "text-gray-500 group-hover:text-orange-400"
                         }`}
                     >
                       <Icon size={28} strokeWidth={1.5} />
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3
-                        className={`text-lg font-semibold mb-1 transition-colors duration-300 ${isActive ? "text-gray-900" : "text-gray-600 group-hover:text-gray-900"
+                        className={`text-lg font-semibold mb-1 transition-colors duration-300 ${isActive ? "text-white" : "text-gray-400 group-hover:text-white"
                           }`}
                       >
                         {t(feature.titleKey)}
                       </h3>
                       <p
-                        className={`text-sm transition-colors duration-300 ${isActive ? "text-orange-600" : "text-gray-400 group-hover:text-gray-600"
+                        className={`text-sm transition-colors duration-300 ${isActive ? "text-orange-500" : "text-gray-500 group-hover:text-gray-400"
                           }`}
                       >
                         {t(feature.subtitleKey)}
@@ -184,7 +170,7 @@ export default function ProsperifyFeatures() {
               transition={{ duration: 0.3 }}
               className="absolute inset-0"
             >
-              <div className="h-full flex flex-col justify-center bg-gradient-to-br from-orange-50/30 to-white rounded-2xl p-6 sm:p-8 lg:p-12 border border-gray-200">
+              <div className="h-full flex flex-col justify-center bg-[#1c1c1c] rounded-2xl p-6 sm:p-8 lg:p-12 border border-white/5 shadow-2xl">
                 {/* Icon */}
                 <div className="mb-6 sm:mb-8">
                   {(() => {
@@ -194,23 +180,23 @@ export default function ProsperifyFeatures() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 text-balance">
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4 text-balance">
                   {t(features[activeTab].titleKey)}
                 </h3>
 
                 {/* Subtitle */}
-                <p className="text-base sm:text-lg text-orange-600 font-medium mb-4 sm:mb-6">
+                <p className="text-base sm:text-lg text-orange-500 font-medium mb-4 sm:mb-6">
                   {t(features[activeTab].subtitleKey)}
                 </p>
 
                 {/* Description */}
-                <p className="text-base sm:text-lg text-gray-600 leading-relaxed text-pretty">
+                <p className="text-base sm:text-lg text-gray-400 leading-relaxed text-pretty">
                   {t(features[activeTab].descriptionKey)}
                 </p>
 
                 {/* Decorative element */}
-                <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-orange-200">
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-white/5">
+                  <div className="flex items-center gap-2 text-sm text-gray-500">
                     <span className="text-orange-500 font-semibold">{String(activeTab + 1).padStart(2, "0")}</span>
                     <span>/</span>
                     <span>{String(features.length).padStart(2, "0")}</span>

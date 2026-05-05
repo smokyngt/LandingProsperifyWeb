@@ -1,66 +1,269 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { useTranslation } from "react-i18next"
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+} from "motion/react"
+import { useRef, useState, useEffect } from "react"
+
+/* ------------------------------------------------------------------ */
+/*  Static data                                                        */
+/* ------------------------------------------------------------------ */
+
+const apiEndpoints = [
+  { method: "POST", path: "/assistants/create", status: "201", appearsAt: 2 },
+  { method: "PUT", path: "/documents/upload", status: "200", appearsAt: 1 },
+  { method: "GET", path: "/query/search", status: "200", appearsAt: 3 },
+]
+
+const connectedTools = [
+  { name: "SharePoint", appearsAt: 1 },
+  { name: "Google Drive", appearsAt: 2 },
+  { name: "Salesforce", appearsAt: 3 },
+  { name: "S3 / MinIO", appearsAt: 4 },
+]
+
+/* ------------------------------------------------------------------ */
+/*  Helpers                                                            */
+/* ------------------------------------------------------------------ */
+
+interface IntegrationStep {
+  title: string
+  description: string
+  tag: string
+}
+
+function methodColor(method: string) {
+  if (method === "POST") return { text: "#FF6A13", bg: "#FFF4EC" }
+  if (method === "PUT") return { text: "#2563eb", bg: "#dbeafe" }
+  return { text: "#22c55e", bg: "#dcfce7" }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Animated API Panel (right side)                                    */
+/* ------------------------------------------------------------------ */
+
+function AnimatedApiPanel({
+  activeStep,
+  t,
+}: {
+  activeStep: number
+  t: (key: string) => string
+}) {
+  return (
+    <div className="bg-gray-50 rounded-2xl p-6 sm:p-8 border border-gray-200">
+      {/* Header with animated status */}
+      <div className="flex items-center gap-2 mb-5">
+        <motion.div
+          className="w-2.5 h-2.5 rounded-full"
+          animate={{
+            backgroundColor: activeStep >= 1 ? "#22c55e" : "#94A3B8",
+            scale: activeStep >= 1 ? [1, 1.3, 1] : 1,
+          }}
+          transition={{
+            backgroundColor: { duration: 0.4 },
+            scale: { duration: 0.6, repeat: activeStep >= 1 ? Infinity : 0, repeatDelay: 2 },
+          }}
+        />
+        <span className="text-[13px] font-medium text-gray-600">
+          {t("integration.api.title")}
+        </span>
+      </div>
+
+      {/* API Endpoints — appear progressively */}
+      <div className="space-y-2 mb-5">
+        {apiEndpoints.map((ep, i) => {
+          const visible = activeStep >= ep.appearsAt
+          const colors = methodColor(ep.method)
+
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: 20, height: 0, marginBottom: 0 }}
+              animate={
+                visible
+                  ? { opacity: 1, x: 0, height: "auto", marginBottom: 8 }
+                  : { opacity: 0, x: 20, height: 0, marginBottom: 0 }
+              }
+              transition={{ duration: 0.5, delay: visible ? i * 0.12 : 0, ease: [0.4, 0, 0.2, 1] }}
+              className="overflow-hidden"
+            >
+              <div className="flex items-center gap-2.5 px-3.5 py-2.5 bg-white rounded-[10px] border border-gray-200">
+                <span
+                  className="font-mono text-[11px] font-semibold px-2 py-0.5 rounded-md"
+                  style={{ color: colors.text, background: colors.bg }}
+                >
+                  {ep.method}
+                </span>
+                <span className="font-mono text-[13px] text-gray-700 flex-1 truncate">
+                  {ep.path}
+                </span>
+
+                {/* Animated status indicator */}
+                <motion.span
+                  className="font-mono text-[11px] font-semibold"
+                  initial={{ opacity: 0 }}
+                  animate={visible ? { opacity: 1 } : { opacity: 0 }}
+                  transition={{ delay: 0.4 + i * 0.12 }}
+                  style={{ color: "#22c55e" }}
+                >
+                  {ep.status}
+                </motion.span>
+
+                {/* Pulsing connection dot */}
+                <motion.div
+                  className="w-1.5 h-1.5 rounded-full bg-green-500"
+                  animate={
+                    visible
+                      ? { scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }
+                      : { scale: 1, opacity: 0 }
+                  }
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                />
+              </div>
+            </motion.div>
+          )
+        })}
+      </div>
+
+      {/* Connection line animation */}
+      <motion.div
+        className="h-[2px] rounded-full mb-5"
+        animate={{
+          background:
+            activeStep >= 2
+              ? "linear-gradient(90deg, #FF6A13, #22c55e)"
+              : "linear-gradient(90deg, #e2e8f0, #e2e8f0)",
+          scaleX: activeStep >= 1 ? 1 : 0,
+        }}
+        initial={{ scaleX: 0 }}
+        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
+        style={{ transformOrigin: "left" }}
+      />
+
+      {/* Connected Tools — appear progressively */}
+      <motion.div
+        className="flex flex-col gap-2"
+        initial={{ opacity: 0 }}
+        animate={activeStep >= 1 ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="text-xs font-medium text-gray-500 mb-1">
+          {t("integration.api.connectedTools")}
+        </div>
+        {connectedTools.map((tool, i) => {
+          const visible = activeStep >= tool.appearsAt
+          return (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 10 }}
+              animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ duration: 0.4, delay: visible ? i * 0.1 : 0 }}
+              className="flex items-center gap-2.5 px-3 py-2 bg-white rounded-lg border border-gray-200"
+            >
+              <motion.div
+                className="w-2 h-2 rounded-full"
+                animate={{
+                  backgroundColor: visible ? "#22c55e" : "#d1d5db",
+                }}
+                transition={{ duration: 0.3 }}
+              />
+              <span className="text-[13px] font-medium text-gray-700">
+                {tool.name}
+              </span>
+              <motion.span
+                className="ml-auto text-[11px]"
+                animate={{
+                  color: visible ? "#22c55e" : "#9ca3af",
+                }}
+              >
+                {visible ? t("integration.api.connected") : "…"}
+              </motion.span>
+            </motion.div>
+          )
+        })}
+      </motion.div>
+
+      {/* Progress footer */}
+      <motion.div
+        className="mt-5 pt-4 border-t border-gray-200"
+        animate={{ opacity: activeStep >= 0 ? 1 : 0 }}
+      >
+        <div className="flex items-center justify-between text-xs text-gray-400">
+          <span>{t("integration.api.title")}</span>
+          <motion.span
+            animate={{
+              color: activeStep >= 4 ? "#22c55e" : "#94A3B8",
+            }}
+            className="font-semibold"
+          >
+            {activeStep >= 4 ? "✓ 100%" : `${Math.min(activeStep * 25, 100)}%`}
+          </motion.span>
+        </div>
+        <div className="mt-2 h-1.5 bg-gray-200 rounded-full overflow-hidden">
+          <motion.div
+            className="h-full rounded-full bg-gradient-to-r from-orange-400 to-orange-500"
+            initial={{ width: "0%" }}
+            animate={{ width: `${Math.min(activeStep * 25, 100)}%` }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
+          />
+        </div>
+      </motion.div>
+    </div>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Main Component                                                     */
+/* ------------------------------------------------------------------ */
 
 export default function WorkflowPath() {
   const { t } = useTranslation()
-  const steps = [
-    {
-      id: 1,
-      titleKey: "integration.steps.0.title",
-      descriptionKey: "integration.steps.0.description",
-      position: { x: 50, y: 10 },
-      color: "#ff6a13",
-    },
-    {
-      id: 2,
-      titleKey: "integration.steps.1.title",
-      descriptionKey: "integration.steps.1.description",
-      position: { x: 25, y: 40 },
-      color: "#ff6a13",
-    },
-    {
-      id: 3,
-      titleKey: "integration.steps.2.title",
-      descriptionKey: "integration.steps.2.description",
-      position: { x: 70, y: 50 },
-      color: "#ff6a13",
-    },
-    {
-      id: 4,
-      titleKey: "integration.steps.3.title",
-      descriptionKey: "integration.steps.3.description",
-      position: { x: 30, y: 75 },
-      color: "#ff6a13",
-    },
-    {
-      id: 5,
-      titleKey: "integration.steps.4.title",
-      descriptionKey: "integration.steps.4.description",
-      position: { x: 65, y: 90 },
-      color: "#ff6a13",
-    },
-  ]
 
-  // Générer un path courbé reliant les nodes
-  const generatePath = () => {
-    return steps
-      .map((s, i) => {
-        const { x, y } = s.position
-        if (i === 0) return `M ${x} ${y}`
-        const prev = steps[i - 1]
-        const cx1 = (prev.position.x + x) / 2
-        const cy1 = prev.position.y
-        const cx2 = (prev.position.x + x) / 3
-        const cy2 = y
-        return `C ${cx1} ${cy1}, ${cx2} ${cy2}, ${x} ${y}`
-      })
-      .join(" ")
-  }
+  // Parse steps from i18n
+  const rawSteps = t("integration.steps", { returnObjects: true }) as unknown
+  const steps: IntegrationStep[] = Array.isArray(rawSteps)
+    ? (rawSteps as IntegrationStep[])
+    : rawSteps && typeof rawSteps === "object"
+      ? (Object.values(rawSteps) as IntegrationStep[])
+      : []
+
+  // Refs for scroll tracking
+  const containerRef = useRef<HTMLDivElement>(null)
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const [timelineHeight, setTimelineHeight] = useState(0)
+  const [activeStep, setActiveStep] = useState(0)
+
+  useEffect(() => {
+    if (timelineRef.current) {
+      setTimelineHeight(timelineRef.current.getBoundingClientRect().height)
+    }
+  }, [steps])
+
+  // Scroll-based progress for the animated line
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 10%", "end 50%"],
+  })
+
+  const heightTransform = useTransform(scrollYProgress, [0, 1], [0, timelineHeight])
+  const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1])
+
+  // Track active step based on scroll
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    const totalSteps = steps.length
+    const step = Math.round(latest * totalSteps)
+    setActiveStep(Math.min(step, totalSteps))
+  })
 
   return (
-
     <div className="max-w-7xl mx-auto">
       {/* Badge */}
       <div className="flex justify-center mb-6">
@@ -69,137 +272,80 @@ export default function WorkflowPath() {
         </div>
       </div>
 
-      {/* Titre + description */}
-      <div className="text-center mb-12 sm:mb-16">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
-          {t("integration.titlePrefix")} <span className="text-orange-500">{t("integration.titleHighlight")}</span>,
+      {/* Titre + description — centré en haut */}
+      <div className="text-center mb-8 sm:mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 sm:mb-6 leading-tight tracking-tight">
+          {t("integration.titlePrefix")}{" "}
           <br />
+          <span className="text-orange-500">{t("integration.titleHighlight")}</span>{" "}
           {t("integration.titleSuffix")}
         </h2>
-        <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto">
+        <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
           {t("integration.subtitle")}
         </p>
       </div>
 
-      <div className="relative flex flex-col items-center gap-6 sm:hidden">
-        {/* SVG en arrière-plan */}
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <motion.path
-            d="M 50 0 L 50 100"   // ligne verticale au milieu
-            fill="none"
-            stroke="#5a5a5aff"
-            strokeWidth="0.7"
-            strokeLinecap="round"
-            strokeDasharray="0.5 2"
-            animate={{ strokeDashoffset: [0, -12] }}
-            transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-          />
-        </svg>
-
-        {/* Les nodes empilés */}
-        {steps.map((s, i) => (
-          <div
-            key={s.id}
-            className="relative flex flex-col items-center justify-center 
-                 w-54 h-54 bg-white border border-orange-200 rounded-full p-4 text-center"
-          >
-            {/* Cercle numéro */}
-            <motion.div
-              className="w-8 h-8 rounded-full flex items-center justify-center shadow-lg mb-2"
-              style={{ backgroundColor: s.color }}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: i * 0.3 }}
-            >
-              <span className="text-white font-bold text-sm">{s.id}</span>
-            </motion.div>
-
-            {/* Texte */}
-            <h3
-              className="font-bold text-xs mb-1 leading-tight"
-              style={{ color: s.color }}
-            >
-              {t(s.titleKey)}
-            </h3>
-            <p className="text-[0.8rem] text-gray-600 leading-snug">
-              {t(s.descriptionKey)}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      {/* Conteneur carré pour respecter le viewBox */}
-      <div className="hidden sm:block max-w-2xl lg:max-w-3xl mx-auto relative w-full aspect-[1/1]">
-        {/* Path courbé pointillé animé */}
-        <svg
-          className="absolute inset-0 w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="xMidYMid meet"
-        >
-          <motion.path
-            d={generatePath()}
-            fill="none"
-            stroke="#5a5a5aff"
-            strokeWidth="0.5"
-            strokeLinecap="round"
-            strokeDasharray="2 2"
-            animate={{ strokeDashoffset: [0, -12] }} // décalage des tirets
-            transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-          />
-
-        </svg>
-
-        {/* Nodes + texte */}
-        {steps.map((s, i) => (
-          <div
-            key={s.id}
-            className="absolute flex flex-col items-center justify-center p-4  w-34 h-34 sm:w-46 sm:h-46 lg:w-62 lg:h-62
-p-3 sm:p-4 lg:p-6
-text-xs sm:text-sm  bg-white border border-orange-200 rounded-full"
-            style={{
-              left: `${s.position.x}%`,
-              top: `${s.position.y}%`,
-              transform: "translate(-50%, -50%)",
-            }}
-          >
-            {/* Cercle */}
-            <motion.div
-              className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12
-text-xs sm:text-sm lg:text-base rounded-full flex items-center justify-center shadow-lg mb-2"
-              style={{ backgroundColor: s.color }}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: i * 0.3 }}
-            >
-              <span className="text-white font-bold text-sm sm:text-base">
-                {s.id}
-              </span>
-            </motion.div>
-
-            {/* Texte */}
-            <div className="text-center max-w-[160px] sm:max-w-[200px]">
-              <h3
-                className="font-bold text-[0.65rem] sm:text-[0.75rem] lg:text-sm
- sm:text-sm mb-1 leading-tight"
-                style={{ color: s.color }}
+      {/* Two-column layout */}
+      <div
+        ref={containerRef}
+        className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start w-full"
+      >
+        {/* ── Left: Timeline ── */}
+        <div className="flex-1 w-full font-sans md:px-6 lg:px-10">
+          <div ref={timelineRef} className="relative max-w-3xl mx-auto pb-20">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className="flex justify-start pt-10 md:pt-32 md:gap-10"
               >
-                {t(s.titleKey)}
-              </h3>
-              <p className="text-[0.55rem] sm:text-[0.65rem] lg:text-xs
- sm:text-xs text-gray-600 leading-snug">
-                {t(s.descriptionKey)}
-              </p>
+                {/* Sticky dot + tag label */}
+                <div className="sticky flex flex-col md:flex-row z-20 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
+                  <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
+                    <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
+                  </div>
+                  <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
+                    {step.tag}
+                  </h3>
+                </div>
+
+                {/* Content */}
+                <div className="relative pl-20 pr-4 md:pl-4 w-full">
+                  <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
+                    {step.tag}
+                  </h3>
+                  <div>
+                    <h4 className="text-xl sm:text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-2">
+                      {step.title}
+                    </h4>
+                    <p className="text-sm sm:text-base text-gray-500 dark:text-neutral-400 leading-relaxed max-w-md">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            {/* Animated gradient line */}
+            <div
+              style={{ height: timelineHeight + "px" }}
+              className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%] [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
+            >
+              <motion.div
+                style={{
+                  height: heightTransform,
+                  opacity: opacityTransform,
+                }}
+                className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-orange-400 via-orange-100 to-transparent from-[0%] via-[40%] to-[100%] rounded-full"
+              />
             </div>
           </div>
-        ))}
+        </div>
+
+        {/* ── Right: Animated API Panel (sticky) ── */}
+        <div className="w-full lg:w-[400px] lg:flex-shrink-0 lg:sticky lg:top-40 self-start">
+          <AnimatedApiPanel activeStep={activeStep} t={t} />
+        </div>
       </div>
     </div>
-
-
-
   )
 }

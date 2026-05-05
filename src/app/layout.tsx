@@ -64,7 +64,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className={`font-sans bg-white ${inter.variable} antialiased`}>
+      <body className={`font-sans bg-background ${inter.variable} antialiased`}>
         <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{

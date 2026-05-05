@@ -181,26 +181,36 @@
     "subtitle": "Deploy Prosperify in a few days without reworking your existing tools.",
     "steps": [
       {
-        "title": "Scoping & objectives",
-        "description": "Choose the number of AI assistants, files to process, users, etc."
+        "title": "Scoping & Objectives",
+        "description": "Define your needs: AI assistants, volumes, users.",
+        "tag": "Day 1"
       },
       {
-        "title": "Connecting your documents",
-        "description": "Each team selects and organizes the key files."
+        "title": "Document Connection",
+        "description": "Connect your existing sources via our API.",
+        "tag": "Day 2"
       },
       {
-        "title": "Assistant configuration",
-        "description": "Configure assistants, business rules and confidentiality levels."
+        "title": "Assistant Configuration",
+        "description": "Set up business rules and confidentiality levels.",
+        "tag": "Day 3"
       },
       {
-        "title": "Testing & adjustments",
-        "description": "Explaining features and best practices."
+        "title": "Testing & Validation",
+        "description": "Validate results with your teams.",
+        "tag": "Day 4"
       },
       {
-        "title": "Manage & update",
-        "description": "Add, archive or delete documents over time."
+        "title": "Production & Evolution",
+        "description": "Launch and continuously update.",
+        "tag": "Ongoing"
       }
-    ]
+    ],
+    "api": {
+      "title": "Prosperify API — Connected",
+      "connectedTools": "Your connected tools",
+      "connected": "Connected"
+    }
   },
   "aiChat": {
     "sidebar": {
@@ -246,8 +256,8 @@
   },
   "products": {
     "badge": "OUR PLANS",
-    "titlePrefix": "One Solution, Three Levels",
-    "titleMiddle": "Of",
+    "titlePrefix": "One Solution,",
+    "titleMiddle": "Three Levels of",
     "titleHighlight": "Control",
     "subtitle": "Choose the level of control that fits you best: secure cloud, hybrid deployment or fully local.",
     "offers": [

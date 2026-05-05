@@ -57,8 +57,8 @@
   },
   "features": {
     "badge": "FONCTIONNALITÉS",
-    "title": "Une Intelligence Documentaire",
-    "titleHighlight": "Tout-en-Un",
+    "title": "L'Intelligence",
+    "titleHighlight": "Documentaire Tout-en-Un",
     "subtitle": "Une plateforme unifiée qui transforme vos documents en insights exploitables, avec précision et gouvernance.",
     "items": {
       "precision": {
@@ -182,25 +182,35 @@
     "steps": [
       {
         "title": "Cadrage & objectifs",
-        "description": "Choisissez le nombre d'assistants IA, de fichiers à traiter et d'utilisateurs, etc..."
+        "description": "Définissez vos besoins : assistants IA, volumes, utilisateurs.",
+        "tag": "Jour 1"
       },
       {
-        "title": "Connexion de vos documents",
-        "description": "Chaque équipe sélectionne et organise les fichiers importants."
+        "title": "Connexion Documents",
+        "description": "Connectez vos sources existantes via notre API.",
+        "tag": "Jour 2"
       },
       {
-        "title": "Configuration des assistants",
-        "description": "Paramétrage des assistants, des règles métier et des niveaux de confidentialité."
+        "title": "Configuration Assistants",
+        "description": "Paramétrez règles métier et niveaux de confidentialité.",
+        "tag": "Jour 3"
       },
       {
-        "title": "Tests & ajustements",
-        "description": "Explication des fonctionnalités et bonnes pratiques."
+        "title": "Tests & Validation",
+        "description": "Validez les résultats avec vos équipes.",
+        "tag": "Jour 4"
       },
       {
-        "title": "Gérer & mettre à jour",
-        "description": "Ajouter, archiver ou supprimer les documents au fil du temps."
+        "title": "Production & Évolution",
+        "description": "Lancez et mettez à jour en continu.",
+        "tag": "Continu"
       }
-    ]
+    ],
+    "api": {
+      "title": "API Prosperify — Connectée",
+      "connectedTools": "Vos outils connectés",
+      "connected": "Connecté"
+    }
   },
   "aiChat": {
     "sidebar": {
@@ -246,8 +256,8 @@
   },
   "products": {
     "badge": "NOS OFFRES",
-    "titlePrefix": "Une Solution, Trois  Niveaux",
-    "titleMiddle": "De",
+    "titlePrefix": "Une Solution,",
+    "titleMiddle": "Trois Niveaux de",
     "titleHighlight": "Contrôle",
     "subtitle": "Choisissez le niveau de contrôle qui vous convient : cloud sécurisé, solution hybride ou déploiement local.",
     "offers": [

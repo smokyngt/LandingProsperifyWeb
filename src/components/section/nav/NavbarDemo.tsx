@@ -77,13 +77,12 @@ export function NavbarDemo() {
     { nameKey: "footer.links.products", link: "#products" },
     { nameKey: "footer.links.architecture", link: "#architecture" },
     { nameKey: "footer.links.features", link: "#features" },
-    { nameKey: "footer.links.roadmap", link: "/roadmap" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const resolveLink = (link: string) => {
-    // Si ce n'est pas une ancre (#...), on renvoie tel quel (/roadmap, etc.)
+    // Si ce n'est pas une ancre (#...), on renvoie tel quel
     if (!link.startsWith("#")) return link;
 
     // Sur la page de landing (/), on reste sur la même page
@@ -91,7 +90,7 @@ export function NavbarDemo() {
       return link;
     }
 
-    // Depuis /roadmap (ou autre), on renvoie vers la page d'accueil sans segment de langue
+    // Depuis une autre page, on renvoie vers la page d'accueil
     return `/${link}`;
   };
 
