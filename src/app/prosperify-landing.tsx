@@ -146,8 +146,7 @@ const ProsperifyLanding = ({ lang }: ProsperifyLandingProps) => {
             <div className="max-w-4xl mx-auto text-center scroll-animate">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-balance mb-4 sm:mb-6 leading-tight">
                 {t("contact.titleLine1")}
-                <br />
-                <span style={{ color: "#ff6a13" }}>{t("contact.titleHighlight")}</span>
+                <span style={{ color: "#ff6a13" }}> {t("contact.titleHighlight")}</span>
               </h2>
               <p className="text-base sm:text-lg text-gray-600 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
                 {t("contact.subtitle")}
