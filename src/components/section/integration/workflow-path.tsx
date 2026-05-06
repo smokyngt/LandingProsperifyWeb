@@ -252,7 +252,7 @@ export default function WorkflowPath() {
         setTimelineHeight(timelineRef.current.getBoundingClientRect().height);
       }
     };
-    
+
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -261,7 +261,7 @@ export default function WorkflowPath() {
   // Single scroll progress
   const { scrollYProgress: rawProgress } = useScroll({
     target: containerRef,
-    offset: ["start 10%", "end 40%"],
+    offset: ["start 160px", "end 160px"],
   })
 
   // Synchronized movement values
@@ -302,7 +302,7 @@ export default function WorkflowPath() {
             {steps.map((step, index) => {
               const isActive = activeStep > index;
               const Icon = [Target, Link, Settings, ShieldCheck, Rocket][index] || Rocket;
-              
+
               return (
                 <div key={index} className="flex justify-start pt-10 md:pt-32 md:gap-10">
                   <div className="sticky flex flex-col md:flex-row z-20 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
