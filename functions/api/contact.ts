@@ -75,7 +75,7 @@ export async function onRequestPost({ request, env }: { request: Request; env: a
 
     await resend.emails.send({
       from: "Prosperify <contact@prosperify.app>",
-      to: "brikielyes9@gmail.com",
+      to: "contact@prosperify.app",
       subject: `Nouveau message de ${escape(name)}`,
       replyTo: escape(email),
       html,
