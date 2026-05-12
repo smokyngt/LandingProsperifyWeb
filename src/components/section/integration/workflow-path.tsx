@@ -25,7 +25,7 @@ const connectedTools = [
   { name: "SharePoint", appearsAt: 1 },
   { name: "Google Drive", appearsAt: 2 },
   { name: "Salesforce", appearsAt: 3 },
-  { name: "S3 / MinIO", appearsAt: 4 },
+  { name: "MinIO", appearsAt: 4 },
 ]
 
 /* ------------------------------------------------------------------ */
